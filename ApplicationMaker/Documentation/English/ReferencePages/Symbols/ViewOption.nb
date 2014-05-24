@@ -1,0 +1,1023 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     42041,       1014]
+NotebookOptionsPosition[     37947,        882]
+NotebookOutlinePosition[     39887,        937]
+CellTagsIndexPosition[     39802,        932]
+WindowTitle->ViewOption - ApplicationMaker`DocumentationMaker`
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["APPLICATIONMAKER`DOCUMENTATIONMAKER` SYMBOL", "PacletNameCell"], 
+    Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"How to build documented packages\"\>":>
+       Documentation`HelpLookup[
+        StringJoin[
+        "paclet:", "ApplicationMaker", 
+         "/tutorial/HowToBuildADocumentedPackage"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"See Also \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"EditOption\"\>":>Documentation`HelpLookup[
+       
+        StringJoin[
+        "paclet:", "ApplicationMaker", 
+         "/ref/EditOption"]], "\<\"ViewNotebookOption\"\>":>
+       Documentation`HelpLookup[
+        StringJoin["paclet:", "ApplicationMaker", "/ref/ViewNotebookOption"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"ApplicationMaker\"\>":>
+       Documentation`HelpLookup[
+        StringJoin["paclet:", "ApplicationMaker", "/guide/ApplicationMaker"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Go to StackOverflow tutorial\"\>":>
+       FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+           "http://stackoverflow.com/questions/6574710/integrating-notebooks-\
+to-mathematicas-documentation-center"], None}]}], 
+       Delimiter, "\<\"Go to Wolfram Mathematica\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+           "http://reference.wolfram.com/mathematica/guide/Mathematica.html"],
+            None}]}], "\<\"Go to jmlopez website\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL["http://math.uh.edu/~jmlopez/"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1699355767],
+
+Cell[CellGroupData[{
+
+Cell["ViewOption", "ObjectName",
+ CellID->789552052],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       ButtonBox["ViewOption",
+        BaseStyle->"Link",
+        ButtonData->"paclet:ApplicationMaker/ref/ViewOption"], "[", 
+       StyleBox[
+        RowBox[{"obj", ",", "name"}], "TI"], "]"}]], "InlineFormula"],
+     "\[LineSeparator]Inserts an input cell in the evaluation notebook \
+displaying the settings for the option ",
+     StyleBox["name", "TI"]
+    }]]}
+  }]], "Usage",
+ CellID->699883151]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[
+  FrameBox[
+   StyleBox[
+    RowBox[{"MORE", " ", "INFORMATION"}], "NotesFrameText"],
+   StripOnInput->False],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1168184238,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell["\<\
+Prints a formatted message for the specified option. This is useful in \
+particular with options that have nested rules and lists.\
+\>", "Notes",
+ CellID->1376987192]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["EXAMPLES",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1153519505,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ CellID->1867439066,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell["\<\
+This can be used instead of Options function. Here is how we usually obtain \
+the options.\
+\>", "ExampleText",
+ CellID->574881357],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fig", " ", "=", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"Sin", "[", "x", "]"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", " ", "0", ",", " ", "10"}], "}"}], ",", " ", 
+    RowBox[{"PlotRange", "\[Rule]", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", " ", "10"}], "}"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]}]}], "]"}]}]], "Input",\
+
+ CellLabel->"In[1]:=",
+ CellID->1804653778],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1: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
+UX25u3ZED1invt9rc0AAF+i4lS2U74EtWY67G94JoGSc/kcFsW7g+9GKOVcE
+cWw4aZl0WQdouNq4H1oqhNkt6QmbXFugYzTcXDxXGNdbPiqNaakBo84L10Iu
+imDP5/NObOEPsK8jeBmTKYYc8ySlGSeC6Cuyvln+Shzfl7o3/xD+SWjT6lS2
+nliAgtX6W8uWtxJdgV23ws4uwP2LvXseGrYST8XGu7vtFuCQvq2N+ZFWQmLe
+wrf33BegTuHb9zm3W4m+saM76h4swNQt9poLfrUSCc2/Hc8XL8CFB5LC3nj/
+JZSTOomgJZK4k7xOvqxuI8Rg9FTzsCQqlmRej9jZSbhv0RL5MCmJl7+8DJxv
+2Ul0bT2WFsQvhYOZzsM2zp1E4a6CSUMpKfz476PvWEQnccU08GHyUikUzG1e
+c7i3k+g/u7jkv1NSmNz3ooTm20V8uWemRfsmhaXa3U/mf+gm9ILuVvXVSmGw
+MV45W95NJD345FrcLIUpG4K63/zqJrwfqRZc7pNCjQ/O+nJz3QTz+9hyUkAa
+nSwLLcR39hB1jYUlZkxpfHRbb/Dxjx5iJ8diXM1MGp8MC56faeklomVu/7hx
+RBoVP5+8WMHtJUY2vUxvPiaNS5Z9Xnx7tpd45j917pG1NBp3WtgQKn3EpOaT
+BlFnaRy4eJlucayPSLX+nTXoL43bmj49l/zRR0g3nPDMy5fGjOx96csy+gmb
+Od8jSsXSWPXs6uuIgn4iR+P1WvcyaUw+9pkxVNVPnHfj46yqksbZbcym8739
+RCH9+fGEJmkU7vp7zl5lgHDd22Zwb0waP+ys83rvNUA0FJ7ht1hOw1hNoxbF
+TRxicMsvxWs6NBRwNNLftZ1DzC/Yv/bZahoudMTI0/s5xHpC71zXRhrO/NLb
+cOY0hwj9JP3VZTsNv48wjtzz5xD7M3IiAqxo+Ldny7hLLYewWbP6bdopGvZP
+TLpca+EQ198mVlafoWHPaocgt24Okfo6ZFbejoZH11wO1eZxCLFXtmfiL9NQ
+SMllQ5ESlyhNkFmZG0xDT/O6XS7HuUTLIv/drQ9p+Oz2sOmhs1xiNG7OWjCc
+mp/YmKLuwCUWxfaF7X5KQz/d2pX+nlziVnT+VG0yDdve/Kb9F8UlDMLty7iF
+NOSyC1eW1HAJc7m2VlopDQuO6A96NHIJh7DDk2sraGj5WvKDUiuXePLQcMXV
+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
+j2MTfVzoeN0QbG/NRJVGJdfF/7igbpvPH3CWiQHXssbdx7kQWxfUXmbHRO/T
+Eje7BUmIeaeduMWdiUFfVy5vUyIhysFee90DJlpbqFcb7SLh16JDMQdDmdhv
+7eFyay8JCs2bpF3Cmbg+/4t4oikJEUbiQ2lPmbh3w6hCpiUJYZop77VSmNgt
+HbV/yImEny0PNHa+YmJaad2xB64kyDzyCD/7molRn0x2qXiQEDJvt0fsByam
+eMx9mPIiIfhvt75yERMlc948qwkh4XvEt1d6pUx09BU+0/CIBKkDmcyjFUws
+DSkc+hxFwv08H75H35iof6fN9r9YEu49Xlws1czE60yny12vSfhiumCd9h8m
+1lw9amaaQYK42GiCcRsTtx0jBlIySfB3L/b162Gi2rouUMsjwdfs9B7BUSY+
+Xxm4ZclnEmL3N1uenWCiIlk2sP4rCTm7zRzLppjY9uR0w4rvJAxt3vkgQICF
+5oGmtvW1JEhszI/lCLFwbXeEiH8DCZqrdTP2i7LwzSmNv4ubSLDUWFbPkGah
+t/LrNQqtJFxmx/e4MVjo/F01xbmN0kNRZbJejoVp90tM3nSQUCYppfJEhYV/
+bmzR5vaQ0CZyV3uWzULTl7STfX0kTAvw48lFLNz8UzD32wAJq8eHrBctY6Fk
++r8hs0ES9v6zc/XRZqEEv23F2D8SbPs77vSsYuHtkNGSm8Mk3Oo8Hm60joU7
+gm52D4+Q8PRPXVLqRhYGe84tPzBGwsfG/dmS+izM0PUICxsnoeZHeaUzsLCZ
+T4hdPEEC5+uW3zWGLHxx7nNlE48EkfJs7todLCw6wR/RPEmCeuEavvDdLPTd
+MHS7dIoEg5xUGs+YheejRu9HTpNw5MNi9WMHWHjtgetHsxkSLr2OXpt7kIVt
+t3vmJim+nyK/g3WYhcobms74zZKQFB982MuChU7furr45kgoihY9336chYu/
+v79ziuKWiFtXtp9iYaWS4JaXFPNCpgISz7Dw9EjkwhaKZQJdn4rasjBgykxi
+kmJtX06anR0LQ1arK89RvNvLJv+rIwuDJmf+978NZ67+qdZxYaGFzHBQMcXX
+3Y60P3Cj1j9jjXhTHOlUPTLszkIr1htXbYozzhsJm3uyMNK5k1ZAnffb6SL5
+jzdYaPlD7Is+xX3H9Zco3mZhb+eNuOfU/eYdea/n6UOdL+FdBEnpwTLVNm7x
+Y6GHw+JUDYr1jBOPYyALGRNnWnZQ+h3awXaKDWZhpyV95QFKXyeMvDkvlIXT
+0i3PDSn9/fXoITbhLNzZdXctk6pPwtqAuPIoFgqKd/S0UfXM1573fmk0C3VE
+q4ngURJG1cbqufEsTLy5sTFxiARpFafeA0kszK4pU6FRflkq3zP59iUL96bR
+/U6TJJwU/6Vy+S0LvW59bCjqJ+GK0EGdxvcsfCfzkqjupfI/V4mbsliYdOpu
+TXk3CZ+Hc0/PESy8Idzl5dJOwrrm58m+X1no6Da8JqOR2k/bdiL9O5WXTktC
+t56EgRvaOxt+sNAz8cullz9JiFf/1KH1i4XVBkutDn6j6mf3k/W5i5q/54bt
++yISBnOiHId6Wdh4wMbuST6Vd8lTuYocFv4avpDglEuC91uOhd0wC7+wi0p/
+fSBh0lNwjzAfG7v2KPGKkkjoSbBxieJnY7myECmRQEJdVUWktiAbtUo2rjB8
+TsJbdnCPuTAbrU/NBFyMJOFCsbJPogQbz/gsWdhxl4RG8fUFuxTYmKr7Jkfx
+DAmlayN7mhXZKNIV4rDkBOWH49NSF5XZaHXdKGSRBdXf0gutIllsbB+r2Nq6
+n4RdB/dP9y5mo2ljxHMHPSpvUbYbAlaz0SaoYFu7OAkviiqtWGvZ2Ln6V3G2
+EAmhA9o+79ax8db2W4PX57jgbDD6s2kjG/dpyVl8HeKCVpuXy3Kg1p+Y13Wr
+gQsRSx6/+rqHjW50ms+hZ1wYGd6RcHsvG1clGayyoL4n+/OGnujuZ+O7PAuP
+3cFcED5odC/BlI3nR0QnOm5wwc2Td+HaUTZGPL17RNqKC6bfDmutOMfG8flP
+FhvIcSEtUpDdbsvGN4H3fFsluCB6Jl0+8gIbr4pcGbAX5EL+hPB8IUc2El+F
+mrYOckBH7UNnsysbJQbdpfvLOSDhJhN37xYbF08LGCz+jwO2kB9l6M1GtYLU
+lXZ2HCgStQ+ZuMPG5q+Xnzw+yYEr0UVeZ/zYmPl98dwnIw70lrmc1A9mo63P
+5popFQ6UKlarDDxlo2K0D+d6/gDcyA+M2JPFRnb6c7nvo/3Q9zs/lJfNxqVi
+nUszevrBfGo4ODGHqu8i2WDvpn5Yvt7CTzCfuo+/p0tffj80vNS48qmUjUIW
+62Iq/fthdThxbNlPNk7+/ik4oNgPXQ7/mOIkG3vcRpj9y/tgr5JZwudFquhx
+T2kFKPZARId2/jENVQzPX26aLdoDHa9EmgY0VXEy0PeDBq8bPDFHWmqZKsYm
+/zz7o74bUs+qex5cpYoS6q3XroV2g9jrf6bNm1XRnvUsWUW8G8q23efjmqsi
+a4m5XQOnE7Y4lh2j+ami2PpHyxMD2iFG2XrRl1FV9Bu7UrTlbhMsKkp8tO+Y
+Gqa++WEwpfsNglcULq3JU0Od2A/+BokpYDM8r7piqTqemZp/69rmYsL6zRDb
+L0gd1ThpnMiddYT9rYPTRg/UUf6ygtEuzzrC7WBGvcRDdZSzLzDqfF1H3B11
+ux/8SB3NXp141KdQT6Tp8qbCn6qjwPaBHpX+eoJXMFf34qU6PlUV1Zvn30gE
+10gEFpep4+7ZF/4fPzYTUXEOtj4V6ih0ePgHp6+ZiHOt2rqrUh2ZMXs/S6j8
+Jj7IBU9WVqnjD1V39flev4lmC4btj1p11KfdO9C7s4XQbFfY2taujsuPOMsb
+Vv8hVmZcYcZ3UvsfjVPk428l9O408c52q2PcnZwqU4VWwljz6evePnXk+2zT
+VLO7lXCxYzP//VPH4a6NVzeltBKe+l68t8PqSIskE9cVthJ3FrT9dB2l9CBS
+O9R+tRIR6XEBExPq+Hmh9bY60b9E7M1557In1ZG3z9fwiepf4qXJWUPPaXXM
+VFww30z3L5GhVqpiMEutPxd3g8/kL5E3rMGbm1On/jfnRUXb/iX+D01y2q0=
+
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{0, 0},
+  PlotRange->{{0, 10}, {-1, 1}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{Automatic, Automatic}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->828998364]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Options", "[", 
+  RowBox[{"fig", ",", " ", "\"\<PlotRange\>\""}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->101602012],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"PlotRange", "\[Rule]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "10"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->375516319]
+}, Open  ]],
+
+Cell["Here is a different display", "ExampleText",
+ CellID->1995818547],
+
+Cell[BoxData[
+ RowBox[{"<<", "ApplicationMaker`"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1697573211],
+
+Cell[BoxData[
+ RowBox[{"ViewOption", "[", 
+  RowBox[{"fig", ",", " ", "\"\<PlotRange\>\""}], "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->27753289],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"PlotRange", " ", "\[Rule]", " ", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"0", ",", "\[IndentingNewLine]", "10"}], "\[IndentingNewLine]",
+        "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "\[IndentingNewLine]", "1"}], 
+       "\[IndentingNewLine]", "}"}]}], "\[IndentingNewLine]", "}"}]}], 
+   "\[IndentingNewLine]"}], "MSG"]], "Input",
+ CellID->445576824],
+
+Cell["\<\
+This type of view is useful in particular for options with nested rules.\
+\>", "ExampleText",
+ CellID->534203879],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"nb", " ", "=", " ", 
+   RowBox[{"NotebookOpen", "[", 
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+      "$InstallationDirectory", ",", " ", "\"\<Documentation\>\"", ",", " ", 
+       "\"\<English\>\"", ",", " ", "\"\<System\>\"", ",", " ", 
+       "\"\<ReferencePages\>\"", ",", " ", "\"\<Symbols\>\"", ",", " ", 
+       "\"\<Sin.nb\>\""}], "}"}], "]"}], "]"}]}], ";"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->546568482],
+
+Cell["\<\
+Do not close the notebook that just appeared in the screen otherwise you will \
+obtain an error. This is something that I might fix in the next version.\
+\>", "ExampleText",
+ CellID->1010657920],
+
+Cell[BoxData[
+ RowBox[{"ViewOption", "[", 
+  RowBox[{"nb", ",", " ", "\"\<TaggingRules\>\""}], "]"}]], "Input",
+ CellLabel->"In[6]:=",
+ CellID->1388918755],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"TaggingRules", " ", "\[Rule]", " ", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<ModificationHighlight\>\"", " ", "\[Rule]", " ", "False"}],
+       ",", "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<ColorType\>\"", " ", "\[Rule]", " ", "\"\<SymbolColor\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<LinkTrails\>\"", " ", "\[Rule]", " ", 
+       RowBox[{"GridBox", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"RowBox", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"StyleBox", "[", 
+                RowBox[{
+                 RowBox[{"ButtonBox", "[", 
+                  RowBox[{"Mathematica", ",", " ", 
+                   RowBox[{"ButtonData", " ", "->", " ", 
+                    RowBox[{"paclet", ":", 
+                    RowBox[{"guide", "/", "Mathematica"}]}]}], ",", " ", 
+                   RowBox[{"BaseStyle", " ", "->", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"Link", ",", " ", "DockedLinkTrail"}], "}"}]}]}], 
+                  "]"}], ",", " ", 
+                 RowBox[{"FontSlant", " ", "->", " ", "Italic"}]}], "]"}], 
+               ",", " ", 
+               RowBox[{"Cell", "[", 
+                RowBox[{">", 
+                 RowBox[{",", " ", "DockedLinkTrailSeparator"}]}], "]"}], ",",
+                " ", 
+               RowBox[{"ButtonBox", "[", 
+                RowBox[{
+                 RowBox[{"Mathematics", " ", "and", " ", "Algorithms"}], ",", 
+                 " ", 
+                 RowBox[{"ButtonData", " ", "->", " ", 
+                  RowBox[{"paclet", ":", 
+                   RowBox[{
+                   "guide", "/", "MathematicsAndAlgorithmsOverview"}]}]}], 
+                 ",", " ", 
+                 RowBox[{"BaseStyle", " ", "->", " ", 
+                  RowBox[{"{", 
+                   RowBox[{"Link", ",", " ", "DockedLinkTrail"}], "}"}]}]}], 
+                "]"}], ",", " ", 
+               RowBox[{"Cell", "[", 
+                RowBox[{">", 
+                 RowBox[{",", " ", "DockedLinkTrailSeparator"}]}], "]"}], ",",
+                " ", 
+               RowBox[{"ButtonBox", "[", 
+                RowBox[{
+                 RowBox[{"Formula", " ", "Manipulation"}], ",", " ", 
+                 RowBox[{"ButtonData", " ", "->", " ", 
+                  RowBox[{"paclet", ":", 
+                   RowBox[{"guide", "/", "FormulaManipulation"}]}]}], ",", 
+                 " ", 
+                 RowBox[{"BaseStyle", " ", "->", " ", 
+                  RowBox[{"{", 
+                   RowBox[{"Link", ",", " ", "DockedLinkTrail"}], "}"}]}]}], 
+                "]"}], ",", " ", 
+               RowBox[{"Cell", "[", 
+                RowBox[{">", 
+                 RowBox[{",", " ", "DockedLinkTrailSeparator"}]}], "]"}], ",",
+                " ", 
+               RowBox[{"ButtonBox", "[", 
+                RowBox[{
+                 RowBox[{"Algebraic", " ", "Transformations"}], ",", " ", 
+                 RowBox[{"ButtonData", " ", "->", " ", 
+                  RowBox[{"paclet", ":", 
+                   RowBox[{"guide", "/", "AlgebraicTransformations"}]}]}], 
+                 ",", " ", 
+                 RowBox[{"BaseStyle", " ", "->", " ", 
+                  RowBox[{"{", 
+                   RowBox[{"Link", ",", " ", "DockedLinkTrail"}], "}"}]}]}], 
+                "]"}], ",", " ", 
+               RowBox[{"Cell", "[", 
+                RowBox[{">", 
+                 RowBox[{",", " ", "DockedLinkTrailSeparator"}]}], "]"}], ",",
+                " ", 
+               RowBox[{"ButtonBox", "[", 
+                RowBox[{
+                 RowBox[{"Trigonometric", " ", "Functions"}], ",", " ", 
+                 RowBox[{"ButtonData", " ", "->", " ", 
+                  RowBox[{"paclet", ":", 
+                   RowBox[{"guide", "/", "TrigonometricFunctions"}]}]}], ",", 
+                 " ", 
+                 RowBox[{"BaseStyle", " ", "->", " ", 
+                  RowBox[{"{", 
+                   RowBox[{"Link", ",", " ", "DockedLinkTrail"}], "}"}]}]}], 
+                "]"}], ",", " ", 
+               RowBox[{"Cell", "[", 
+                RowBox[{">", 
+                 RowBox[{",", " ", "DockedLinkTrailSeparator"}]}], "]"}], ",",
+                " ", 
+               RowBox[{"ButtonBox", "[", 
+                RowBox[{"Sin", ",", " ", 
+                 RowBox[{"ButtonData", " ", "->", " ", 
+                  RowBox[{"paclet", ":", 
+                   RowBox[{"ref", "/", "Sin"}]}]}], ",", " ", 
+                 RowBox[{"BaseStyle", " ", "->", " ", 
+                  RowBox[{"{", 
+                   RowBox[{"Link", ",", " ", "DockedLinkTrail"}], "}"}]}]}], 
+                "]"}], ",", " ", 
+               RowBox[{"Cell", "[", 
+                RowBox[{">", 
+                 RowBox[{",", " ", "DockedLinkTrailSeparator"}]}], "]"}]}], 
+              "}"}], "]"}], "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"RowBox", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"StyleBox", "[", 
+                RowBox[{
+                 RowBox[{"ButtonBox", "[", 
+                  RowBox[{"Mathematica", ",", " ", 
+                   RowBox[{"ButtonData", " ", "->", " ", 
+                    RowBox[{"paclet", ":", 
+                    RowBox[{"guide", "/", "Mathematica"}]}]}], ",", " ", 
+                   RowBox[{"BaseStyle", " ", "->", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"Link", ",", " ", "DockedLinkTrail"}], "}"}]}]}], 
+                  "]"}], ",", " ", 
+                 RowBox[{"FontSlant", " ", "->", " ", "Italic"}]}], "]"}], 
+               ",", " ", 
+               RowBox[{"Cell", "[", 
+                RowBox[{">", 
+                 RowBox[{",", " ", "DockedLinkTrailSeparator"}]}], "]"}], ",",
+                " ", 
+               RowBox[{"ButtonBox", "[", 
+                RowBox[{
+                 RowBox[{"Mathematics", " ", "and", " ", "Algorithms"}], ",", 
+                 " ", 
+                 RowBox[{"ButtonData", " ", "->", " ", 
+                  RowBox[{"paclet", ":", 
+                   RowBox[{
+                   "guide", "/", "MathematicsAndAlgorithmsOverview"}]}]}], 
+                 ",", " ", 
+                 RowBox[{"BaseStyle", " ", "->", " ", 
+                  RowBox[{"{", 
+                   RowBox[{"Link", ",", " ", "DockedLinkTrail"}], "}"}]}]}], 
+                "]"}], ",", " ", 
+               RowBox[{"Cell", "[", 
+                RowBox[{">", 
+                 RowBox[{",", " ", "DockedLinkTrailSeparator"}]}], "]"}], ",",
+                " ", 
+               RowBox[{"ButtonBox", "[", 
+                RowBox[{
+                 RowBox[{"Mathematical", " ", "Functions"}], ",", " ", 
+                 RowBox[{"ButtonData", " ", "->", " ", 
+                  RowBox[{"paclet", ":", 
+                   RowBox[{"guide", "/", "MathematicalFunctions"}]}]}], ",", 
+                 " ", 
+                 RowBox[{"BaseStyle", " ", "->", " ", 
+                  RowBox[{"{", 
+                   RowBox[{"Link", ",", " ", "DockedLinkTrail"}], "}"}]}]}], 
+                "]"}], ",", " ", 
+               RowBox[{"Cell", "[", 
+                RowBox[{">", 
+                 RowBox[{",", " ", "DockedLinkTrailSeparator"}]}], "]"}], ",",
+                " ", 
+               RowBox[{"ButtonBox", "[", 
+                RowBox[{
+                 RowBox[{"Elementary", " ", "Functions"}], ",", " ", 
+                 RowBox[{"ButtonData", " ", "->", " ", 
+                  RowBox[{"paclet", ":", 
+                   RowBox[{"guide", "/", "ElementaryFunctions"}]}]}], ",", 
+                 " ", 
+                 RowBox[{"BaseStyle", " ", "->", " ", 
+                  RowBox[{"{", 
+                   RowBox[{"Link", ",", " ", "DockedLinkTrail"}], "}"}]}]}], 
+                "]"}], ",", " ", 
+               RowBox[{"Cell", "[", 
+                RowBox[{">", 
+                 RowBox[{",", " ", "DockedLinkTrailSeparator"}]}], "]"}], ",",
+                " ", 
+               RowBox[{"ButtonBox", "[", 
+                RowBox[{
+                 RowBox[{"Trigonometric", " ", "Functions"}], ",", " ", 
+                 RowBox[{"ButtonData", " ", "->", " ", 
+                  RowBox[{"paclet", ":", 
+                   RowBox[{"guide", "/", "TrigonometricFunctions"}]}]}], ",", 
+                 " ", 
+                 RowBox[{"BaseStyle", " ", "->", " ", 
+                  RowBox[{"{", 
+                   RowBox[{"Link", ",", " ", "DockedLinkTrail"}], "}"}]}]}], 
+                "]"}], ",", " ", 
+               RowBox[{"Cell", "[", 
+                RowBox[{">", 
+                 RowBox[{",", " ", "DockedLinkTrailSeparator"}]}], "]"}], ",",
+                " ", 
+               RowBox[{"ButtonBox", "[", 
+                RowBox[{"Sin", ",", " ", 
+                 RowBox[{"ButtonData", " ", "->", " ", 
+                  RowBox[{"paclet", ":", 
+                   RowBox[{"ref", "/", "Sin"}]}]}], ",", " ", 
+                 RowBox[{"BaseStyle", " ", "->", " ", 
+                  RowBox[{"{", 
+                   RowBox[{"Link", ",", " ", "DockedLinkTrail"}], "}"}]}]}], 
+                "]"}], ",", " ", 
+               RowBox[{"Cell", "[", 
+                RowBox[{">", 
+                 RowBox[{",", " ", "DockedLinkTrailSeparator"}]}], "]"}]}], 
+              "}"}], "]"}], "}"}]}], "}"}], ",", " ", 
+         RowBox[{"ColumnAlignments", " ", "->", " ", "Left"}]}], "]"}]}], ",",
+       "\[IndentingNewLine]", 
+      RowBox[{"\"\<RootCaptions\>\"", " ", "\[Rule]", " ", "\"\<\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<Metadata\>\"", " ", "\[Rule]", " ", 
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+         "\"\<built\>\"", " ", "\[Rule]", " ", 
+          "\"\<{2011, 2, 24, 1, 11, 1.4288726}\>\""}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"\"\<history\>\"", " ", "\[Rule]", " ", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+           "\"\<1\>\"", ",", "\[IndentingNewLine]", "\"\<4\>\"", ",", 
+            "\[IndentingNewLine]", "\"\<\>\"", ",", "\[IndentingNewLine]", 
+            "\"\<\>\""}], "\[IndentingNewLine]", "}"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"\"\<context\>\"", " ", "\[Rule]", " ", "\"\<System`\>\""}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{"\"\<keywords\>\"", " ", "\[Rule]", " ", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+           "\"\<sen\>\"", ",", "\[IndentingNewLine]", "\"\<sin\>\"", ",", 
+            "\[IndentingNewLine]", "\"\<sine\>\"", ",", 
+            "\[IndentingNewLine]", "\"\<sinus\>\"", ",", 
+            "\[IndentingNewLine]", "\"\<sin\>\"", ",", "\[IndentingNewLine]", 
+            "\"\<SIN\>\"", ",", "\[IndentingNewLine]", "\"\<csin\>\"", ",", 
+            "\[IndentingNewLine]", "\"\<csinf\>\"", ",", 
+            "\[IndentingNewLine]", "\"\<csinl\>\"", ",", 
+            "\[IndentingNewLine]", "\"\<sin\>\"", ",", "\[IndentingNewLine]", 
+            "\"\<sinf\>\"", ",", "\[IndentingNewLine]", "\"\<sinl\>\"", ",", 
+            "\[IndentingNewLine]", "\"\<sin\>\"", ",", "\[IndentingNewLine]", 
+            "\"\<sin\>\"", ",", "\[IndentingNewLine]", "\"\<sin\>\"", ",", 
+            "\[IndentingNewLine]", "\"\<sin\>\"", ",", "\[IndentingNewLine]", 
+            "\"\<sin\>\"", ",", "\[IndentingNewLine]", "\"\<sind\>\""}], 
+           "\[IndentingNewLine]", "}"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"\"\<specialkeywords\>\"", " ", "\[Rule]", " ", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+           "\"\<sin\>\"", ",", "\[IndentingNewLine]", "\"\<SIN\>\"", ",", 
+            "\[IndentingNewLine]", "\"\<csin\>\"", ",", 
+            "\[IndentingNewLine]", "\"\<csinf\>\"", ",", 
+            "\[IndentingNewLine]", "\"\<csinl\>\"", ",", 
+            "\[IndentingNewLine]", "\"\<sin\>\"", ",", "\[IndentingNewLine]", 
+            "\"\<sinf\>\"", ",", "\[IndentingNewLine]", "\"\<sinl\>\"", ",", 
+            "\[IndentingNewLine]", "\"\<sin\>\"", ",", "\[IndentingNewLine]", 
+            "\"\<sin\>\"", ",", "\[IndentingNewLine]", "\"\<sin\>\"", ",", 
+            "\[IndentingNewLine]", "\"\<sin\>\"", ",", "\[IndentingNewLine]", 
+            "\"\<sin\>\"", ",", "\[IndentingNewLine]", "\"\<sind\>\""}], 
+           "\[IndentingNewLine]", "}"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"\"\<tutorialcollectionlinks\>\"", " ", "\[Rule]", " ", 
+          RowBox[{
+          "{", "\[IndentingNewLine]", "List", "\[IndentingNewLine]", "}"}]}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{"\"\<index\>\"", " ", "\[Rule]", " ", "True"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+         "\"\<label\>\"", " ", "\[Rule]", " ", 
+          "\"\<Built-in Mathematica Symbol\>\""}], ",", "\[IndentingNewLine]", 
+         RowBox[{"\"\<language\>\"", " ", "\[Rule]", " ", "\"\<en\>\""}], ",",
+          "\[IndentingNewLine]", 
+         RowBox[{
+         "\"\<paclet\>\"", " ", "\[Rule]", " ", "\"\<Mathematica\>\""}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"\"\<status\>\"", " ", "\[Rule]", " ", "\"\<None\>\""}], ",",
+          "\[IndentingNewLine]", 
+         RowBox[{
+         "\"\<summary\>\"", " ", "\[Rule]", " ", 
+          "\"\<Sin[z] gives the sine of z. \>\""}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"\"\<synonyms\>\"", " ", "\[Rule]", " ", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+           "\"\<sin\>\"", ",", "\[IndentingNewLine]", "\"\<sine\>\""}], 
+           "\[IndentingNewLine]", "}"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"\"\<title\>\"", " ", "\[Rule]", " ", "\"\<Sin\>\""}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"\"\<titlemodifier\>\"", " ", "\[Rule]", " ", "\"\<\>\""}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{"\"\<windowtitle\>\"", " ", "\[Rule]", " ", "\"\<Sin\>\""}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{"\"\<type\>\"", " ", "\[Rule]", " ", "\"\<Symbol\>\""}], ",",
+          "\[IndentingNewLine]", 
+         RowBox[{"\"\<uri\>\"", " ", "\[Rule]", " ", "\"\<ref/Sin\>\""}]}], 
+        "\[IndentingNewLine]", "}"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<SearchTextTranslated\>\"", " ", "\[Rule]", " ", "\"\<\>\""}]}], 
+     "\[IndentingNewLine]", "}"}]}], "\[IndentingNewLine]"}], "MSG"]], "Input",\
+
+ CellID->1679497317],
+
+Cell["\<\
+The function is still has some bugs which I hope to fix later on. For now you \
+can use the first method described here and compare information.  \
+\>", "ExampleText",
+ CellID->786350651]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["SEE ALSO",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "SeeAlsoSection",
+ CellID->83480331,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["EditOption",
+    BaseStyle->"Link",
+    ButtonData->"paclet:ApplicationMaker/ref/EditOption"],
+   FontFamily->"Verdana"]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["ViewNotebookOption",
+    BaseStyle->"Link",
+    ButtonData->"paclet:ApplicationMaker/ref/ViewNotebookOption"],
+   FontFamily->"Verdana"]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->747101626]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["TUTORIALS",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "TutorialsSection",
+ CellID->200144173,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[ButtonBox["How to build a documented package",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:ApplicationMaker/tutorial/HowToBuildADocumentedPackage"]], \
+"Tutorials",
+ CellID->863724409]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["MORE ABOUT",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "MoreAboutSection",
+ CellID->1014359816,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[ButtonBox["ApplicationMaker",
+ BaseStyle->"Link",
+ ButtonData->"paclet:ApplicationMaker/guide/ApplicationMaker"]], "MoreAbout",
+ CellID->1620237626]
+}, Open  ]],
+
+Cell["Made for Mathematica 8  |  Last modified in July 2011", "History",
+ CellID->1748869927],
+
+Cell[" ", "FooterCell",
+ CellID->648186600]
+},
+Saveable->False,
+WindowSize->{759, 730},
+WindowMargins->{{Automatic, 44}, {Automatic, 0}},
+WindowTitle->"ViewOption - ApplicationMaker`DocumentationMaker`",
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "HelpViewerToolbar"],
+PageHeaders->{{None, None, None}, {None, None, 
+   Cell[
+    TextData[{
+      Cell[
+       TextData[{"ApplicationMaker Documentation "}], "PageHeader"], 
+      Cell[
+       TextData[{
+         CounterBox["Page"]}], "PageNumber"]}], 
+    CellMargins -> {{Inherited, -29}, {Inherited, Inherited}}]}},
+PageFooters->{{None, None, None}, {
+   Cell[
+    TextData[{"Created by Manuel Lopez | July 12, 2011"}], "PageFooter"], 
+   None, None}},
+TaggingRules->{
+ "ModificationHighlight" -> False, 
+  "Metadata" -> {
+   "context" -> "ApplicationMaker`", 
+    "keywords" -> {"viewoption", "view", "option", "VIEWOPTION"}, "index" -> 
+    True, "label" -> "ApplicationMaker`DocumentationMaker` Symbol", 
+    "language" -> "en", "paclet" -> "ApplicationMaker DocumentationMaker", 
+    "status" -> "", "summary" -> 
+    "ViewOption[obj, name] inserts an input cell in the evaluation notebook \
+displaying the settings for the option name.", 
+    "synonyms" -> {"viewoption", "VIEWOPTION"}, "title" -> "ViewOption", 
+    "windowTitle" -> "ViewOption", "type" -> "Symbol", "uri" -> 
+    "ApplicationMaker/ref/ViewOption"}, "SearchTextTranslated" -> "", 
+  "LinkTrails" -> ""},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[4619, 139, 537, 14, 45, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1153519505]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 39658, 925}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[620, 21, 2527, 63, 47, "AnchorBarGrid",
+ CellID->1699355767],
+Cell[CellGroupData[{
+Cell[3172, 88, 52, 1, 51, "ObjectName",
+ CellID->789552052],
+Cell[3227, 91, 483, 14, 82, "Usage",
+ CellID->699883151]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3747, 110, 656, 18, 38, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1168184238],
+Cell[4406, 130, 176, 4, 43, "Notes",
+ CellID->1376987192]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4619, 139, 537, 14, 45, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1153519505],
+Cell[CellGroupData[{
+Cell[5181, 157, 242, 6, 32, "ExampleSection",
+ CellID->1867439066],
+Cell[5426, 165, 141, 4, 32, "ExampleText",
+ CellID->574881357],
+Cell[CellGroupData[{
+Cell[5592, 173, 528, 17, 24, "Input",
+ CellID->1804653778],
+Cell[6123, 192, 12069, 204, 127, "Output",
+ CellID->828998364]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18229, 401, 149, 4, 24, "Input",
+ CellID->101602012],
+Cell[18381, 407, 309, 11, 33, "Output",
+ CellID->375516319]
+}, Open  ]],
+Cell[18705, 421, 71, 1, 32, "ExampleText",
+ CellID->1995818547],
+Cell[18779, 424, 105, 3, 24, "Input",
+ CellID->1697573211],
+Cell[18887, 429, 151, 4, 24, "Input",
+ CellID->27753289],
+Cell[19041, 435, 563, 14, 177, "Input",
+ CellID->445576824],
+Cell[19607, 451, 123, 3, 32, "ExampleText",
+ CellID->534203879],
+Cell[19733, 456, 482, 12, 38, "Input",
+ CellID->546568482],
+Cell[20218, 470, 204, 4, 46, "ExampleText",
+ CellID->1010657920],
+Cell[20425, 476, 155, 4, 24, "Input",
+ CellID->1388918755],
+Cell[20583, 482, 14486, 298, 1498, "Input",
+ CellID->1679497317],
+Cell[35072, 782, 197, 4, 46, "ExampleText",
+ CellID->786350651]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35318, 792, 490, 13, 45, "SeeAlsoSection",
+ CellID->83480331],
+Cell[35811, 807, 548, 18, 19, "SeeAlso",
+ CellID->747101626]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36396, 830, 494, 13, 45, "TutorialsSection",
+ CellID->200144173],
+Cell[36893, 845, 198, 5, 16, "Tutorials",
+ CellID->863724409]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37128, 855, 496, 13, 45, "MoreAboutSection",
+ CellID->1014359816],
+Cell[37627, 870, 162, 3, 16, "MoreAbout",
+ CellID->1620237626]
+}, Open  ]],
+Cell[37804, 876, 93, 1, 42, "History",
+ CellID->1748869927],
+Cell[37900, 879, 43, 1, 24, "FooterCell",
+ CellID->648186600]
+}
+]
+*)
+
+(* End of internal cache information *)

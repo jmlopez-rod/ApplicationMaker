@@ -1,0 +1,596 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     19788,        587]
+NotebookOptionsPosition[     16061,        469]
+NotebookOutlinePosition[     18052,        524]
+CellTagsIndexPosition[     17967,        519]
+WindowTitle->ViewNotebookOption - ApplicationMaker`DocumentationMaker`
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["APPLICATIONMAKER`DOCUMENTATIONMAKER` SYMBOL", "PacletNameCell"], 
+    Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"How to build documented packages\"\>":>
+       Documentation`HelpLookup[
+        StringJoin[
+        "paclet:", "ApplicationMaker", 
+         "/tutorial/HowToBuildADocumentedPackage"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"See Also \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"EditNotebookOption\"\>":>
+       Documentation`HelpLookup[
+        StringJoin[
+        "paclet:", "ApplicationMaker", 
+         "/ref/EditNotebookOption"]], "\<\"ViewOption\"\>":>
+       Documentation`HelpLookup[
+        StringJoin["paclet:", "ApplicationMaker", "/ref/ViewOption"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"ApplicationMaker\"\>":>
+       Documentation`HelpLookup[
+        StringJoin["paclet:", "ApplicationMaker", "/guide/ApplicationMaker"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Go to StackOverflow tutorial\"\>":>
+       FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+           "http://stackoverflow.com/questions/6574710/integrating-notebooks-\
+to-mathematicas-documentation-center"], None}]}], 
+       Delimiter, "\<\"Go to Wolfram Mathematica\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+           "http://reference.wolfram.com/mathematica/guide/Mathematica.html"],
+            None}]}], "\<\"Go to jmlopez website\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL["http://math.uh.edu/~jmlopez/"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1699355767],
+
+Cell[CellGroupData[{
+
+Cell["ViewNotebookOption", "ObjectName",
+ CellID->242853283],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       ButtonBox["ViewNotebookOption",
+        BaseStyle->"Link",
+        ButtonData->"paclet:ApplicationMaker/ref/ViewNotebookOption"], "[", 
+       StyleBox["name", "TI"], "]"}]], "InlineFormula"],
+     "\[LineSeparator]Inserts an input cell in the evaluation notebook \
+displaying the settings for the option ",
+     StyleBox["name", "TI"],
+     "."
+    }]]},
+   {" ", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       ButtonBox["ViewNotebookOption",
+        BaseStyle->"Link",
+        ButtonData->"paclet:ApplicationMaker/ref/ViewNotebookOption"], "[", 
+       StyleBox[
+        RowBox[{"name", ",", " ", "notebook"}], "TI"], "]"}]], 
+      "InlineFormula"],
+     "\[LineSeparator]Displays the settings for the option ",
+     StyleBox["name", "TI"],
+     " of the specified notebook."
+    }]]}
+  }]], "Usage",
+ CellID->1416198081]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[
+  FrameBox[
+   StyleBox[
+    RowBox[{"MORE", " ", "INFORMATION"}], "NotesFrameText"],
+   StripOnInput->False],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1479887666,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[{
+ "This is no different from ",
+ ButtonBox["ViewOption",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ApplicationMaker/ref/ViewOption"],
+ ". This function is mainly a shortcut to obtain the settings for an option \
+of the evaluation notebook."
+}], "Notes",
+ CellID->316402908]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["EXAMPLES",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1461117206,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ CellID->521377797,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell["\<\
+We can see the options of this notebook.\
+\>", "ExampleText",
+ CellID->1063354419],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Options", "[", 
+  RowBox[{"EvaluationNotebook", "[", "]"}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1759304995],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"DockedCells", "\[Rule]", "None"}], ",", 
+   RowBox[{
+   "FrontEndVersion", 
+    "\[Rule]", "\<\"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February \
+23, 2011)\"\>"}], ",", 
+   RowBox[{"StyleDefinitions", "\[Rule]", 
+    RowBox[{"FrontEnd`FileName", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "$RootDirectory", ",", "\<\"Users\"\>", ",", "\<\"jmlopez\"\>", 
+        ",", "\<\"Library\"\>", ",", "\<\"Mathematica\"\>", 
+        ",", "\<\"Applications\"\>", ",", "\<\"ApplicationMaker\"\>", 
+        ",", "\<\"FrontEnd\"\>", ",", "\<\"Stylesheets\"\>"}], "}"}], 
+      ",", "\<\"UserReference.nb\"\>", ",", 
+      RowBox[{"CharacterEncoding", "\[Rule]", "\<\"UTF-8\"\>"}]}], "]"}]}], 
+   ",", 
+   RowBox[{"TaggingRules", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"\<\"ModificationHighlight\"\>", "\[Rule]", "False"}], ",", 
+      RowBox[{"\<\"Metadata\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\<\"context\"\>", "\[Rule]", "\<\"ApplicationMaker`\"\>"}], 
+         ",", 
+         RowBox[{"\<\"keywords\"\>", "\[Rule]", 
+          RowBox[{"{", 
+           
+           RowBox[{"\<\"viewnotebookoption\"\>", 
+            ",", "\<\"VIEWNOTEBOOKOPTION\"\>"}], "}"}]}], ",", 
+         RowBox[{"\<\"index\"\>", "\[Rule]", "True"}], ",", 
+         RowBox[{"\<\"label\"\>", 
+          "\[Rule]", "\<\"ApplicationMaker`DocumentationMaker` Symbol\"\>"}], 
+         ",", 
+         RowBox[{"\<\"language\"\>", "\[Rule]", "\<\"en\"\>"}], ",", 
+         RowBox[{"\<\"paclet\"\>", 
+          "\[Rule]", "\<\"ApplicationMaker DocumentationMaker\"\>"}], ",", 
+         RowBox[{"\<\"status\"\>", "\[Rule]", "\<\"\"\>"}], ",", 
+         RowBox[{"\<\"summary\"\>", 
+          "\[Rule]", "\<\"ViewNotebookOption[name] inserts an input cell in \
+the evaluation notebook displaying the settings for the option name.\"\>"}], 
+         ",", 
+         RowBox[{"\<\"synonyms\"\>", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"\<\"viewnotebookoption\"\>", 
+            ",", "\<\"VIEWNOTEBOOKOPTION\"\>"}], "}"}]}], ",", 
+         RowBox[{"\<\"title\"\>", "\[Rule]", "\<\"ViewNotebookOption\"\>"}], 
+         ",", 
+         RowBox[{"\<\"windowTitle\"\>", 
+          "\[Rule]", "\<\"ViewNotebookOption\"\>"}], ",", 
+         RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"Symbol\"\>"}], ",", 
+         RowBox[{"\<\"uri\"\>", 
+          "\[Rule]", "\<\"ApplicationMaker/ref/ViewNotebookOption\"\>"}]}], 
+        "}"}]}], ",", 
+      RowBox[{"\<\"SearchTextTranslated\"\>", "\[Rule]", "\<\"\"\>"}]}], 
+     "}"}]}], ",", 
+   RowBox[{"WindowMargins", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"Automatic", ",", "65"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Automatic", ",", "47"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"WindowSize", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"740", ",", "652"}], "}"}]}], ",", 
+   RowBox[{
+   "WindowTitle", 
+    "\[Rule]", "\<\"ViewNotebookOption - ApplicationMaker`DocumentationMaker`\
+\"\>"}]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->2084199069]
+}, Open  ]],
+
+Cell["\<\
+Now we display a few of them with the function.\
+\>", "ExampleText",
+ CellID->1527986466],
+
+Cell[BoxData[
+ RowBox[{"<<", "ApplicationMaker`"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1259083236],
+
+Cell[BoxData[
+ RowBox[{"ViewNotebookOption", "[", "\"\<StyleDefinitions\>\"", 
+  "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->108089914],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"StyleDefinitions", " ", "\[Rule]", " ", 
+    RowBox[{"FrontEnd`FileName", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "$RootDirectory", ",", " ", "Users", ",", " ", "jmlopez", ",", " ", 
+        "Library", ",", " ", "Mathematica", ",", " ", "Applications", ",", 
+        " ", "ApplicationMaker", ",", " ", "FrontEnd", ",", " ", 
+        "Stylesheets"}], "}"}], ",", " ", 
+      RowBox[{"UserReference", ".", "nb"}], ",", " ", 
+      RowBox[{"CharacterEncoding", " ", "->", " ", 
+       RowBox[{"UTF", "-", "8"}]}]}], "]"}]}], "\[IndentingNewLine]"}], 
+  "MSG"]], "Input",
+ CellID->2043502883],
+
+Cell[BoxData[
+ RowBox[{"ViewNotebookOption", "[", "\"\<TaggingRules\>\"", "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->446988110],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"TaggingRules", " ", "\[Rule]", " ", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<ModificationHighlight\>\"", " ", "\[Rule]", " ", "False"}],
+       ",", "\[IndentingNewLine]", 
+      RowBox[{"\"\<Metadata\>\"", " ", "\[Rule]", " ", 
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+         "\"\<context\>\"", " ", "\[Rule]", " ", 
+          "\"\<ApplicationMaker`\>\""}], ",", "\[IndentingNewLine]", 
+         RowBox[{"\"\<keywords\>\"", " ", "\[Rule]", " ", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+           "\"\<viewnotebookoption\>\"", ",", "\[IndentingNewLine]", 
+            "\"\<VIEWNOTEBOOKOPTION\>\""}], "\[IndentingNewLine]", "}"}]}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{"\"\<index\>\"", " ", "\[Rule]", " ", "True"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+         "\"\<label\>\"", " ", "\[Rule]", " ", 
+          "\"\<ApplicationMaker`DocumentationMaker` Symbol\>\""}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"\"\<language\>\"", " ", "\[Rule]", " ", "\"\<en\>\""}], ",",
+          "\[IndentingNewLine]", 
+         RowBox[{
+         "\"\<paclet\>\"", " ", "\[Rule]", " ", 
+          "\"\<ApplicationMaker DocumentationMaker\>\""}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"\"\<status\>\"", " ", "\[Rule]", " ", "\"\<\>\""}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+         "\"\<summary\>\"", " ", "\[Rule]", " ", 
+          "\"\<ViewNotebookOption[name] inserts an input cell in the \
+evaluation notebook displaying the settings for the option name.\>\""}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"\"\<synonyms\>\"", " ", "\[Rule]", " ", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+           "\"\<viewnotebookoption\>\"", ",", "\[IndentingNewLine]", 
+            "\"\<VIEWNOTEBOOKOPTION\>\""}], "\[IndentingNewLine]", "}"}]}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{
+         "\"\<title\>\"", " ", "\[Rule]", " ", "\"\<ViewNotebookOption\>\""}],
+          ",", "\[IndentingNewLine]", 
+         RowBox[{
+         "\"\<windowTitle\>\"", " ", "\[Rule]", " ", 
+          "\"\<ViewNotebookOption\>\""}], ",", "\[IndentingNewLine]", 
+         RowBox[{"\"\<type\>\"", " ", "\[Rule]", " ", "\"\<Symbol\>\""}], ",",
+          "\[IndentingNewLine]", 
+         RowBox[{
+         "\"\<uri\>\"", " ", "\[Rule]", " ", 
+          "\"\<ApplicationMaker/ref/ViewNotebookOption\>\""}]}], 
+        "\[IndentingNewLine]", "}"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<SearchTextTranslated\>\"", " ", "\[Rule]", " ", "\"\<\>\""}]}], 
+     "\[IndentingNewLine]", "}"}]}], "\[IndentingNewLine]"}], "MSG"]], "Input",\
+
+ CellID->631367564]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["SEE ALSO",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "SeeAlsoSection",
+ CellID->83480331,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["EditNotebookOption",
+    BaseStyle->"Link",
+    ButtonData->"paclet:ApplicationMaker/ref/EditNotebookOption"],
+   FontFamily->"Verdana"]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["ViewOption",
+    BaseStyle->"Link",
+    ButtonData->"paclet:ApplicationMaker/ref/ViewOption"],
+   FontFamily->"Verdana"]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->747101626]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["TUTORIALS",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "TutorialsSection",
+ CellID->200144173,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[ButtonBox["How to build a documented package",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:ApplicationMaker/tutorial/HowToBuildADocumentedPackage"]], \
+"Tutorials",
+ CellID->863724409]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["MORE ABOUT",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "MoreAboutSection",
+ CellID->1014359816,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[ButtonBox["ApplicationMaker",
+ BaseStyle->"Link",
+ ButtonData->"paclet:ApplicationMaker/guide/ApplicationMaker"]], "MoreAbout",
+ CellID->1620237626]
+}, Open  ]],
+
+Cell["Made for Mathematica 8  |  Last modified in July 2011", "History",
+ CellID->1081327916],
+
+Cell[" ", "FooterCell",
+ CellID->1871663298]
+},
+Saveable->False,
+WindowSize->{740, 652},
+WindowMargins->{{Automatic, 122}, {Automatic, 27}},
+WindowTitle->"ViewNotebookOption - ApplicationMaker`DocumentationMaker`",
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "HelpViewerToolbar"],
+PageHeaders->{{None, None, None}, {None, None, 
+   Cell[
+    TextData[{
+      Cell[
+       TextData[{"ApplicationMaker Documentation "}], "PageHeader"], 
+      Cell[
+       TextData[{
+         CounterBox["Page"]}], "PageNumber"]}], 
+    CellMargins -> {{Inherited, -29}, {Inherited, Inherited}}]}},
+PageFooters->{{None, None, None}, {
+   Cell[
+    TextData[{"Created by Manuel Lopez | July 12, 2011"}], "PageFooter"], 
+   None, None}},
+TaggingRules->{
+ "ModificationHighlight" -> False, 
+  "Metadata" -> {
+   "context" -> "ApplicationMaker`", 
+    "keywords" -> {"viewnotebookoption", "VIEWNOTEBOOKOPTION"}, "index" -> 
+    True, "label" -> "ApplicationMaker`DocumentationMaker` Symbol", 
+    "language" -> "en", "paclet" -> "ApplicationMaker DocumentationMaker", 
+    "status" -> "", "summary" -> 
+    "ViewNotebookOption[name] inserts an input cell in the evaluation \
+notebook displaying the settings for the option name.", 
+    "synonyms" -> {"viewnotebookoption", "VIEWNOTEBOOKOPTION"}, "title" -> 
+    "ViewNotebookOption", "windowTitle" -> "ViewNotebookOption", "type" -> 
+    "Symbol", "uri" -> "ApplicationMaker/ref/ViewNotebookOption"}, 
+  "SearchTextTranslated" -> "", "LinkTrails" -> ""},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5187, 156, 537, 14, 45, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1461117206]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 17823, 512}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[628, 21, 2527, 63, 47, "AnchorBarGrid",
+ CellID->1699355767],
+Cell[CellGroupData[{
+Cell[3180, 88, 60, 1, 51, "ObjectName",
+ CellID->242853283],
+Cell[3243, 91, 922, 27, 138, "Usage",
+ CellID->1416198081]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4202, 123, 656, 18, 38, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1479887666],
+Cell[4861, 143, 289, 8, 43, "Notes",
+ CellID->316402908]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5187, 156, 537, 14, 45, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1461117206],
+Cell[CellGroupData[{
+Cell[5749, 174, 241, 6, 32, "ExampleSection",
+ CellID->521377797],
+Cell[5993, 182, 92, 3, 32, "ExampleText",
+ CellID->1063354419],
+Cell[CellGroupData[{
+Cell[6110, 189, 144, 4, 24, "Input",
+ CellID->1759304995],
+Cell[6257, 195, 3130, 75, 255, "Output",
+ CellID->2084199069]
+}, Open  ]],
+Cell[9402, 273, 99, 3, 32, "ExampleText",
+ CellID->1527986466],
+Cell[9504, 278, 105, 3, 24, "Input",
+ CellID->1259083236],
+Cell[9612, 283, 140, 4, 24, "Input",
+ CellID->108089914],
+Cell[9755, 289, 659, 16, 73, "Input",
+ CellID->2043502883],
+Cell[10417, 307, 133, 3, 24, "Input",
+ CellID->446988110],
+Cell[10553, 312, 2829, 61, 436, "Input",
+ CellID->631367564]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13431, 379, 490, 13, 45, "SeeAlsoSection",
+ CellID->83480331],
+Cell[13924, 394, 548, 18, 19, "SeeAlso",
+ CellID->747101626]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14509, 417, 494, 13, 45, "TutorialsSection",
+ CellID->200144173],
+Cell[15006, 432, 198, 5, 16, "Tutorials",
+ CellID->863724409]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15241, 442, 496, 13, 45, "MoreAboutSection",
+ CellID->1014359816],
+Cell[15740, 457, 162, 3, 16, "MoreAbout",
+ CellID->1620237626]
+}, Open  ]],
+Cell[15917, 463, 93, 1, 42, "History",
+ CellID->1081327916],
+Cell[16013, 466, 44, 1, 24, "FooterCell",
+ CellID->1871663298]
+}
+]
+*)
+
+(* End of internal cache information *)

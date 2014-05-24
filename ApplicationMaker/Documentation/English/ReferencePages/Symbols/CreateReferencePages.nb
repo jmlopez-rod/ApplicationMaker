@@ -1,0 +1,571 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     19265,        562]
+NotebookOptionsPosition[     15388,        439]
+NotebookOutlinePosition[     17402,        495]
+CellTagsIndexPosition[     17317,        490]
+WindowTitle->CreateReferencePages - ApplicationMaker`DocumentationMaker`
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["APPLICATIONMAKER`DOCUMENTATIONMAKER` SYMBOL", "PacletNameCell"], 
+    Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"How to build documented packages\"\>":>
+       Documentation`HelpLookup[
+        StringJoin[
+        "paclet:", "ApplicationMaker", 
+         "/tutorial/HowToBuildADocumentedPackage"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"See Also \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"NewGuide\"\>":>Documentation`HelpLookup[
+        StringJoin[
+        "paclet:", "ApplicationMaker", 
+         "/ref/NewGuide"]], "\<\"NewTutorial\"\>":>Documentation`HelpLookup[
+        StringJoin["paclet:", "ApplicationMaker", "/ref/NewTutorial"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"ApplicationMaker\"\>":>
+       Documentation`HelpLookup[
+        StringJoin["paclet:", "ApplicationMaker", "/guide/ApplicationMaker"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Go to StackOverflow tutorial\"\>":>
+       FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+           "http://stackoverflow.com/questions/6574710/integrating-notebooks-\
+to-mathematicas-documentation-center"], None}]}], 
+       Delimiter, "\<\"Go to Wolfram Mathematica\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+           "http://reference.wolfram.com/mathematica/guide/Mathematica.html"],
+            None}]}], "\<\"Go to jmlopez website\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL["http://math.uh.edu/~jmlopez/"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1699355767],
+
+Cell[CellGroupData[{
+
+Cell["CreateReferencePages", "ObjectName",
+ CellID->1737483160],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       ButtonBox["CreateReferencePages",
+        BaseStyle->"Link",
+        ButtonData->"paclet:ApplicationMaker/ref/CreateReferencePages"], "[", 
+       
+       StyleBox["appName", "TI"], "]"}]], "InlineFormula"],
+     "\[LineSeparator]Creates references pages for each symbol in the \
+application ",
+     StyleBox["appName", "TI"],
+     "."
+    }]]},
+   {" ", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       ButtonBox["CreateReferencePages",
+        BaseStyle->"Link",
+        ButtonData->"paclet:ApplicationMaker/ref/CreateReferencePages"], "[", 
+       
+       StyleBox[
+        RowBox[{"appName", ",", "appDir"}], "TI"], "]"}]], "InlineFormula"],
+     "\[LineSeparator]Creates references pages for each symbol in the \
+application ",
+     StyleBox["appName", "TI"],
+     " located in ",
+     StyleBox["appDir", "TI"],
+     "."
+    }]]}
+  }]], "Usage",
+ CellID->396838214]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[
+  FrameBox[
+   StyleBox[
+    RowBox[{"MORE", " ", "INFORMATION"}], "NotesFrameText"],
+   StripOnInput->False],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1723138763,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell["\<\
+This function makes a reference page for each symbol in the application. If \
+at any other point you add another symbol to the package simply call this \
+function again and it will create a new page for the missing symbols.\
+\>", "Notes",
+ CellID->1976209946],
+
+Cell["\<\
+The notebooks names are the symbol names with \"___\" prepended. You can find \
+these notebooks in the documentation folder of the application.\
+\>", "Notes",
+ CellID->1203816724]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["EXAMPLES",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->436725159,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ CellID->2088125514,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell["\<\
+Using the example from the tutorial in ApplicationMaker we will call \
+CreateReferencePages again on the application SimpleArithmetic.\
+\>", "ExampleText",
+ CellID->947754524],
+
+Cell[BoxData[
+ RowBox[{"<<", "ApplicationMaker`"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1448270228],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CreateReferencePages", "[", "\"\<SimpleArithmetic\>\"", 
+  "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1498066898],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"Building reference pages for: \"\>", "MSG",
+    StripOnInput->False], "\[InvisibleSpace]", 
+   StyleBox["\<\"Addition\"\>", "Input",
+    StripOnInput->False]}],
+  SequenceForm[
+   Style["Building reference pages for: ", "MSG"], 
+   Style["Addition", "Input"]],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->912077258],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CreateReferencePages", "::", "symb"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"A reference page for \[NoBreak]\\!\\(\\\"AddThree\\\"\\)\
+\[NoBreak] already exists. Click \
+\[NoBreak]\\!\\(\\*TagBox[ButtonBox[PaneSelectorBox[{False -> \
+\\\"\\\\\\\"here\\\\\\\"\\\", Rule[True, \
+StyleBox[\\\"\\\\\\\"here\\\\\\\"\\\", List[\\\"HyperlinkActive\\\"]]]}, \
+Dynamic[CurrentValue[\\\"MouseOver\\\"]], Rule[BaselinePosition, Baseline], \
+Rule[BaseStyle, List[\\\"Hyperlink\\\"]], Rule[FrameMargins, 0], \
+Rule[ImageSize, Automatic]], Rule[BaseStyle, \\\"Hyperlink\\\"], \
+RuleDelayed[ButtonData, \
+List[\\\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/ReferencePages/Symbols/___AddThree.nb\\\", None]], \
+Rule[ButtonNote, \
+\\\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/ReferencePages/Symbols/___AddThree.nb\\\"]], \
+Function[Annotation[Slot[1], \
+\\\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/ReferencePages/Symbols/___AddThree.nb\\\", \
+\\\"Hyperlink\\\"]]]\\)\[NoBreak] to make changes.\"\>"}]], "Message", "MSG",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->544202920],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CreateReferencePages", "::", "symb"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"A reference page for \[NoBreak]\\!\\(\\\"AddTwo\\\"\\)\
+\[NoBreak] already exists. Click \
+\[NoBreak]\\!\\(\\*TagBox[ButtonBox[PaneSelectorBox[{False -> \
+\\\"\\\\\\\"here\\\\\\\"\\\", Rule[True, \
+StyleBox[\\\"\\\\\\\"here\\\\\\\"\\\", List[\\\"HyperlinkActive\\\"]]]}, \
+Dynamic[CurrentValue[\\\"MouseOver\\\"]], Rule[BaselinePosition, Baseline], \
+Rule[BaseStyle, List[\\\"Hyperlink\\\"]], Rule[FrameMargins, 0], \
+Rule[ImageSize, Automatic]], Rule[BaseStyle, \\\"Hyperlink\\\"], \
+RuleDelayed[ButtonData, \
+List[\\\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/ReferencePages/Symbols/___AddTwo.nb\\\", None]], \
+Rule[ButtonNote, \
+\\\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/ReferencePages/Symbols/___AddTwo.nb\\\"]], \
+Function[Annotation[Slot[1], \
+\\\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/ReferencePages/Symbols/___AddTwo.nb\\\", \
+\\\"Hyperlink\\\"]]]\\)\[NoBreak] to make changes.\"\>"}]], "Message", "MSG",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->285623867],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"Building reference pages for: \"\>", "MSG",
+    StripOnInput->False], "\[InvisibleSpace]", 
+   StyleBox["\<\"Multiplication\"\>", "Input",
+    StripOnInput->False]}],
+  SequenceForm[
+   Style["Building reference pages for: ", "MSG"], 
+   Style["Multiplication", "Input"]],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->854381624],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CreateReferencePages", "::", "symb"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"A reference page for \[NoBreak]\\!\\(\\\"DotThree\\\"\\)\
+\[NoBreak] already exists. Click \
+\[NoBreak]\\!\\(\\*TagBox[ButtonBox[PaneSelectorBox[{False -> \
+\\\"\\\\\\\"here\\\\\\\"\\\", Rule[True, \
+StyleBox[\\\"\\\\\\\"here\\\\\\\"\\\", List[\\\"HyperlinkActive\\\"]]]}, \
+Dynamic[CurrentValue[\\\"MouseOver\\\"]], Rule[BaselinePosition, Baseline], \
+Rule[BaseStyle, List[\\\"Hyperlink\\\"]], Rule[FrameMargins, 0], \
+Rule[ImageSize, Automatic]], Rule[BaseStyle, \\\"Hyperlink\\\"], \
+RuleDelayed[ButtonData, \
+List[\\\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/ReferencePages/Symbols/___DotThree.nb\\\", None]], \
+Rule[ButtonNote, \
+\\\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/ReferencePages/Symbols/___DotThree.nb\\\"]], \
+Function[Annotation[Slot[1], \
+\\\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/ReferencePages/Symbols/___DotThree.nb\\\", \
+\\\"Hyperlink\\\"]]]\\)\[NoBreak] to make changes.\"\>"}]], "Message", "MSG",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->1516290726],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"CreateReferencePages", "::", "symb"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"A reference page for \[NoBreak]\\!\\(\\\"DotTwo\\\"\\)\
+\[NoBreak] already exists. Click \
+\[NoBreak]\\!\\(\\*TagBox[ButtonBox[PaneSelectorBox[{False -> \
+\\\"\\\\\\\"here\\\\\\\"\\\", Rule[True, \
+StyleBox[\\\"\\\\\\\"here\\\\\\\"\\\", List[\\\"HyperlinkActive\\\"]]]}, \
+Dynamic[CurrentValue[\\\"MouseOver\\\"]], Rule[BaselinePosition, Baseline], \
+Rule[BaseStyle, List[\\\"Hyperlink\\\"]], Rule[FrameMargins, 0], \
+Rule[ImageSize, Automatic]], Rule[BaseStyle, \\\"Hyperlink\\\"], \
+RuleDelayed[ButtonData, \
+List[\\\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/ReferencePages/Symbols/___DotTwo.nb\\\", None]], \
+Rule[ButtonNote, \
+\\\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/ReferencePages/Symbols/___DotTwo.nb\\\"]], \
+Function[Annotation[Slot[1], \
+\\\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/ReferencePages/Symbols/___DotTwo.nb\\\", \
+\\\"Hyperlink\\\"]]]\\)\[NoBreak] to make changes.\"\>"}]], "Message", "MSG",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->109792933]
+}, Open  ]],
+
+Cell["\<\
+If a new notebook is created you will not see any messages for it. The \
+notebook will pop on your screen.\
+\>", "ExampleText",
+ CellID->601372158]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["SEE ALSO",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "SeeAlsoSection",
+ CellID->83480331,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["NewGuide",
+    BaseStyle->"Link",
+    ButtonData->"paclet:ApplicationMaker/ref/NewGuide"],
+   FontFamily->"Verdana"]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["NewTutorial",
+    BaseStyle->"Link",
+    ButtonData->"paclet:ApplicationMaker/ref/NewTutorial"],
+   FontFamily->"Verdana"]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->747101626]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["TUTORIALS",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "TutorialsSection",
+ CellID->200144173,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[ButtonBox["How to build a documented package",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:ApplicationMaker/tutorial/HowToBuildADocumentedPackage"]], \
+"Tutorials",
+ CellID->863724409]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["MORE ABOUT",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "MoreAboutSection",
+ CellID->1014359816,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[ButtonBox["ApplicationMaker",
+ BaseStyle->"Link",
+ ButtonData->"paclet:ApplicationMaker/guide/ApplicationMaker"]], "MoreAbout",
+ CellID->1620237626]
+}, Open  ]],
+
+Cell["Made for Mathematica 8  |  Last modified in July 2011", "History",
+ CellID->336359530],
+
+Cell[" ", "FooterCell",
+ CellID->1017661806]
+},
+Saveable->False,
+WindowSize->{709, 720},
+WindowMargins->{{Automatic, 235}, {Automatic, 7}},
+WindowTitle->"CreateReferencePages - ApplicationMaker`DocumentationMaker`",
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "HelpViewerToolbar"],
+PageHeaders->{{None, None, None}, {None, None, 
+   Cell[
+    TextData[{
+      Cell[
+       TextData[{"ApplicationMaker Documentation "}], "PageHeader"], 
+      Cell[
+       TextData[{
+         CounterBox["Page"]}], "PageNumber"]}], 
+    CellMargins -> {{Inherited, -29}, {Inherited, Inherited}}]}},
+PageFooters->{{None, None, None}, {
+   Cell[
+    TextData[{"Created by Manuel Lopez | July 12, 2011"}], "PageFooter"], 
+   None, None}},
+TaggingRules->{
+ "ModificationHighlight" -> False, 
+  "Metadata" -> {
+   "context" -> "ApplicationMaker`", 
+    "keywords" -> {
+     "symbol", "reference", "createreferencepages", "CREATEREFERENCEPAGES"}, 
+    "index" -> True, "label" -> "ApplicationMaker`DocumentationMaker` Symbol",
+     "language" -> "en", "paclet" -> "ApplicationMaker DocumentationMaker", 
+    "status" -> "", "summary" -> 
+    "CreateReferencePages[appName] creates references pages for each symbol \
+in the application appName.", 
+    "synonyms" -> {"createreferencepages", "CREATEREFERENCEPAGES"}, "title" -> 
+    "CreateReferencePages", "windowTitle" -> "CreateReferencePages", "type" -> 
+    "Symbol", "uri" -> "ApplicationMaker/ref/CreateReferencePages"}, 
+  "SearchTextTranslated" -> "", "LinkTrails" -> ""},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5374, 161, 536, 14, 45, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->436725159]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 17174, 483}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[630, 21, 2493, 61, 47, "AnchorBarGrid",
+ CellID->1699355767],
+Cell[CellGroupData[{
+Cell[3148, 86, 63, 1, 51, "ObjectName",
+ CellID->1737483160],
+Cell[3214, 89, 966, 31, 138, "Usage",
+ CellID->396838214]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4217, 125, 656, 18, 38, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1723138763],
+Cell[4876, 145, 269, 5, 57, "Notes",
+ CellID->1976209946],
+Cell[5148, 152, 189, 4, 43, "Notes",
+ CellID->1203816724]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5374, 161, 536, 14, 45, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->436725159],
+Cell[CellGroupData[{
+Cell[5935, 179, 242, 6, 32, "ExampleSection",
+ CellID->2088125514],
+Cell[6180, 187, 185, 4, 46, "ExampleText",
+ CellID->947754524],
+Cell[6368, 193, 105, 3, 24, "Input",
+ CellID->1448270228],
+Cell[CellGroupData[{
+Cell[6498, 200, 143, 4, 24, "Input",
+ CellID->1498066898],
+Cell[6644, 206, 416, 12, 20, "Print",
+ CellID->912077258],
+Cell[7063, 220, 1267, 24, 37, "Message",
+ CellID->544202920],
+Cell[8333, 246, 1259, 24, 37, "Message",
+ CellID->285623867],
+Cell[9595, 272, 428, 12, 20, "Print",
+ CellID->854381624],
+Cell[10026, 286, 1268, 24, 37, "Message",
+ CellID->1516290726],
+Cell[11297, 312, 1259, 24, 37, "Message",
+ CellID->109792933]
+}, Open  ]],
+Cell[12571, 339, 157, 4, 33, "ExampleText",
+ CellID->601372158]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12777, 349, 490, 13, 45, "SeeAlsoSection",
+ CellID->83480331],
+Cell[13270, 364, 530, 18, 19, "SeeAlso",
+ CellID->747101626]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13837, 387, 494, 13, 45, "TutorialsSection",
+ CellID->200144173],
+Cell[14334, 402, 198, 5, 16, "Tutorials",
+ CellID->863724409]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14569, 412, 496, 13, 45, "MoreAboutSection",
+ CellID->1014359816],
+Cell[15068, 427, 162, 3, 16, "MoreAbout",
+ CellID->1620237626]
+}, Open  ]],
+Cell[15245, 433, 92, 1, 42, "History",
+ CellID->336359530],
+Cell[15340, 436, 44, 1, 24, "FooterCell",
+ CellID->1017661806]
+}
+]
+*)
+
+(* End of internal cache information *)
