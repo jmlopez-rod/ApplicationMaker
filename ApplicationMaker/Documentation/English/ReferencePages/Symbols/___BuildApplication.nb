@@ -834,24 +834,8 @@ Cell["Made for Mathematica 8  |  Last modified in July 2011", "History",
 Cell[" ", "FooterCell",
  CellID->1153225377]
 },
-Saveable->False,
 WindowSize->{711, 742},
 WindowMargins->{{Automatic, 9}, {Automatic, 1}},
-WindowTitle->"BuildApplication - ApplicationMaker`ApplicationMaker`",
-DockedCells->FEPrivate`FrontEndResource[
- "FEExpressions", "HelpViewerToolbar"],
-PageHeaders->{{None, None, None}, {None, None, 
-   Cell[
-    TextData[{
-      Cell[
-       TextData[{"ApplicationMaker Documentation "}], "PageHeader"], 
-      Cell[
-       TextData[{
-         CounterBox["Page"]}], "PageNumber"]}], 
-    CellMargins -> {{Inherited, -29}, {Inherited, Inherited}}]}},
-PageFooters->{{None, None, None}, {
-   Cell[
-    TextData[{"Created by Manuel Lopez"}], "PageFooter"], None, None}},
 TaggingRules->{
  "ModificationHighlight" -> False, 
   "Metadata" -> {
