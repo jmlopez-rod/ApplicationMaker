@@ -269,9 +269,9 @@ of packages and their documentation.",
   "SearchTextTranslated" -> ""},
 FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
 2011)",
-StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Users", "jmlopez", 
-   "Library", "Mathematica", "Applications", "ApplicationMaker", "FrontEnd", 
-   "Stylesheets"}, "UserReference.nb", CharacterEncoding -> "UTF-8"]
+StyleDefinitions->FrontEnd`FileName[{$UserBaseDirectory, "Applications",  
+   "ApplicationMaker", "FrontEnd", "Stylesheets",}, 
+   "UserReference7.nb", CharacterEncoding -> "UTF-8"]
 ]
 (* End of Notebook Content *)
 
