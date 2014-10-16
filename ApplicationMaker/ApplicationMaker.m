@@ -16,8 +16,8 @@
 				distribution. *)
 
 
-(* ::Section::Closed:: *)
-(*Initialiazation*)
+(* ::Section:: *)
+(*Initialization*)
 
 
 BeginPackage["ApplicationMaker`ApplicationMaker`"];
@@ -93,8 +93,12 @@ spaceRiffledString = Composition[StringJoin, spaceRiffle];
 prefixStringViaSpace@s_String := spaceRiffledString@{s, #}&
 
 
+(* ::Text:: *)
+(*I suspect Capitalize was actually a huge mistake of mine. When I put it there I didn't know Linux directories are case sensitive.*)
+
+
 Capitalize@s_String :=
-If[StringLength@s =!= 0
+If[s =!= ""
 ,  ToUpperCase@StringTake[s, {1}] <> StringDrop[s, {1}]
 ,  s]
 
@@ -103,7 +107,7 @@ If[StringLength@s =!= 0
 (*I hope the following two will become obsolete:*)
 
 
-fileBaseNameWithoutFirstThree@path_ :=
+fileBaseNameWithoutFirstThreeChars@path_ :=
 StringDrop[FileBaseName@path, 3]
 
 
@@ -121,7 +125,7 @@ blueMsg = Style[#, "MSG", Blue]&;
 plainMsg = Style[#, "MSG"]&;
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Directory tree creation*)
 
 
@@ -145,8 +149,8 @@ Block[{CreateDirectory},
 If[DirectoryQ@#,
 Sequence @@ Transpose @
 { prefixStringViaSpace@"Directory" /@
-  {   "exists"    ,     "created"     }
-, { Capitalize@# , CreateDirectory@# } } // Evaluate]]&;
+  { "exists" ,     "created"      }
+, {    #     , CreateDirectory@# } } // Evaluate]]&;
 
 
 createDirTree[address___, dir_String@subDirs___] :=
@@ -185,6 +189,31 @@ If[OptionValue@"Output Form" === OpenerView
 ,  {}]
 
 
+(* ::Subsubsection::Closed:: *)
+(*Delete multiple files in a directory tree*)
+
+
+deleteFiles[
+  dir_String@sub__
+, root:_String:$HomeDirectory] :=
+With[{newroot = FileNameJoin@{root, dir}}
+, OpenerView @
+  { newroot
+  , deleteFiles[#, newroot]& /@ {sub} // Column }]
+
+deleteFiles[
+  fileNamePattern_String
+, root:_String:$HomeDirectory] :=
+With[
+  { listOfFilesToDelete =
+    FileNames @ FileNameJoin @ {root, fileNamePattern}}
+, Column @
+  { "Files deleted:"
+  , Replace[
+      (DeleteFile@#; Column@#)& @ listOfFilesToDelete
+    , Column@{} -> "(None)"]}]
+
+
 (* ::Subsubsection:: *)
 (*NewApplication*)
 
@@ -221,15 +250,13 @@ With[
     FileNameJoin @
     { DirectoryName@path
     , StringDrop[FileNameTake@path, 3] }}
-, Module[{nb, winTitle},
+, Module[{nb},
     nb = NotebookOpen@path;
-
-    winTitle = Options[nb, WindowTitle][[1]][[2]];
 
     NotebookSave[nb, newpath];
 
-    SetOptions[nb,
-      Saveable -> False
+    SetOptions[nb
+    , Saveable -> False
     , StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]
     , DockedCells -> FEPrivate`FrontEndResource["FEExpressions", "HelpViewerToolbar"]
     , PageFooters ->
@@ -238,14 +265,14 @@ With[
       PageHeaders ->
       { {None, None,   None  }
       , {None, None, someCell} }
-    , WindowTitle -> winTitle];
+    , ##&@@Options[nb, WindowTitle]];
     NotebookSave@nb;
     NotebookClose@nb;
     DocumentationSearch`AddDocumentationNotebook[index, newpath];
-    fileBaseNameWithoutFirstThree@path]]
+    fileBaseNameWithoutFirstThreeChars@path]]
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*BuildApplication*)
 
 
@@ -264,7 +291,7 @@ Module[
   indexDir = FileNameJoin@{appNameDir, "Documentation", "English", "Index"};
 
   If[!DirectoryQ@appNameDir
-  ,  Message[BuildApplication::nodir, appName, appDir]; Return[$Failed]];
+  ,  Message[BuildApplication::nodir, appName, appDir]; Return@$Failed];
 
   If[FileNames@indexDir != {}
   ,  DeleteDirectory[indexDir, DeleteContents -> True]];
@@ -310,7 +337,7 @@ Module[
   , StringJoin[
     ( Print[
         grayMsg@"Adding Guide : "
-      , boldMsg@fileBaseNameWithoutFirstThree@#];
+      , boldMsg@fileBaseNameWithoutFirstThreeChars@#];
       StringJoin[
         "\t\t\t\t\""
       , FileNameJoin @
@@ -333,7 +360,7 @@ Module[
   , StringJoin[
     ( Print[
         grayMsg@"Adding Tutorial : "
-      , boldMsg@fileBaseNameWithoutFirstThree@#];
+      , boldMsg@fileBaseNameWithoutFirstThreeChars@#];
       StringJoin[
         "\t\t\t\t\""
       , FileNameJoin @
@@ -358,7 +385,7 @@ Module[
     StringJoin[
     ( Print[
         grayMsg@"Adding Reference : "
-      , boldMsg@fileBaseNameWithoutFirstThree@#];
+      , boldMsg@fileBaseNameWithoutFirstThreeChars@#];
       StringJoin[
         "\t\t\t\t\""
       , FileNameJoin @
@@ -378,7 +405,7 @@ Module[
   PacletManager`RestartPacletManager[];]
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*DeployApplication*)
 
 
@@ -388,27 +415,29 @@ DeployApplication[
   appName_String
 , destDir_String
 , appDir_String: $DefaultAppsDir] :=
+With[{deploymentDirectory = FileNameJoin@{destDir, appName}},
 Module[
-  {appNameDir, files},
+  {appNameDir},
   appNameDir = FileNameJoin@{appDir, appName};
   If[!DirectoryQ@appNameDir
   ,  Message[BuildApplication::nodir, appName, appDir]; Return@$Failed];
 
-  If[MatchQ[CopyDirectory[appNameDir, FileNameJoin@{destDir, appName}], $Failed]
+  If[MatchQ[CopyDirectory[appNameDir, deploymentDirectory], $Failed]
   ,  Return@$Failed];
 
-  Composition[DeleteFile
-  , FileNames, FileNameJoin] /@
-  { {destDir, appName, "*.nb"}
-  , {destDir, appName, "Documentation", "English", "ReferencePages", "Symbols", "___*.nb"}
-  , {destDir, appName, "Documentation", "English", "Guides", "___*.nb"}
-  , {destDir, appName, "Documentation", "English", "Tutorials", "___*.nb"} };
+  destDir@appName[
+    "*.nb"
+  , "Documentation"[
+      "English"[
+        "ReferencePages"@"Symbols"@#
+      , "Guides"@#
+      , "Tutorials"@#]]]& @ "___*.nb" // deleteFiles;
 
   Print[
         plainMsg @ "The application ", 
          boldMsg @ appName, 
         plainMsg @ " has been deployed to ", 
-         boldMsg @ FileNameJoin@{destDir, appName}];]
+         boldMsg @ deploymentDirectory];]]
 
 
 (* ::Section::Closed:: *)
