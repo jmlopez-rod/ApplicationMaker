@@ -1,0 +1,442 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     13460,        433]
+NotebookOptionsPosition[     10055,        324]
+NotebookOutlinePosition[     12042,        380]
+CellTagsIndexPosition[     11957,        375]
+WindowTitle->DeployApplication - ApplicationMaker`ApplicationMaker`
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["APPLICATIONMAKER`APPLICATIONMAKER` SYMBOL", "PacletNameCell"], Cell[
+    TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"How to build documented packages\"\>":>
+       Documentation`HelpLookup[
+        StringJoin[
+        "paclet:", "ApplicationMaker", 
+         "/tutorial/HowToBuildADocumentedPackage"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"See Also \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"BuildApplication\"\>":>
+       Documentation`HelpLookup[
+        StringJoin[
+        "paclet:", "ApplicationMaker", 
+         "/ref/BuildApplication"]], "\<\"NewApplication\"\>":>
+       Documentation`HelpLookup[
+        StringJoin["paclet:", "ApplicationMaker", "/ref/NewApplication"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"ApplicationMaker\"\>":>
+       Documentation`HelpLookup[
+        StringJoin["paclet:", "ApplicationMaker", "/guide/ApplicationMaker"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Go to StackOverflow tutorial\"\>":>
+       FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+           "http://stackoverflow.com/questions/6574710/integrating-notebooks-\
+to-mathematicas-documentation-center"], None}]}], 
+       Delimiter, "\<\"Go to Wolfram Mathematica\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+           "http://reference.wolfram.com/mathematica/guide/Mathematica.html"],
+            None}]}], "\<\"Go to jmlopez website\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL["http://math.uh.edu/~jmlopez/"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1699355767],
+
+Cell[CellGroupData[{
+
+Cell["DeployApplication", "ObjectName",
+ CellID->689662268],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       ButtonBox["DeployApplication",
+        BaseStyle->"Link",
+        ButtonData->"paclet:ApplicationMaker/ref/DeployApplication"], "[", 
+       StyleBox[
+        RowBox[{"appName", ",", "destDir"}], "TI"], "]"}]], "InlineFormula"],
+     "\[LineSeparator]Copies the m files and documentation of your \
+application to destDir"
+    }]]},
+   {" ", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       ButtonBox["DeployApplication",
+        BaseStyle->"Link",
+        ButtonData->"paclet:ApplicationMaker/ref/DeployApplication"], "[", 
+       StyleBox[
+        RowBox[{"appName", ",", "destDir", ",", "appDir"}], "TI"], "]"}]], 
+      "InlineFormula"],
+     "\[LineSeparator]By default ",
+     StyleBox["appDir", "TI"],
+     " is ",
+     StyleBox["$UserBaseDirectory", "Input"],
+     "/Applications/. If ",
+     StyleBox["appName", "TI"],
+     " is located somewhere else then specify this with ",
+     StyleBox["appDir", "TI"],
+     "."
+    }]]}
+  }]], "Usage",
+ CellID->1184495417]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[
+  FrameBox[
+   StyleBox[
+    RowBox[{"MORE", " ", "INFORMATION"}], "NotesFrameText"],
+   StripOnInput->False],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->641065829,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[{
+ "This is the final process in the creation of your application. You might \
+want to do this to share your applications with other ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " users."
+}], "Notes",
+ CellID->467931004]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["EXAMPLES",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->579328973,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ CellID->91193713,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell["\<\
+Here I will deploy the application ApplicationMaker to my Desktop so that I \
+can later upload it to the web.\
+\>", "ExampleText",
+ CellID->1536894080],
+
+Cell[BoxData[
+ RowBox[{"<<", "ApplicationMaker`"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->65058492],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DeployApplication", "[", 
+  RowBox[{
+  "\"\<ApplicationMaker\>\"", ",", " ", "\"\</Users/jmlopez/Desktop\>\""}], 
+  "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->368898721],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"The application \"\>", "MSG",
+    StripOnInput->False], "\[InvisibleSpace]", 
+   StyleBox["\<\"ApplicationMaker\"\>", "MSG",
+    StripOnInput->False,
+    FontWeight->Bold], "\[InvisibleSpace]", 
+   StyleBox["\<\" has been deployed to \"\>", "MSG",
+    StripOnInput->False], "\[InvisibleSpace]", 
+   StyleBox["\<\"/Users/jmlopez/Desktop/ApplicationMaker\"\>", "MSG",
+    StripOnInput->False,
+    FontWeight->Bold]}],
+  SequenceForm[
+   Style["The application ", "MSG"], 
+   Style["ApplicationMaker", "MSG", Bold], 
+   Style[" has been deployed to ", "MSG"], 
+   Style["/Users/jmlopez/Desktop/ApplicationMaker", "MSG", Bold]],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->1013725186]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["SEE ALSO",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "SeeAlsoSection",
+ CellID->83480331,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["BuildApplication",
+    BaseStyle->"Link",
+    ButtonData->"paclet:ApplicationMaker/ref/BuildApplication"],
+   FontFamily->"Verdana"]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["NewApplication",
+    BaseStyle->"Link",
+    ButtonData->"paclet:ApplicationMaker/ref/NewApplication"],
+   FontFamily->"Verdana"]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->747101626]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["TUTORIALS",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "TutorialsSection",
+ CellID->200144173,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[ButtonBox["How to build a documented package",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:ApplicationMaker/tutorial/HowToBuildADocumentedPackage"]], \
+"Tutorials",
+ CellID->863724409]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["MORE ABOUT",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "MoreAboutSection",
+ CellID->1014359816,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[ButtonBox["ApplicationMaker",
+ BaseStyle->"Link",
+ ButtonData->"paclet:ApplicationMaker/guide/ApplicationMaker"]], "MoreAbout",
+ CellID->1620237626]
+}, Open  ]],
+
+Cell["Made for Mathematica 8  |  Last modified in July 2011", "History",
+ CellID->1513925119],
+
+Cell[" ", "FooterCell",
+ CellID->874136070]
+},
+Saveable->False,
+WindowSize->{740, 652},
+WindowMargins->{{Automatic, 52}, {Automatic, 28}},
+WindowTitle->"DeployApplication - ApplicationMaker`ApplicationMaker`",
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "HelpViewerToolbar"],
+PageHeaders->{{None, None, None}, {None, None, 
+   Cell[
+    TextData[{
+      Cell[
+       TextData[{"ApplicationMaker Documentation "}], "PageHeader"], 
+      Cell[
+       TextData[{
+         CounterBox["Page"]}], "PageNumber"]}], 
+    CellMargins -> {{Inherited, -29}, {Inherited, Inherited}}]}},
+PageFooters->{{None, None, None}, {
+   Cell[
+    TextData[{"Created by Manuel Lopez | July 12, 2011"}], "PageFooter"], 
+   None, None}},
+TaggingRules->{
+ "ModificationHighlight" -> False, 
+  "Metadata" -> {
+   "context" -> "ApplicationMaker`", 
+    "keywords" -> {
+     "deployapplication", "deploy", "Deploy", "DEPLOYAPPLICATION"}, "index" -> 
+    True, "label" -> "ApplicationMaker`ApplicationMaker` Symbol", "language" -> 
+    "en", "paclet" -> "ApplicationMaker ApplicationMaker", "status" -> "", 
+    "summary" -> 
+    "DeployApplication[appName, destDir] copies the m files and documentation \
+of your application to destDir.", 
+    "synonyms" -> {"deployapplication", "DEPLOYAPPLICATION"}, "title" -> 
+    "DeployApplication", "windowTitle" -> "DeployApplication", "type" -> 
+    "Symbol", "uri" -> "ApplicationMaker/ref/DeployApplication"}, 
+  "SearchTextTranslated" -> "", "LinkTrails" -> ""},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5282, 160, 536, 14, 45, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->579328973]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 11814, 368}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[625, 21, 2529, 63, 47, "AnchorBarGrid",
+ CellID->1699355767],
+Cell[CellGroupData[{
+Cell[3179, 88, 59, 1, 51, "ObjectName",
+ CellID->689662268],
+Cell[3241, 91, 1067, 32, 152, "Usage",
+ CellID->1184495417]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4345, 128, 655, 18, 38, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->641065829],
+Cell[5003, 148, 242, 7, 43, "Notes",
+ CellID->467931004]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5282, 160, 536, 14, 45, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->579328973],
+Cell[CellGroupData[{
+Cell[5843, 178, 240, 6, 32, "ExampleSection",
+ CellID->91193713],
+Cell[6086, 186, 161, 4, 32, "ExampleText",
+ CellID->1536894080],
+Cell[6250, 192, 103, 3, 24, "Input",
+ CellID->65058492],
+Cell[CellGroupData[{
+Cell[6378, 199, 199, 6, 24, "Input",
+ CellID->368898721],
+Cell[6580, 207, 781, 20, 20, "Print",
+ CellID->1013725186]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7422, 234, 490, 13, 45, "SeeAlsoSection",
+ CellID->83480331],
+Cell[7915, 249, 552, 18, 19, "SeeAlso",
+ CellID->747101626]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8504, 272, 494, 13, 45, "TutorialsSection",
+ CellID->200144173],
+Cell[9001, 287, 198, 5, 16, "Tutorials",
+ CellID->863724409]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9236, 297, 496, 13, 45, "MoreAboutSection",
+ CellID->1014359816],
+Cell[9735, 312, 162, 3, 16, "MoreAbout",
+ CellID->1620237626]
+}, Open  ]],
+Cell[9912, 318, 93, 1, 42, "History",
+ CellID->1513925119],
+Cell[10008, 321, 43, 1, 24, "FooterCell",
+ CellID->874136070]
+}
+]
+*)
+
+(* End of internal cache information *)

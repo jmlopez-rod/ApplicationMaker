@@ -1,0 +1,497 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     15692,        488]
+NotebookOptionsPosition[     12542,        387]
+NotebookOutlinePosition[     14050,        427]
+CellTagsIndexPosition[     13965,        422]
+WindowTitle->NewGuide - ApplicationMaker`DocumentationMaker`
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["APPLICATIONMAKER`DOCUMENTATIONMAKER` SYMBOL", "PacletNameCell"], 
+    Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"How to build documented packages\"\>":>
+       Documentation`HelpLookup[
+        StringJoin[
+        "paclet:", "ApplicationMaker", 
+         "/tutorial/HowToBuildADocumentedPackage"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"See Also \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"CreateReferencePages\"\>":>
+       Documentation`HelpLookup[
+        StringJoin[
+        "paclet:", "ApplicationMaker", 
+         "/ref/CreateReferencePages"]], "\<\"NewTutorial\"\>":>
+       Documentation`HelpLookup[
+        StringJoin["paclet:", "ApplicationMaker", "/ref/NewTutorial"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"ApplicationMaker\"\>":>
+       Documentation`HelpLookup[
+        StringJoin["paclet:", "ApplicationMaker", "/guide/ApplicationMaker"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Go to StackOverflow tutorial\"\>":>
+       FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+           "http://stackoverflow.com/questions/6574710/integrating-notebooks-\
+to-mathematicas-documentation-center"], None}]}], 
+       Delimiter, "\<\"Go to Wolfram Mathematica\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+           "http://reference.wolfram.com/mathematica/guide/Mathematica.html"],
+            None}]}], "\<\"Go to jmlopez website\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL["http://math.uh.edu/~jmlopez/"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1699355767],
+
+Cell[CellGroupData[{
+
+Cell["NewGuide", "ObjectName",
+ CellID->502269049],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       ButtonBox["NewGuide",
+        BaseStyle->"Link",
+        ButtonData->"paclet:ApplicationMaker/ref/NewGuide"], "[", 
+       StyleBox[
+        RowBox[{"guideName", ",", "appName"}], "TI"], "]"}]], "InlineFormula"],
+     "\[LineSeparator]Creates the guide notebook guideName.nb inside the \
+documentation for the application ",
+     StyleBox["appName", "TI"],
+     "."
+    }]]},
+   {" ", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       ButtonBox["NewGuide",
+        BaseStyle->"Link",
+        ButtonData->"paclet:ApplicationMaker/ref/NewGuide"], "[", 
+       StyleBox[
+        RowBox[{"guideName", ",", "appName", ",", " ", "appDir"}], "TI"], 
+       "]"}]], "InlineFormula"],
+     "\[LineSeparator]Creates the guide notebook guideName.nb inside the \
+documentation for the application ",
+     StyleBox["appName", "TI"],
+     " located in ",
+     StyleBox["appDir", "TI"],
+     "."
+    }]]}
+  }]], "Usage",
+ CellID->2025173833]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[
+  FrameBox[
+   StyleBox[
+    RowBox[{"MORE", " ", "INFORMATION"}], "NotesFrameText"],
+   StripOnInput->False],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1628289928,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell["\<\
+Use this function to create a new guide. You will be able to find the \
+document created by this function inside the documentation for the \
+application you are creating.\
+\>", "Notes",
+ CellID->1284706175]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["EXAMPLES",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1446045599,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(#)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ CellID->615949294,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell["\<\
+If you try to create a guide that has already been created you will obtain an \
+error message with a link to open the guide.\
+\>", "ExampleText",
+ CellID->1750050634],
+
+Cell[BoxData[
+ RowBox[{"<<", "ApplicationMaker`"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1226292102],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NewGuide", "[", 
+  RowBox[{"\"\<SimpleArithmetic\>\"", ",", " ", "\"\<SimpleArithmetic\>\""}], 
+  "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->890798055],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"NotebookObject", "[", 
+   PanelBox[GridBox[{
+      {
+       TooltipBox[
+        ButtonBox[
+         StyleBox[
+          
+          DynamicBox[FEPrivate`FrontEndResource[
+           "FEBitmaps", "ManipulatePasteIcon"],
+           ImageSizeCache->{13., {4., 9.}}],
+          DynamicUpdating->True],
+         Appearance->{Automatic, None},
+         BaseStyle->{},
+         ButtonFunction:>FrontEndExecute[{
+            FrontEnd`SetSelectedNotebook[
+             NotebookObject[
+              FrontEndObject[
+               LinkObject["vpq_shm", 1, 1]], 607]]}],
+         Evaluator->None,
+         Method->"Queued"],
+        DynamicBox[
+         FEPrivate`FrontEndResource[
+         "FEStrings", "NotebookObjectToTheFront"]]], 
+       TagBox[
+        TooltipBox["\<\"SimpleArithmetic - SimpleArithmetic\"\>",
+         "\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/Guides/___SimpleArithmetic.nb\"",
+         TooltipStyle->"TextStyling"],
+        Annotation[#, 
+         "/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/Guides/___SimpleArithmetic.nb", "Tooltip"]& ]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}}],
+    FrameMargins->{{4, 5}, {4, 4}}], "]"}],
+  NotebookObject[
+   FrontEndObject[
+    LinkObject["vpq_shm", 1, 1]], 607],
+  Editable->False]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->79014647]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NewGuide", "[", 
+  RowBox[{"\"\<SimpleArithmetic\>\"", ",", " ", "\"\<SimpleArithmetic\>\""}], 
+  "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->854278283],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NewGuide", "::", "guideerr"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The guide you are trying to create in the application \
+\[NoBreak]\\!\\(\\\"SimpleArithmetic\\\"\\)\[NoBreak] already exists. Click \
+\[NoBreak]\\!\\(\\*TagBox[ButtonBox[PaneSelectorBox[{False -> \
+\\\"\\\\\\\"here\\\\\\\"\\\", Rule[True, \
+StyleBox[\\\"\\\\\\\"here\\\\\\\"\\\", List[\\\"HyperlinkActive\\\"]]]}, \
+Dynamic[CurrentValue[\\\"MouseOver\\\"]], Rule[BaselinePosition, Baseline], \
+Rule[BaseStyle, List[\\\"Hyperlink\\\"]], Rule[FrameMargins, 0], \
+Rule[ImageSize, Automatic]], Rule[BaseStyle, \\\"Hyperlink\\\"], \
+RuleDelayed[ButtonData, \
+List[\\\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/Guides/___SimpleArithmetic.nb\\\", None]], \
+Rule[ButtonNote, \
+\\\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/Guides/___SimpleArithmetic.nb\\\"]], \
+Function[Annotation[Slot[1], \
+\\\"/Users/jmlopez/Library/Mathematica/Applications/SimpleArithmetic/\
+Documentation/English/Guides/___SimpleArithmetic.nb\\\", \\\"Hyperlink\\\"]]]\
+\\)\[NoBreak] to edit its contents. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\
+\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ApplicationMaker/ref/NewGuide\\\", ButtonNote -> \
+\\\"ApplicationMaker`DocumentationMaker`NewGuide::guideerr\\\"]\\)\"\>"}]], \
+"Message", "MSG",
+ CellLabel->"During evaluation of In[3]:=",
+ CellID->1926922186],
+
+Cell[BoxData["$Failed"], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1727783342]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["SEE ALSO",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "SeeAlsoSection",
+ CellID->83480331,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["CreateReferencePages",
+    BaseStyle->"Link",
+    ButtonData->"paclet:ApplicationMaker/ref/CreateReferencePages"],
+   FontFamily->"Verdana"]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["NewTutorial",
+    BaseStyle->"Link",
+    ButtonData->"paclet:ApplicationMaker/ref/NewTutorial"],
+   FontFamily->"Verdana"]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->747101626]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["TUTORIALS",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "TutorialsSection",
+ CellID->200144173,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[ButtonBox["How to build a documented package",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:ApplicationMaker/tutorial/HowToBuildADocumentedPackage"]], \
+"Tutorials",
+ CellID->863724409]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["MORE ABOUT",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "MoreAboutSection",
+ CellID->1014359816,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[ButtonBox["ApplicationMaker",
+ BaseStyle->"Link",
+ ButtonData->"paclet:ApplicationMaker/guide/ApplicationMaker"]], "MoreAbout",
+ CellID->1620237626]
+}, Open  ]],
+
+Cell["Made for Mathematica 8  |  Last modified in July 2011", "History",
+ CellID->776875746],
+
+Cell[" ", "FooterCell",
+ CellID->250089262]
+},
+WindowSize->{740, 652},
+WindowMargins->{{51, Automatic}, {45, Automatic}},
+WindowTitle->"NewGuide - ApplicationMaker`DocumentationMaker`",
+DockedCells->None,
+TaggingRules->{
+ "ModificationHighlight" -> False, 
+  "Metadata" -> {
+   "context" -> "ApplicationMaker`", 
+    "keywords" -> {"newguide", "guide", "NEWGUIDE"}, "index" -> True, "label" -> 
+    "ApplicationMaker`DocumentationMaker` Symbol", "language" -> "en", 
+    "paclet" -> "ApplicationMaker DocumentationMaker", "status" -> "", 
+    "summary" -> 
+    "NewGuide[guideName, appName] creates the guide notebook guideName.nb \
+inside the documentation for the application appName.", 
+    "synonyms" -> {"newguide", "NEWGUIDE"}, "title" -> "NewGuide", 
+    "windowTitle" -> "NewGuide", "type" -> "Symbol", "uri" -> 
+    "ApplicationMaker/ref/NewGuide"}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "Users", "jmlopez", 
+   "Library", "Mathematica", "Applications", "ApplicationMaker", "FrontEnd", 
+   "Stylesheets"}, "UserReference.nb", CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5199, 157, 537, 14, 45, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1446045599]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 13821, 415}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[618, 21, 2533, 63, 47, "AnchorBarGrid",
+ CellID->1699355767],
+Cell[CellGroupData[{
+Cell[3176, 88, 50, 1, 51, "ObjectName",
+ CellID->502269049],
+Cell[3229, 91, 1021, 31, 154, "Usage",
+ CellID->2025173833]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4287, 127, 656, 18, 38, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1628289928],
+Cell[4946, 147, 216, 5, 44, "Notes",
+ CellID->1284706175]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5199, 157, 537, 14, 45, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1446045599],
+Cell[CellGroupData[{
+Cell[5761, 175, 241, 6, 32, "ExampleSection",
+ CellID->615949294],
+Cell[6005, 183, 176, 4, 46, "ExampleText",
+ CellID->1750050634],
+Cell[6184, 189, 105, 3, 24, "Input",
+ CellID->1226292102],
+Cell[CellGroupData[{
+Cell[6314, 196, 181, 5, 24, "Input",
+ CellID->890798055],
+Cell[6498, 203, 1527, 43, 47, "Output",
+ CellID->79014647]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8062, 251, 181, 5, 24, "Input",
+ CellID->854278283],
+Cell[8246, 258, 1520, 28, 37, "Message",
+ CellID->1926922186],
+Cell[9769, 288, 78, 2, 33, "Output",
+ CellID->1727783342]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9908, 297, 490, 13, 45, "SeeAlsoSection",
+ CellID->83480331],
+Cell[10401, 312, 554, 18, 19, "SeeAlso",
+ CellID->747101626]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10992, 335, 494, 13, 45, "TutorialsSection",
+ CellID->200144173],
+Cell[11489, 350, 198, 5, 16, "Tutorials",
+ CellID->863724409]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11724, 360, 496, 13, 45, "MoreAboutSection",
+ CellID->1014359816],
+Cell[12223, 375, 162, 3, 16, "MoreAbout",
+ CellID->1620237626]
+}, Open  ]],
+Cell[12400, 381, 92, 1, 42, "History",
+ CellID->776875746],
+Cell[12495, 384, 43, 1, 24, "FooterCell",
+ CellID->250089262]
+}
+]
+*)
+
+(* End of internal cache information *)

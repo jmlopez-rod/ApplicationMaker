@@ -1,0 +1,668 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     20863,        666]
+NotebookOptionsPosition[     16805,        535]
+NotebookOutlinePosition[     18518,        581]
+CellTagsIndexPosition[     18433,        576]
+WindowTitle->UpdateInit - ApplicationMaker`PackageMaker`
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["APPLICATIONMAKER`PACKAGEMAKER` SYMBOL", "PacletNameCell"], Cell[
+    TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"How to build documented packages\"\>":>
+       Documentation`HelpLookup[
+        StringJoin[
+        "paclet:", "ApplicationMaker", 
+         "/tutorial/HowToBuildADocumentedPackage"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"See Also \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"NewApplication\"\>":>
+       Documentation`HelpLookup[
+        StringJoin[
+        "paclet:", "ApplicationMaker", 
+         "/ref/NewApplication"]], "\<\"NewPackage\"\>":>
+       Documentation`HelpLookup[
+        StringJoin["paclet:", "ApplicationMaker", "/ref/NewPackage"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"ApplicationMaker\"\>":>
+       Documentation`HelpLookup[
+        StringJoin["paclet:", "ApplicationMaker", "/guide/ApplicationMaker"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Go to StackOverflow tutorial\"\>":>
+       FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+           "http://stackoverflow.com/questions/6574710/integrating-notebooks-\
+to-mathematicas-documentation-center"], None}]}], 
+       Delimiter, "\<\"Go to Wolfram Mathematica\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+           "http://reference.wolfram.com/mathematica/guide/Mathematica.html"],
+            None}]}], "\<\"Go to jmlopez website\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL["http://math.uh.edu/~jmlopez/"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1699355767],
+
+Cell[CellGroupData[{
+
+Cell["UpdateInit", "ObjectName",
+ CellID->1687354516],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       ButtonBox["UpdateInit",
+        BaseStyle->"Link",
+        ButtonData->"paclet:ApplicationMaker/ref/UpdateInit"], "[", 
+       StyleBox["appName", "TI"], "]"}]], "InlineFormula"],
+     "\[LineSeparator]Creates the init file for the application ",
+     StyleBox["appName", "TI"],
+     "."
+    }]]},
+   {" ", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       ButtonBox["UpdateInit",
+        BaseStyle->"Link",
+        ButtonData->"paclet:ApplicationMaker/ref/UpdateInit"], "[", 
+       StyleBox[
+        RowBox[{"appName", ",", " ", "appDir"}], "TI"], "]"}]], 
+      "InlineFormula"],
+     "\[LineSeparator]Creates the init file for the application ",
+     StyleBox["appName", "TI"],
+     " located in the directory ",
+     StyleBox["appDir", "TI"],
+     "."
+    }]]}
+  }]], "Usage",
+ CellID->1845791777]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[
+  FrameBox[
+   StyleBox[
+    RowBox[{"MORE", " ", "INFORMATION"}], "NotesFrameText"],
+   StripOnInput->False],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1821115124,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell["\<\
+This function needs to be called before you can start using an application.\
+\>", "Notes",
+ CellID->1544952024],
+
+Cell[TextData[{
+ "The default value for ",
+ StyleBox["appDir", "TI"],
+ " is ",
+ StyleBox["$UserBaseDirectory", "Input"],
+ "/Applications. If you have some other path where you install your ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " packages then you might want to specify ",
+ StyleBox["appDir", "TI"],
+ ". Note that by doing so then you will have to specify ",
+ StyleBox["appDir", "TI"],
+ " in all of the other functions in ApplicationMaker."
+}], "Notes",
+ CellID->783891491]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["EXAMPLES",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->52114892,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ CellID->1869145515,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell["\<\
+This example shows the results of using UpdateInit. \
+\>", "ExampleText",
+ CellID->1337882289],
+
+Cell[BoxData[
+ RowBox[{"<<", "ApplicationMaker`"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->208213324],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NewApplication", "[", "\"\<SampleApplication\>\"", "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1190475505],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"Directory Created  : \"\>", "MSG",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], "\[InvisibleSpace]", 
+   StyleBox["\<\"/Users/jmlopez/Library/Mathematica/Applications/\
+SampleApplication\"\>", "MSG",
+    StripOnInput->False,
+    FontWeight->Bold]}],
+  SequenceForm[
+   Style["Directory Created  : ", "MSG", 
+    RGBColor[0, 0, 1]], 
+   Style["/Users/jmlopez/Library/Mathematica/Applications/SampleApplication", 
+    "MSG", Bold]],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->901695981],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"Directory Created  : \"\>", "MSG",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], "\[InvisibleSpace]", 
+   StyleBox["\<\"/Users/jmlopez/Library/Mathematica/Applications/\
+SampleApplication/Documentation\"\>", "MSG",
+    StripOnInput->False,
+    FontWeight->Bold]}],
+  SequenceForm[
+   Style["Directory Created  : ", "MSG", 
+    RGBColor[0, 0, 1]], 
+   Style["/Users/jmlopez/Library/Mathematica/Applications/SampleApplication/\
+Documentation", "MSG", Bold]],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->12255788],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"Directory Created  : \"\>", "MSG",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], "\[InvisibleSpace]", 
+   StyleBox["\<\"/Users/jmlopez/Library/Mathematica/Applications/\
+SampleApplication/Kernel\"\>", "MSG",
+    StripOnInput->False,
+    FontWeight->Bold]}],
+  SequenceForm[
+   Style["Directory Created  : ", "MSG", 
+    RGBColor[0, 0, 1]], 
+   Style["/Users/jmlopez/Library/Mathematica/Applications/SampleApplication/\
+Kernel", "MSG", Bold]],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->1972082451],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"Directory Created  : \"\>", "MSG",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], "\[InvisibleSpace]", 
+   StyleBox["\<\"/Users/jmlopez/Library/Mathematica/Applications/\
+SampleApplication/Documentation/English\"\>", "MSG",
+    StripOnInput->False,
+    FontWeight->Bold]}],
+  SequenceForm[
+   Style["Directory Created  : ", "MSG", 
+    RGBColor[0, 0, 1]], 
+   Style["/Users/jmlopez/Library/Mathematica/Applications/SampleApplication/\
+Documentation/English", "MSG", Bold]],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->527146159],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"Directory Created  : \"\>", "MSG",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], "\[InvisibleSpace]", 
+   StyleBox["\<\"/Users/jmlopez/Library/Mathematica/Applications/\
+SampleApplication/Documentation/English/Guides\"\>", "MSG",
+    StripOnInput->False,
+    FontWeight->Bold]}],
+  SequenceForm[
+   Style["Directory Created  : ", "MSG", 
+    RGBColor[0, 0, 1]], 
+   Style["/Users/jmlopez/Library/Mathematica/Applications/SampleApplication/\
+Documentation/English/Guides", "MSG", Bold]],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->1375450438],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"Directory Created  : \"\>", "MSG",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], "\[InvisibleSpace]", 
+   StyleBox["\<\"/Users/jmlopez/Library/Mathematica/Applications/\
+SampleApplication/Documentation/English/ReferencePages\"\>", "MSG",
+    StripOnInput->False,
+    FontWeight->Bold]}],
+  SequenceForm[
+   Style["Directory Created  : ", "MSG", 
+    RGBColor[0, 0, 1]], 
+   Style["/Users/jmlopez/Library/Mathematica/Applications/SampleApplication/\
+Documentation/English/ReferencePages", "MSG", Bold]],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->1681535158],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"Directory Created  : \"\>", "MSG",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], "\[InvisibleSpace]", 
+   StyleBox["\<\"/Users/jmlopez/Library/Mathematica/Applications/\
+SampleApplication/Documentation/English/Tutorials\"\>", "MSG",
+    StripOnInput->False,
+    FontWeight->Bold]}],
+  SequenceForm[
+   Style["Directory Created  : ", "MSG", 
+    RGBColor[0, 0, 1]], 
+   Style["/Users/jmlopez/Library/Mathematica/Applications/SampleApplication/\
+Documentation/English/Tutorials", "MSG", Bold]],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->676605986],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   StyleBox["\<\"Directory Created  : \"\>", "MSG",
+    StripOnInput->False,
+    LineColor->RGBColor[0, 0, 1],
+    FrontFaceColor->RGBColor[0, 0, 1],
+    BackFaceColor->RGBColor[0, 0, 1],
+    GraphicsColor->RGBColor[0, 0, 1],
+    FontColor->RGBColor[0, 0, 1]], "\[InvisibleSpace]", 
+   StyleBox["\<\"/Users/jmlopez/Library/Mathematica/Applications/\
+SampleApplication/Documentation/English/ReferencePages/Symbols\"\>", "MSG",
+    StripOnInput->False,
+    FontWeight->Bold]}],
+  SequenceForm[
+   Style["Directory Created  : ", "MSG", 
+    RGBColor[0, 0, 1]], 
+   Style["/Users/jmlopez/Library/Mathematica/Applications/SampleApplication/\
+Documentation/English/ReferencePages/Symbols", "MSG", Bold]],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->790895837]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"NewPackage", "[", 
+   RowBox[{"\"\<SamplePackage1\>\"", ",", " ", "\"\<SampleApplication\>\""}], 
+   "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"NewPackage", "[", 
+   RowBox[{"\"\<SamplePackage2\>\"", ",", " ", "\"\<SampleApplication\>\""}], 
+   "]"}], ";"}]}], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1645657187],
+
+Cell["\<\
+At this point you need to write your code in the notebooks. Once you are \
+finish then call UpdateInit\
+\>", "ExampleText",
+ CellID->1810041176],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UpdateInit", "[", "\"\<SampleApplication\>\"", "]"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->108701630],
+
+Cell[BoxData["\<\"/Users/jmlopez/Library/Mathematica/Applications/\
+SampleApplication/Kernel/Init.m\"\>"], "Output",
+ CellLabel->"Out[5]=",
+ CellID->1587195460]
+}, Open  ]],
+
+Cell["\<\
+These are the contents of the init file:\
+\>", "ExampleText",
+ CellID->342041080],
+
+Cell["\<\
+Get[\"SampleApplication`SamplePackage1`\"];
+Get[\"SampleApplication`SamplePackage2`\"];\
+\>", "Program",
+ CellID->2018192188]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["SEE ALSO",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "SeeAlsoSection",
+ CellID->83480331,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["NewApplication",
+    BaseStyle->"Link",
+    ButtonData->"paclet:ApplicationMaker/ref/NewApplication"],
+   FontFamily->"Verdana"]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["NewPackage",
+    BaseStyle->"Link",
+    ButtonData->"paclet:ApplicationMaker/ref/NewPackage"],
+   FontFamily->"Verdana"]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->747101626]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["TUTORIALS",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "TutorialsSection",
+ CellID->200144173,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[ButtonBox["How to build a documented package",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:ApplicationMaker/tutorial/HowToBuildADocumentedPackage"]], \
+"Tutorials",
+ CellID->863724409]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["MORE ABOUT",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "MoreAboutSection",
+ CellID->1014359816,
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[ButtonBox["ApplicationMaker",
+ BaseStyle->"Link",
+ ButtonData->"paclet:ApplicationMaker/guide/ApplicationMaker"]], "MoreAbout",
+ CellID->1620237626]
+}, Open  ]],
+
+Cell["Made for Mathematica 8  |  Last modified in July 2011", "History",
+ CellID->790362280],
+
+Cell[" ", "FooterCell",
+ CellID->1432483265]
+},
+WindowSize->{689, 713},
+WindowMargins->{{Automatic, 156}, {Automatic, 14}},
+WindowTitle->"UpdateInit - ApplicationMaker`PackageMaker`",
+DockedCells->None,
+TaggingRules->{
+ "ModificationHighlight" -> False, 
+  "Metadata" -> {
+   "context" -> "ApplicationMaker`", 
+    "keywords" -> {"updateinit", "init", "INIT", "Init", "UPDATEINIT"}, 
+    "index" -> True, "label" -> "ApplicationMaker`PackageMaker` Symbol", 
+    "language" -> "en", "paclet" -> "ApplicationMaker PackageMaker", "status" -> 
+    "", "summary" -> 
+    "UpdateInit[appName] creates the init file for the application appName.", 
+    "synonyms" -> {"updateinit", "UPDATEINIT"}, "title" -> "UpdateInit", 
+    "windowTitle" -> "UpdateInit", "type" -> "Symbol", "uri" -> 
+    "ApplicationMaker/ref/UpdateInit"}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{$UserBaseDirectory, "Applications",  
+   "ApplicationMaker", "FrontEnd", "Stylesheets",}, 
+   "UserReference7.nb", CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5449, 168, 535, 14, 45, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->52114892]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 18291, 569}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[614, 21, 2513, 63, 47, "AnchorBarGrid",
+ CellID->1699355767],
+Cell[CellGroupData[{
+Cell[3152, 88, 53, 1, 51, "ObjectName",
+ CellID->1687354516],
+Cell[3208, 91, 897, 28, 138, "Usage",
+ CellID->1845791777]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4142, 124, 656, 18, 38, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1821115124],
+Cell[4801, 144, 121, 3, 30, "Notes",
+ CellID->1544952024],
+Cell[4925, 149, 487, 14, 60, "Notes",
+ CellID->783891491]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5449, 168, 535, 14, 45, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->52114892],
+Cell[CellGroupData[{
+Cell[6009, 186, 242, 6, 32, "ExampleSection",
+ CellID->1869145515],
+Cell[6254, 194, 104, 3, 32, "ExampleText",
+ CellID->1337882289],
+Cell[6361, 199, 104, 3, 24, "Input",
+ CellID->208213324],
+Cell[CellGroupData[{
+Cell[6490, 206, 135, 3, 24, "Input",
+ CellID->1190475505],
+Cell[CellGroupData[{
+Cell[6650, 213, 750, 21, 20, "Print",
+ CellID->901695981],
+Cell[7403, 236, 774, 21, 20, "Print",
+ CellID->12255788],
+Cell[8180, 259, 762, 21, 20, "Print",
+ CellID->1972082451],
+Cell[8945, 282, 791, 21, 20, "Print",
+ CellID->527146159],
+Cell[9739, 305, 806, 21, 20, "Print",
+ CellID->1375450438],
+Cell[10548, 328, 822, 21, 34, "Print",
+ CellID->1681535158],
+Cell[11373, 351, 811, 21, 34, "Print",
+ CellID->676605986],
+Cell[12187, 374, 837, 21, 47, "Print",
+ CellID->790895837]
+}, Open  ]]
+}, Open  ]],
+Cell[13051, 399, 365, 10, 38, "Input",
+ CellID->1645657187],
+Cell[13419, 411, 154, 4, 32, "ExampleText",
+ CellID->1810041176],
+Cell[CellGroupData[{
+Cell[13598, 419, 130, 3, 24, "Input",
+ CellID->108701630],
+Cell[13731, 424, 160, 3, 33, "Output",
+ CellID->1587195460]
+}, Open  ]],
+Cell[13906, 430, 91, 3, 32, "ExampleText",
+ CellID->342041080],
+Cell[14000, 435, 135, 4, 56, "Program",
+ CellID->2018192188]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14184, 445, 490, 13, 45, "SeeAlsoSection",
+ CellID->83480331],
+Cell[14677, 460, 540, 18, 19, "SeeAlso",
+ CellID->747101626]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15254, 483, 494, 13, 45, "TutorialsSection",
+ CellID->200144173],
+Cell[15751, 498, 198, 5, 16, "Tutorials",
+ CellID->863724409]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15986, 508, 496, 13, 45, "MoreAboutSection",
+ CellID->1014359816],
+Cell[16485, 523, 162, 3, 16, "MoreAbout",
+ CellID->1620237626]
+}, Open  ]],
+Cell[16662, 529, 92, 1, 42, "History",
+ CellID->790362280],
+Cell[16757, 532, 44, 1, 24, "FooterCell",
+ CellID->1432483265]
+}
+]
+*)
+
+(* End of internal cache information *)
