@@ -20,7 +20,7 @@
 (*Initialization*)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Public Context*)
 
 
@@ -248,7 +248,7 @@ With[
 (*Main functions*)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*NewApplication*)
 
 
@@ -306,7 +306,7 @@ With[
     fileBaseNameWithoutFirstThreeChars@path]]
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*BuildApplication*)
 
 
@@ -319,7 +319,8 @@ BuildApplication[
 , footer_String: ""
 , appDir_String: $DefaultAppsDir] :=
 Module[
-  {appNameDir, indexDir, tmpPath, files, pacFile, pkg, index, str},
+  {appNameDir, indexDir, tmpPath, files, pacFile, pkg, index, str,guides,
+   tutorials,refs},
 
   appNameDir = FileNameJoin@{appDir, appName};
   indexDir = FileNameJoin@{appNameDir, "Documentation", "English", "Index"};
@@ -359,7 +360,7 @@ Module[
 
 (* :GUIDES: *)
 
-  files =
+  guides =
   FileNames @
   FileNameJoin@{appNameDir
   , "Documentation"
@@ -369,21 +370,18 @@ Module[
 
   WriteString[pacFile
   , StringJoin[
-    ( Print[
-        grayMsg@"Adding Guide : "
-      , boldMsg@fileBaseNameWithoutFirstThreeChars@#];
-      StringJoin[
+    ( StringJoin[
         "\t\t\t\t\""
       , FileNameJoin[
         { "Guides"
-        , ChangeNotebookSettings[#, index, header, footer] },
+        , fileBaseNameWithoutFirstThreeChars@# },
           OperatingSystem-> "Unix"]
       , "\",\n"] ) & /@
-    files]];
+    guides]];
 
 (* :TUTORIALS: *)
 
-  files =
+  tutorials =
   FileNames @
   FileNameJoin@{appNameDir
   , "Documentation"
@@ -393,22 +391,19 @@ Module[
 
   WriteString[pacFile
   , StringJoin[
-    ( Print[
-        grayMsg@"Adding Tutorial : "
-      , boldMsg@fileBaseNameWithoutFirstThreeChars@#];
-      StringJoin[
+    ( StringJoin[
         "\t\t\t\t\""
-      , FileNameJoin [
+      , FileNameJoin[
         { "Tutorials"
-        , ChangeNotebookSettings[#, index, header, footer] },
+        , fileBaseNameWithoutFirstThreeChars@# },
           OperatingSystem-> "Unix"
        ]
         , "\",\n"] ) & /@
-      files]];
+      tutorials]];
 
 (* :REFERENCES: *)
 
-  files =
+  refs =
   FileNames @
   FileNameJoin@{appNameDir
   , "Documentation"
@@ -420,25 +415,38 @@ Module[
   WriteString[pacFile
   , dropLastCharsAndAddNewLine[2] @
     StringJoin[
-    ( Print[
-        grayMsg@"Adding Reference : "
-      , boldMsg@fileBaseNameWithoutFirstThreeChars@#];
-      StringJoin[
+    ( StringJoin[
         "\t\t\t\t\""
       , FileNameJoin [
         { "ReferencePages"
         , "Symbols"
-        , ChangeNotebookSettings[#, index, header, footer] },
+        , fileBaseNameWithoutFirstThreeChars@# },
          OperatingSystem-> "Unix"
        ]
       , "\",\n"] ) & /@
-    files]];
+    refs]];
 
   WriteString[pacFile, "\t\t\t}
 		}
 	}
 ]\n"];
   Close@pacFile;
+
+  ( Print[
+        grayMsg@"Adding Guide : "
+      , boldMsg@fileBaseNameWithoutFirstThreeChars@#];
+      ChangeNotebookSettings[#, index, header, footer] ) & /@
+    guides;
+  ( Print[
+        grayMsg@"Adding Tutorial : "
+      , boldMsg@fileBaseNameWithoutFirstThreeChars@#];
+      ChangeNotebookSettings[#, index, header, footer] ) & /@
+      tutorials;
+  ( Print[
+        grayMsg@"Adding Reference : "
+      , boldMsg@fileBaseNameWithoutFirstThreeChars@#];
+      ChangeNotebookSettings[#, index, header, footer] ) & /@
+    refs;
 
   DocumentationSearch`CloseDocumentationNotebookIndexer@index;
   PacletManager`RestartPacletManager[];]
@@ -478,7 +486,7 @@ Print[
        boldMsg @ deploymentDirectory];]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Finalization*)
 
 
