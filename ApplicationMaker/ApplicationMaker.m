@@ -20,7 +20,7 @@
 (*Initialization*)
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsubsection::Closed:: *)
 (*Public Context*)
 
 
@@ -343,7 +343,7 @@ Module[
 		{
 			\"Kernel\",
 			\"Context\" -> {\n"];
-  pkg = FileBaseName /@ FileNames[appNameDir <> "/*.nb"];
+  pkg = FileBaseName /@ FileNames[appNameDir <> "/*.m"];
 
   WriteString[pacFile
   , dropLastCharsAndAddNewLine[3] @
@@ -374,9 +374,10 @@ Module[
       , boldMsg@fileBaseNameWithoutFirstThreeChars@#];
       StringJoin[
         "\t\t\t\t\""
-      , FileNameJoin @
+      , FileNameJoin[
         { "Guides"
-        , ChangeNotebookSettings[#, index, header, footer] }
+        , ChangeNotebookSettings[#, index, header, footer] },
+          OperatingSystem-> "Unix"]
       , "\",\n"] ) & /@
     files]];
 
@@ -397,9 +398,11 @@ Module[
       , boldMsg@fileBaseNameWithoutFirstThreeChars@#];
       StringJoin[
         "\t\t\t\t\""
-      , FileNameJoin @
+      , FileNameJoin [
         { "Tutorials"
-        , ChangeNotebookSettings[#, index, header, footer] }
+        , ChangeNotebookSettings[#, index, header, footer] },
+          OperatingSystem-> "Unix"
+       ]
         , "\",\n"] ) & /@
       files]];
 
@@ -422,10 +425,12 @@ Module[
       , boldMsg@fileBaseNameWithoutFirstThreeChars@#];
       StringJoin[
         "\t\t\t\t\""
-      , FileNameJoin @
+      , FileNameJoin [
         { "ReferencePages"
         , "Symbols"
-        , ChangeNotebookSettings[#, index, header, footer] }
+        , ChangeNotebookSettings[#, index, header, footer] },
+         OperatingSystem-> "Unix"
+       ]
       , "\",\n"] ) & /@
     files]];
 
