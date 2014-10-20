@@ -6,9 +6,10 @@ Paclet[
 		{
 			"Kernel",
 			"Context" -> {
-				"ApplicationMaker`ApplicationMaker`",
-				"ApplicationMaker`DocumentationMaker`",
-				"ApplicationMaker`PackageMaker`"
+	"ApplicationMaker`ApplicationMaker`", 
+				"ApplicationMaker`DocumentationMaker`", 
+				"ApplicationMaker`PackageMaker`", 
+
 			}
 		},
 		{
@@ -18,7 +19,7 @@ Paclet[
 			Resources -> {
 				"Guides/ApplicationMaker",
 				"Tutorials/HowToBuildADocumentedPackage",
-				"ReferencePages/Symbols/BuildApplication",
+		"ReferencePages/Symbols/BuildApplication",
 				"ReferencePages/Symbols/CreateReferencePages",
 				"ReferencePages/Symbols/DeployApplication",
 				"ReferencePages/Symbols/EditNotebookOption",
@@ -29,7 +30,8 @@ Paclet[
 				"ReferencePages/Symbols/NewTutorial",
 				"ReferencePages/Symbols/UpdateInit",
 				"ReferencePages/Symbols/ViewNotebookOption",
-				"ReferencePages/Symbols/ViewOption"
+				"ReferencePages/Symbols/ViewOption",
+
 			}
 		}
 	}

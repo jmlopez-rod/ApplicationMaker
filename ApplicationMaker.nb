@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     41629,       1168]
-NotebookOptionsPosition[     38488,       1061]
-NotebookOutlinePosition[     38827,       1076]
-CellTagsIndexPosition[     38784,       1073]
+NotebookDataLength[     41756,       1177]
+NotebookOptionsPosition[     38615,       1070]
+NotebookOutlinePosition[     38954,       1085]
+CellTagsIndexPosition[     38911,       1082]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -730,9 +730,8 @@ Cell[BoxData[{
      RowBox[{
      "appNameDir", ",", " ", "indexDir", ",", " ", "tmpPath", ",", " ", 
       "files", ",", " ", "pacFile", ",", " ", "pkg", ",", " ", "index", ",", 
-      " ", "str", ",", 
-      RowBox[{"guides", "\n", "   ", "tutorials"}], ",", "refs"}], "}"}], ",",
-     "\n", "\n", "  ", 
+      " ", "str", ",", "guides", ",", "\n", "   ", "tutorials", ",", "refs"}],
+      "}"}], ",", "\n", "\n", "  ", 
     RowBox[{
      RowBox[{"appNameDir", " ", "=", " ", 
       RowBox[{"FileNameJoin", "@", 
@@ -784,10 +783,13 @@ Cell[BoxData[{
 \t{\n\t\t\t\\\"Kernel\\\",\n\t\t\t\\\"Context\\\" -> {\\n\>\""}]}], "]"}], 
      ";", "\n", "  ", 
      RowBox[{"pkg", " ", "=", " ", 
-      RowBox[{"FileBaseName", " ", "/@", " ", 
-       RowBox[{"FileNames", "[", 
-        RowBox[{"appNameDir", " ", "<>", " ", "\"\</*.m\>\""}], "]"}]}]}], 
-     ";", "\n", "\n", "  ", 
+      RowBox[{"DeleteCases", "[", 
+       RowBox[{
+        RowBox[{"FileBaseName", " ", "/@", " ", 
+         RowBox[{"FileNames", "[", 
+          RowBox[{"appNameDir", " ", "<>", " ", "\"\</*.m\>\""}], "]"}]}], 
+        ",", "\n", "          ", "\"\<PacletInfo\>\""}], "]"}]}], ";", "\n", 
+     "\n", "  ", 
      RowBox[{"WriteString", "[", 
       RowBox[{"pacFile", "\n", "  ", ",", " ", 
        RowBox[{
@@ -809,8 +811,7 @@ Language -> \\\"English\\\",\n\t\t\tLinkBase -> \\\"\>\"", " ", "<>", " ",
         "appName", " ", "<>", " ", 
         "\"\<\\\",\n\t\t\tResources -> {\\n\>\""}]}], "]"}], ";", "\n", "\n", 
      RowBox[{"(*", " ", 
-      RowBox[{":", 
-       RowBox[{"GUIDES", ":"}]}], " ", "*)"}], "\n", "\n", "  ", 
+      RowBox[{":", "GUIDES", ":"}], " ", "*)"}], "\n", "\n", "  ", 
      RowBox[{"guides", " ", "=", "\n", "  ", 
       RowBox[{"FileNames", " ", "@", "\n", "  ", 
        RowBox[{"FileNameJoin", "@", 
@@ -826,31 +827,20 @@ Language -> \\\"English\\\",\n\t\t\tLinkBase -> \\\"\>\"", " ", "<>", " ",
         RowBox[{
          RowBox[{
           RowBox[{"(", " ", 
-           RowBox[{
-            RowBox[{"Print", "[", "\n", "        ", 
-             RowBox[{
-              RowBox[{"grayMsg", "@", "\"\<Adding Guide : \>\""}], "\n", 
-              "      ", ",", " ", 
-              RowBox[{"boldMsg", "@", 
-               RowBox[{"fileBaseNameWithoutFirstThreeChars", "@", "#"}]}]}], 
-             "]"}], ";", "\n", "      ", 
-            RowBox[{"StringJoin", "[", "\n", "        ", 
-             RowBox[{"\"\<\\t\\t\\t\\t\\\"\>\"", "\n", "      ", ",", " ", 
-              RowBox[{"FileNameJoin", "[", "\n", "        ", 
-               RowBox[{
-                RowBox[{"{", " ", 
-                 RowBox[{"\"\<Guides\>\"", "\n", "        ", ",", " ", 
-                  RowBox[{"ChangeNotebookSettings", "[", 
-                   RowBox[{
-                   "#", ",", " ", "index", ",", " ", "header", ",", " ", 
-                    "footer"}], "]"}]}], " ", "}"}], ",", "\n", "          ", 
-                RowBox[{"OperatingSystem", "\[Rule]", " ", "\"\<Unix\>\""}]}],
-                "]"}], "\n", "      ", ",", " ", "\"\<\\\",\\n\>\""}], 
-             "]"}]}], " ", ")"}], " ", "&"}], " ", "/@", "\n", "    ", 
-         "guides"}], "]"}]}], "]"}], ";", "\n", "\n", 
+           RowBox[{"StringJoin", "[", "\n", "        ", 
+            RowBox[{"\"\<\\t\\t\\t\\t\\\"\>\"", "\n", "      ", ",", " ", 
+             RowBox[{"FileNameJoin", "[", "\n", "        ", 
+              RowBox[{
+               RowBox[{"{", " ", 
+                RowBox[{"\"\<Guides\>\"", "\n", "        ", ",", " ", 
+                 RowBox[{"fileBaseNameWithoutFirstThreeChars", "@", "#"}]}], 
+                " ", "}"}], ",", "\n", "          ", 
+               RowBox[{"OperatingSystem", "->", " ", "\"\<Unix\>\""}]}], 
+              "]"}], "\n", "      ", ",", " ", "\"\<\\\",\\n\>\""}], "]"}], 
+           " ", ")"}], " ", "&"}], " ", "/@", "\n", "    ", "guides"}], 
+        "]"}]}], "]"}], ";", "\n", "\n", 
      RowBox[{"(*", " ", 
-      RowBox[{":", 
-       RowBox[{"TUTORIALS", ":"}]}], " ", "*)"}], "\n", "\n", "  ", 
+      RowBox[{":", "TUTORIALS", ":"}], " ", "*)"}], "\n", "\n", "  ", 
      RowBox[{"tutorials", " ", "=", "\n", "  ", 
       RowBox[{"FileNames", " ", "@", "\n", "  ", 
        RowBox[{"FileNameJoin", "@", 
@@ -866,32 +856,20 @@ Language -> \\\"English\\\",\n\t\t\tLinkBase -> \\\"\>\"", " ", "<>", " ",
         RowBox[{
          RowBox[{
           RowBox[{"(", " ", 
-           RowBox[{
-            RowBox[{"Print", "[", "\n", "        ", 
-             RowBox[{
-              RowBox[{"grayMsg", "@", "\"\<Adding Tutorial : \>\""}], "\n", 
-              "      ", ",", " ", 
-              RowBox[{"boldMsg", "@", 
-               RowBox[{"fileBaseNameWithoutFirstThreeChars", "@", "#"}]}]}], 
-             "]"}], ";", "\n", "      ", 
-            RowBox[{"StringJoin", "[", "\n", "        ", 
-             RowBox[{"\"\<\\t\\t\\t\\t\\\"\>\"", "\n", "      ", ",", " ", 
-              RowBox[{"FileNameJoin", " ", "[", "\n", "        ", 
-               RowBox[{
-                RowBox[{"{", " ", 
-                 RowBox[{"\"\<Tutorials\>\"", "\n", "        ", ",", " ", 
-                  RowBox[{"ChangeNotebookSettings", "[", 
-                   RowBox[{
-                   "#", ",", " ", "index", ",", " ", "header", ",", " ", 
-                    "footer"}], "]"}]}], " ", "}"}], ",", "\n", "          ", 
-                RowBox[{"OperatingSystem", "\[Rule]", " ", "\"\<Unix\>\""}]}],
-                "\[IndentingNewLine]", "       ", "]"}], "\n", "        ", 
-              ",", " ", "\"\<\\\",\\n\>\""}], "]"}]}], " ", ")"}], " ", "&"}],
-          " ", "/@", "\n", "      ", "tutorials"}], "]"}]}], "]"}], ";", "\n",
-      "\n", 
+           RowBox[{"StringJoin", "[", "\n", "        ", 
+            RowBox[{"\"\<\\t\\t\\t\\t\\\"\>\"", "\n", "      ", ",", " ", 
+             RowBox[{"FileNameJoin", "[", "\n", "        ", 
+              RowBox[{
+               RowBox[{"{", " ", 
+                RowBox[{"\"\<Tutorials\>\"", "\n", "        ", ",", " ", 
+                 RowBox[{"fileBaseNameWithoutFirstThreeChars", "@", "#"}]}], 
+                " ", "}"}], ",", "\n", "          ", 
+               RowBox[{"OperatingSystem", "->", " ", "\"\<Unix\>\""}]}], "\n",
+               "       ", "]"}], "\n", "        ", ",", " ", 
+             "\"\<\\\",\\n\>\""}], "]"}], " ", ")"}], " ", "&"}], " ", "/@", 
+         "\n", "      ", "tutorials"}], "]"}]}], "]"}], ";", "\n", "\n", 
      RowBox[{"(*", " ", 
-      RowBox[{":", 
-       RowBox[{"REFERENCES", ":"}]}], " ", "*)"}], "\n", "\n", "  ", 
+      RowBox[{":", "REFERENCES", ":"}], " ", "*)"}], "\n", "\n", "  ", 
      RowBox[{"refs", " ", "=", "\n", "  ", 
       RowBox[{"FileNames", " ", "@", "\n", "  ", 
        RowBox[{"FileNameJoin", "@", 
@@ -911,46 +889,77 @@ Language -> \\\"English\\\",\n\t\t\tLinkBase -> \\\"\>\"", " ", "<>", " ",
          RowBox[{
           RowBox[{
            RowBox[{"(", " ", 
-            RowBox[{
-             RowBox[{"Print", "[", "\n", "        ", 
-              RowBox[{
-               RowBox[{"grayMsg", "@", "\"\<Adding Reference : \>\""}], "\n", 
-               "      ", ",", " ", 
-               RowBox[{"boldMsg", "@", 
-                RowBox[{"fileBaseNameWithoutFirstThreeChars", "@", "#"}]}]}], 
-              "]"}], ";", "\n", "      ", 
-             RowBox[{"StringJoin", "[", "\n", "        ", 
-              RowBox[{"\"\<\\t\\t\\t\\t\\\"\>\"", "\n", "      ", ",", " ", 
-               RowBox[{"FileNameJoin", " ", "[", "\n", "        ", 
-                RowBox[{
-                 RowBox[{"{", " ", 
-                  RowBox[{
-                  "\"\<ReferencePages\>\"", "\n", "        ", ",", " ", 
-                   "\"\<Symbols\>\"", "\n", "        ", ",", " ", 
-                   RowBox[{"ChangeNotebookSettings", "[", 
-                    RowBox[{
-                    "#", ",", " ", "index", ",", " ", "header", ",", " ", 
-                    "footer"}], "]"}]}], " ", "}"}], ",", 
-                 "\[IndentingNewLine]", "         ", 
+            RowBox[{"StringJoin", "[", "\n", "        ", 
+             RowBox[{"\"\<\\t\\t\\t\\t\\\"\>\"", "\n", "      ", ",", " ", 
+              RowBox[{"FileNameJoin", " ", "[", "\n", "        ", 
+               RowBox[{
+                RowBox[{"{", " ", 
                  RowBox[{
-                 "OperatingSystem", "\[Rule]", " ", "\"\<Unix\>\""}]}], 
-                "\[IndentingNewLine]", "       ", "]"}], "\n", "      ", ",", 
-               " ", "\"\<\\\",\\n\>\""}], "]"}]}], " ", ")"}], " ", "&"}], 
-          " ", "/@", "\n", "    ", "refs"}], "]"}]}]}], "]"}], ";", "\n", 
-     "\n", "  ", 
+                 "\"\<ReferencePages\>\"", "\n", "        ", ",", " ", 
+                  "\"\<Symbols\>\"", "\n", "        ", ",", " ", 
+                  RowBox[{"fileBaseNameWithoutFirstThreeChars", "@", "#"}]}], 
+                 " ", "}"}], ",", "\n", "         ", 
+                RowBox[{"OperatingSystem", "->", " ", "\"\<Unix\>\""}]}], 
+               "\n", "       ", "]"}], "\n", "      ", ",", " ", 
+              "\"\<\\\",\\n\>\""}], "]"}], " ", ")"}], " ", "&"}], " ", "/@", 
+          "\n", "    ", "refs"}], "]"}]}]}], "]"}], ";", "\n", "\n", "  ", 
      RowBox[{"WriteString", "[", 
       RowBox[{"pacFile", ",", " ", "\"\<\\t\\t\\t}\n\t\t}\n\t}\n]\\n\>\""}], 
       "]"}], ";", "\n", "  ", 
      RowBox[{"Close", "@", "pacFile"}], ";", "\n", "\n", "  ", 
      RowBox[{
+      RowBox[{
+       RowBox[{"(", " ", 
+        RowBox[{
+         RowBox[{"Print", "[", "\n", "        ", 
+          RowBox[{
+           RowBox[{"grayMsg", "@", "\"\<Adding Guide : \>\""}], "\n", 
+           "      ", ",", " ", 
+           RowBox[{"boldMsg", "@", 
+            RowBox[{"fileBaseNameWithoutFirstThreeChars", "@", "#"}]}]}], 
+          "]"}], ";", "\n", "      ", 
+         RowBox[{"ChangeNotebookSettings", "[", 
+          RowBox[{
+          "#", ",", " ", "index", ",", " ", "header", ",", " ", "footer"}], 
+          "]"}]}], " ", ")"}], " ", "&"}], " ", "/@", "\n", "    ", 
+      "guides"}], ";", "\n", "  ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", " ", 
+        RowBox[{
+         RowBox[{"Print", "[", "\n", "        ", 
+          RowBox[{
+           RowBox[{"grayMsg", "@", "\"\<Adding Tutorial : \>\""}], "\n", 
+           "      ", ",", " ", 
+           RowBox[{"boldMsg", "@", 
+            RowBox[{"fileBaseNameWithoutFirstThreeChars", "@", "#"}]}]}], 
+          "]"}], ";", "\n", "      ", 
+         RowBox[{"ChangeNotebookSettings", "[", 
+          RowBox[{
+          "#", ",", " ", "index", ",", " ", "header", ",", " ", "footer"}], 
+          "]"}]}], " ", ")"}], " ", "&"}], " ", "/@", "\n", "      ", 
+      "tutorials"}], ";", "\n", "  ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", " ", 
+        RowBox[{
+         RowBox[{"Print", "[", "\n", "        ", 
+          RowBox[{
+           RowBox[{"grayMsg", "@", "\"\<Adding Reference : \>\""}], "\n", 
+           "      ", ",", " ", 
+           RowBox[{"boldMsg", "@", 
+            RowBox[{"fileBaseNameWithoutFirstThreeChars", "@", "#"}]}]}], 
+          "]"}], ";", "\n", "      ", 
+         RowBox[{"ChangeNotebookSettings", "[", 
+          RowBox[{
+          "#", ",", " ", "index", ",", " ", "header", ",", " ", "footer"}], 
+          "]"}]}], " ", ")"}], " ", "&"}], " ", "/@", "\n", "    ", "refs"}], 
+     ";", "\n", "\n", "  ", 
+     RowBox[{
      "DocumentationSearch`CloseDocumentationNotebookIndexer", "@", "index"}], 
      ";", "\n", "  ", 
      RowBox[{"PacletManager`RestartPacletManager", "[", "]"}], ";"}]}], 
-   "]"}]}]}], "Code",
- CellChangeTimes->{{3.622689374726819*^9, 3.6226893965980697`*^9}, {
-   3.622689900985919*^9, 3.6226899015919533`*^9}, {3.6226904959169474`*^9, 
-   3.622690522919492*^9}, {3.62269061729589*^9, 3.6226906227672024`*^9}, {
-   3.6226947671452475`*^9, 3.622694845254715*^9}, 3.6226950903127317`*^9}]
+   "]"}]}]}], "Code"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1156,19 +1165,19 @@ Cell[19018, 600, 4439, 102, 673, "Code"]
 }, Closed]],
 Cell[CellGroupData[{
 Cell[23494, 707, 41, 0, 33, "Subsubsection"],
-Cell[23538, 709, 11292, 243, 2693, "Code"]
+Cell[23538, 709, 11419, 252, 2853, "Code"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[34867, 957, 42, 0, 39, "Subsubsection"],
-Cell[34912, 959, 3000, 73, 593, "Code"]
+Cell[34994, 966, 42, 0, 39, "Subsubsection"],
+Cell[35039, 968, 3000, 73, 593, "Code"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[37973, 1039, 31, 0, 70, "Section"],
-Cell[38007, 1041, 135, 4, 70, "Code"],
-Cell[38145, 1047, 174, 5, 70, "Code"],
-Cell[38322, 1054, 150, 4, 70, "Code"]
+Cell[38100, 1048, 31, 0, 70, "Section"],
+Cell[38134, 1050, 135, 4, 70, "Code"],
+Cell[38272, 1056, 174, 5, 70, "Code"],
+Cell[38449, 1063, 150, 4, 70, "Code"]
 }, Closed]]
 }
 ]

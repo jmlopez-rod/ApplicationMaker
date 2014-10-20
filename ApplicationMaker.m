@@ -344,7 +344,8 @@ Module[
 		{
 			\"Kernel\",
 			\"Context\" -> {\n"];
-  pkg = FileBaseName /@ FileNames[appNameDir <> "/*.m"];
+  pkg = DeleteCases[FileBaseName /@ FileNames[appNameDir <> "/*.m"],
+          "PacletInfo"];
 
   WriteString[pacFile
   , dropLastCharsAndAddNewLine[3] @

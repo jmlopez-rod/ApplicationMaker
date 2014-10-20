@@ -3,17 +3,17 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 8.0' *)
+(* CreatedBy='Mathematica 10.0' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
-NotebookDataPosition[       157,          7]
-NotebookDataLength[     10344,        348]
-NotebookOptionsPosition[      7196,        250]
-NotebookOutlinePosition[      8960,        299]
-CellTagsIndexPosition[      8917,        296]
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10260,        346]
+NotebookOptionsPosition[      7197,        250]
+NotebookOutlinePosition[      8877,        297]
+CellTagsIndexPosition[      8834,        294]
 WindowTitle->ApplicationMaker - ApplicationMaker
 WindowFrame->Normal*)
 
@@ -258,15 +258,14 @@ PageHeaders->{{None, None, None}, {None, None,
    Cell[
     TextData[{
       Cell[
-       TextData[{"ApplicationMaker Documentation "}], "PageHeader"], 
+       TextData[{""}], "PageHeader"], 
       Cell[
        TextData[{
          CounterBox["Page"]}], "PageNumber"]}], 
     CellMargins -> {{Inherited, -29}, {Inherited, Inherited}}]}},
 PageFooters->{{None, None, None}, {
    Cell[
-    TextData[{"Created by Manuel Lopez | July 12, 2011"}], "PageFooter"], 
-   None, None}},
+    TextData[{""}], "PageFooter"], None, None}},
 TaggingRules->{
  "ModificationHighlight" -> False, 
   "Metadata" -> {
@@ -282,10 +281,9 @@ of packages and their documentation.",
     "ApplicationMaker", "windowTitle" -> "ApplicationMaker", "type" -> 
     "Guide", "uri" -> "ApplicationMaker/guide/ApplicationMaker"}, 
   "SearchTextTranslated" -> "", "LinkTrails" -> ""},
-FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
-2011)",
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
-  CharacterEncoding -> "UTF-8"]
+  CharacterEncoding -> "WindowsANSI"]
 ]
 (* End of Notebook Content *)
 
@@ -298,57 +296,57 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[606, 21, 1456, 36, 47, "AnchorBarGrid",
+Cell[607, 21, 1456, 36, 48, "AnchorBarGrid",
  CellID->982124020],
 Cell[CellGroupData[{
-Cell[2087, 61, 58, 1, 65, "GuideTitle",
+Cell[2088, 61, 58, 1, 47, "GuideTitle",
  CellID->999093298],
-Cell[2148, 64, 157, 4, 62, "GuideAbstract",
+Cell[2149, 64, 157, 4, 48, "GuideAbstract",
  CellID->586423593],
 Cell[CellGroupData[{
-Cell[2330, 72, 73, 1, 28, "GuideFunctionsSubsection",
+Cell[2331, 72, 73, 1, 30, "GuideFunctionsSubsection",
  CellID->1218871468],
-Cell[2406, 75, 318, 10, 20, "GuideText",
+Cell[2407, 75, 318, 10, 20, "GuideText",
  CellID->203374175],
-Cell[2727, 87, 335, 9, 21, "GuideText",
+Cell[2728, 87, 335, 9, 20, "GuideText",
  CellID->1872187008],
-Cell[3065, 98, 296, 9, 21, "GuideText",
+Cell[3066, 98, 296, 9, 20, "GuideText",
  CellID->916647612]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3398, 112, 73, 1, 28, "GuideFunctionsSubsection",
+Cell[3399, 112, 73, 1, 30, "GuideFunctionsSubsection",
  CellID->48731306],
-Cell[3474, 115, 327, 9, 21, "GuideText",
+Cell[3475, 115, 327, 9, 20, "GuideText",
  CellID->835790435],
-Cell[3804, 126, 335, 9, 21, "GuideText",
+Cell[3805, 126, 335, 9, 20, "GuideText",
  CellID->439306018],
-Cell[4142, 137, 319, 9, 21, "GuideText",
+Cell[4143, 137, 319, 9, 20, "GuideText",
  CellID->367466140],
-Cell[4464, 148, 289, 9, 21, "GuideText",
+Cell[4465, 148, 289, 9, 20, "GuideText",
  CellID->1987929855],
-Cell[4756, 159, 297, 9, 21, "GuideText",
+Cell[4757, 159, 297, 9, 20, "GuideText",
  CellID->586492959],
-Cell[5056, 170, 331, 9, 21, "GuideText",
+Cell[5057, 170, 331, 9, 20, "GuideText",
  CellID->237222183],
-Cell[5390, 181, 312, 9, 21, "GuideText",
+Cell[5391, 181, 312, 9, 20, "GuideText",
  CellID->1263580849]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5739, 195, 68, 1, 28, "GuideFunctionsSubsection",
+Cell[5740, 195, 68, 1, 30, "GuideFunctionsSubsection",
  CellID->537543960],
-Cell[5810, 198, 285, 9, 21, "GuideText",
+Cell[5811, 198, 285, 9, 20, "GuideText",
  CellID->37632791],
-Cell[6098, 209, 291, 9, 21, "GuideText",
+Cell[6099, 209, 291, 9, 20, "GuideText",
  CellID->1134126119]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6438, 224, 494, 13, 45, "TutorialsSection",
+Cell[6439, 224, 494, 13, 30, "TutorialsSection",
  CellID->200144173],
-Cell[6935, 239, 198, 5, 16, "Tutorials",
+Cell[6936, 239, 198, 5, 18, "Tutorials",
  CellID->863724409]
 }, Open  ]],
-Cell[7148, 247, 44, 1, 40, "FooterCell",
+Cell[7149, 247, 44, 1, 41, "FooterCell",
  CellID->1646851992]
 }
 ]

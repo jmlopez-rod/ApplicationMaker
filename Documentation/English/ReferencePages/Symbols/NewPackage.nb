@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     17757,        568]
-NotebookOptionsPosition[     13796,        439]
-NotebookOutlinePosition[     15709,        493]
-CellTagsIndexPosition[     15624,        488]
+NotebookDataLength[     17639,        562]
+NotebookOptionsPosition[     13762,        435]
+NotebookOutlinePosition[     15591,        487]
+CellTagsIndexPosition[     15506,        482]
 WindowTitle->NewPackage - ApplicationMaker`PackageMaker`
 WindowFrame->Normal*)
 
@@ -84,10 +84,10 @@ to-mathematicas-documentation-center"], None}]}],
   }]], "AnchorBarGrid",
  CellID->1699355767],
 
-Cell[CellGroupData[{
-
 Cell["NewPackage", "ObjectName",
  CellID->1434603343],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
@@ -123,8 +123,7 @@ file in the application ",
      "."
     }]]}
   }]], "Usage",
- CellID->1579480932]
-}, Open  ]],
+ CellID->1579480932],
 
 Cell[CellGroupData[{
 
@@ -148,15 +147,14 @@ Cell[TextData[Cell[BoxData[
  CellID->1290663557,
  ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
 
-Cell["\<\
-By default appDir is $UserBaseDirectory/Applications. \
-\>", "Notes",
+Cell["By default appDir is $UserBaseDirectory/Applications. ", "Notes",
  CellID->450084152],
 
 Cell["\<\
 If the package you are trying to create already exists it will inform you.\
 \>", "Notes",
  CellID->1126937930]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -276,9 +274,8 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"NewPackage", "::", "pkgerr"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"The package you are trying to create in the application \
+   RowBox[{"NewPackage", "::", "pkgerr"}], "MessageName"], ":", 
+  " ", "\<\"The package you are trying to create in the application \
 \[NoBreak]\\!\\(\\\"SampleApplication\\\"\\)\[NoBreak] already exists. Click \
 \[NoBreak]\\!\\(\\*TagBox[ButtonBox[PaneSelectorBox[{False -> \
 \\\"\\\\\\\"here\\\\\\\"\\\", Rule[True, \
@@ -324,9 +321,8 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"NewPackage", "::", "nodir"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"There is no application \
+   RowBox[{"NewPackage", "::", "nodir"}], "MessageName"], ":", 
+  " ", "\<\"There is no application \
 \[NoBreak]\\!\\(\\\"NonExistantApplication\\\"\\)\[NoBreak] in \
 \[NoBreak]\\!\\(\\\"/Users/jmlopez/Library/Mathematica/Applications\\\"\\)\
 \[NoBreak]. To create a new application use NewApplication \
@@ -342,7 +338,7 @@ Cell[BoxData["$Failed"], "Output",
  CellLabel->"Out[4]=",
  CellID->718655829]
 }, Open  ]]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -447,15 +443,14 @@ PageHeaders->{{None, None, None}, {None, None,
    Cell[
     TextData[{
       Cell[
-       TextData[{"ApplicationMaker Documentation "}], "PageHeader"], 
+       TextData[{""}], "PageHeader"], 
       Cell[
        TextData[{
          CounterBox["Page"]}], "PageNumber"]}], 
     CellMargins -> {{Inherited, -29}, {Inherited, Inherited}}]}},
 PageFooters->{{None, None, None}, {
    Cell[
-    TextData[{"Created by Manuel Lopez | July 12, 2011"}], "PageFooter"], 
-   None, None}},
+    TextData[{""}], "PageFooter"], None, None}},
 TaggingRules->{
  "ModificationHighlight" -> False, 
   "Metadata" -> {
@@ -469,10 +464,9 @@ respective m file inside the application appName.",
     "windowTitle" -> "NewPackage", "type" -> "Symbol", "uri" -> 
     "ApplicationMaker/ref/NewPackage"}, "SearchTextTranslated" -> "", 
   "LinkTrails" -> ""},
-FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
-2011)",
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
-  CharacterEncoding -> "UTF-8"]
+  CharacterEncoding -> "WindowsANSI"]
 ]
 (* End of Notebook Content *)
 
@@ -480,95 +474,95 @@ StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb",
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[5268, 163, 537, 14, 45, "PrimaryExamplesSection",
+  Cell[5260, 161, 537, 14, 30, "PrimaryExamplesSection",
    CellTags->"PrimaryExamplesSection",
    CellID->1787506617]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 15480, 481}
+ {"PrimaryExamplesSection", 15362, 475}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[614, 21, 2513, 63, 47, "AnchorBarGrid",
+Cell[614, 21, 2513, 63, 48, "AnchorBarGrid",
  CellID->1699355767],
-Cell[CellGroupData[{
-Cell[3152, 88, 53, 1, 51, "ObjectName",
+Cell[3130, 86, 53, 1, 43, "ObjectName",
  CellID->1434603343],
-Cell[3208, 91, 1105, 34, 138, "Usage",
- CellID->1579480932]
-}, Open  ]],
 Cell[CellGroupData[{
-Cell[4350, 130, 656, 18, 38, "NotesSection",
+Cell[3208, 91, 1105, 34, 142, "Usage",
+ CellID->1579480932],
+Cell[CellGroupData[{
+Cell[4338, 129, 656, 18, 42, "NotesSection",
  CellGroupingRules->{"SectionGrouping", 50},
  CellID->1290663557],
-Cell[5009, 150, 99, 3, 30, "Notes",
+Cell[4997, 149, 91, 1, 30, "Notes",
  CellID->450084152],
-Cell[5111, 155, 120, 3, 30, "Notes",
+Cell[5091, 152, 120, 3, 30, "Notes",
  CellID->1126937930]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5268, 163, 537, 14, 45, "PrimaryExamplesSection",
+Cell[5260, 161, 537, 14, 30, "PrimaryExamplesSection",
  CellTags->"PrimaryExamplesSection",
  CellID->1787506617],
 Cell[CellGroupData[{
-Cell[5830, 181, 242, 6, 32, "ExampleSection",
+Cell[5822, 179, 242, 6, 25, "ExampleSection",
  CellID->1474974036],
-Cell[6075, 189, 253, 7, 32, "ExampleText",
+Cell[6067, 187, 253, 7, 33, "ExampleText",
  CellID->1484885731],
-Cell[6331, 198, 102, 3, 24, "Input",
+Cell[6323, 196, 102, 3, 28, "Input",
  CellID->8270504],
 Cell[CellGroupData[{
-Cell[6458, 205, 182, 5, 24, "Input",
+Cell[6450, 203, 182, 5, 28, "Input",
  CellID->1563407320],
-Cell[6643, 212, 1442, 43, 47, "Output",
+Cell[6635, 210, 1442, 43, 54, "Output",
  CellID->1724406195]
 }, Open  ]],
-Cell[8100, 258, 204, 6, 32, "ExampleText",
+Cell[8092, 256, 204, 6, 47, "ExampleText",
  CellID->1803103100],
 Cell[CellGroupData[{
-Cell[8329, 268, 182, 5, 24, "Input",
+Cell[8321, 266, 182, 5, 28, "Input",
  CellID->1612058883],
-Cell[8514, 275, 1413, 26, 37, "Message",
+Cell[8506, 273, 1400, 25, 35, "Message",
  CellID->1219956029],
-Cell[9930, 303, 78, 2, 33, "Output",
+Cell[9909, 300, 78, 2, 36, "Output",
  CellID->1774601494]
 }, Open  ]],
-Cell[10023, 308, 118, 3, 32, "ExampleText",
+Cell[10002, 305, 118, 3, 33, "ExampleText",
  CellID->1474420122],
 Cell[CellGroupData[{
-Cell[10166, 315, 189, 6, 24, "Input",
+Cell[10145, 312, 189, 6, 31, "Input",
  CellID->765187721],
-Cell[10358, 323, 677, 15, 53, "Message",
+Cell[10337, 320, 664, 14, 56, "Message",
  CellID->1377948611],
-Cell[11038, 340, 77, 2, 33, "Output",
+Cell[11004, 336, 77, 2, 33, "Output",
  CellID->718655829]
 }, Open  ]]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11176, 349, 490, 13, 45, "SeeAlsoSection",
+Cell[11142, 345, 490, 13, 45, "SeeAlsoSection",
  CellID->83480331],
-Cell[11669, 364, 540, 18, 19, "SeeAlso",
+Cell[11635, 360, 540, 18, 19, "SeeAlso",
  CellID->747101626]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12246, 387, 494, 13, 45, "TutorialsSection",
+Cell[12212, 383, 494, 13, 45, "TutorialsSection",
  CellID->200144173],
-Cell[12743, 402, 198, 5, 16, "Tutorials",
+Cell[12709, 398, 198, 5, 16, "Tutorials",
  CellID->863724409]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12978, 412, 496, 13, 45, "MoreAboutSection",
+Cell[12944, 408, 496, 13, 45, "MoreAboutSection",
  CellID->1014359816],
-Cell[13477, 427, 162, 3, 16, "MoreAbout",
+Cell[13443, 423, 162, 3, 16, "MoreAbout",
  CellID->1620237626]
 }, Open  ]],
-Cell[13654, 433, 93, 1, 42, "History",
+Cell[13620, 429, 93, 1, 42, "History",
  CellID->1315940151],
-Cell[13750, 436, 42, 1, 24, "FooterCell",
+Cell[13716, 432, 42, 1, 24, "FooterCell",
  CellID->72037404]
 }
 ]

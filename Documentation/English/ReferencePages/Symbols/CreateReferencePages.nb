@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     19265,        562]
-NotebookOptionsPosition[     15388,        439]
-NotebookOutlinePosition[     17402,        495]
-CellTagsIndexPosition[     17317,        490]
+NotebookDataLength[     19129,        556]
+NotebookOptionsPosition[     15336,        435]
+NotebookOutlinePosition[     17266,        489]
+CellTagsIndexPosition[     17181,        484]
 WindowTitle->CreateReferencePages - ApplicationMaker`DocumentationMaker`
 WindowFrame->Normal*)
 
@@ -82,10 +82,10 @@ to-mathematicas-documentation-center"], None}]}],
   }]], "AnchorBarGrid",
  CellID->1699355767],
 
-Cell[CellGroupData[{
-
 Cell["CreateReferencePages", "ObjectName",
  CellID->1737483160],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
@@ -118,8 +118,7 @@ application ",
      "."
     }]]}
   }]], "Usage",
- CellID->396838214]
-}, Open  ]],
+ CellID->396838214],
 
 Cell[CellGroupData[{
 
@@ -155,6 +154,7 @@ The notebooks names are the symbol names with \"___\" prepended. You can find \
 these notebooks in the documentation folder of the application.\
 \>", "Notes",
  CellID->1203816724]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -221,10 +221,9 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"CreateReferencePages", "::", "symb"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"A reference page for \[NoBreak]\\!\\(\\\"AddThree\\\"\\)\
-\[NoBreak] already exists. Click \
+   RowBox[{"CreateReferencePages", "::", "symb"}], "MessageName"], ":", 
+  " ", "\<\"A reference page for \
+\[NoBreak]\\!\\(\\\"AddThree\\\"\\)\[NoBreak] already exists. Click \
 \[NoBreak]\\!\\(\\*TagBox[ButtonBox[PaneSelectorBox[{False -> \
 \\\"\\\\\\\"here\\\\\\\"\\\", Rule[True, \
 StyleBox[\\\"\\\\\\\"here\\\\\\\"\\\", List[\\\"HyperlinkActive\\\"]]]}, \
@@ -247,10 +246,9 @@ Documentation/English/ReferencePages/Symbols/___AddThree.nb\\\", \
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"CreateReferencePages", "::", "symb"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"A reference page for \[NoBreak]\\!\\(\\\"AddTwo\\\"\\)\
-\[NoBreak] already exists. Click \
+   RowBox[{"CreateReferencePages", "::", "symb"}], "MessageName"], ":", 
+  " ", "\<\"A reference page for \[NoBreak]\\!\\(\\\"AddTwo\\\"\\)\[NoBreak] \
+already exists. Click \
 \[NoBreak]\\!\\(\\*TagBox[ButtonBox[PaneSelectorBox[{False -> \
 \\\"\\\\\\\"here\\\\\\\"\\\", Rule[True, \
 StyleBox[\\\"\\\\\\\"here\\\\\\\"\\\", List[\\\"HyperlinkActive\\\"]]]}, \
@@ -287,10 +285,9 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"CreateReferencePages", "::", "symb"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"A reference page for \[NoBreak]\\!\\(\\\"DotThree\\\"\\)\
-\[NoBreak] already exists. Click \
+   RowBox[{"CreateReferencePages", "::", "symb"}], "MessageName"], ":", 
+  " ", "\<\"A reference page for \
+\[NoBreak]\\!\\(\\\"DotThree\\\"\\)\[NoBreak] already exists. Click \
 \[NoBreak]\\!\\(\\*TagBox[ButtonBox[PaneSelectorBox[{False -> \
 \\\"\\\\\\\"here\\\\\\\"\\\", Rule[True, \
 StyleBox[\\\"\\\\\\\"here\\\\\\\"\\\", List[\\\"HyperlinkActive\\\"]]]}, \
@@ -313,10 +310,9 @@ Documentation/English/ReferencePages/Symbols/___DotThree.nb\\\", \
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"CreateReferencePages", "::", "symb"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"A reference page for \[NoBreak]\\!\\(\\\"DotTwo\\\"\\)\
-\[NoBreak] already exists. Click \
+   RowBox[{"CreateReferencePages", "::", "symb"}], "MessageName"], ":", 
+  " ", "\<\"A reference page for \[NoBreak]\\!\\(\\\"DotTwo\\\"\\)\[NoBreak] \
+already exists. Click \
 \[NoBreak]\\!\\(\\*TagBox[ButtonBox[PaneSelectorBox[{False -> \
 \\\"\\\\\\\"here\\\\\\\"\\\", Rule[True, \
 StyleBox[\\\"\\\\\\\"here\\\\\\\"\\\", List[\\\"HyperlinkActive\\\"]]]}, \
@@ -342,7 +338,7 @@ If a new notebook is created you will not see any messages for it. The \
 notebook will pop on your screen.\
 \>", "ExampleText",
  CellID->601372158]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -447,15 +443,14 @@ PageHeaders->{{None, None, None}, {None, None,
    Cell[
     TextData[{
       Cell[
-       TextData[{"ApplicationMaker Documentation "}], "PageHeader"], 
+       TextData[{""}], "PageHeader"], 
       Cell[
        TextData[{
          CounterBox["Page"]}], "PageNumber"]}], 
     CellMargins -> {{Inherited, -29}, {Inherited, Inherited}}]}},
 PageFooters->{{None, None, None}, {
    Cell[
-    TextData[{"Created by Manuel Lopez | July 12, 2011"}], "PageFooter"], 
-   None, None}},
+    TextData[{""}], "PageFooter"], None, None}},
 TaggingRules->{
  "ModificationHighlight" -> False, 
   "Metadata" -> {
@@ -471,10 +466,9 @@ in the application appName.",
     "CreateReferencePages", "windowTitle" -> "CreateReferencePages", "type" -> 
     "Symbol", "uri" -> "ApplicationMaker/ref/CreateReferencePages"}, 
   "SearchTextTranslated" -> "", "LinkTrails" -> ""},
-FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
-2011)",
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
-  CharacterEncoding -> "UTF-8"]
+  CharacterEncoding -> "WindowsANSI"]
 ]
 (* End of Notebook Content *)
 
@@ -482,87 +476,87 @@ StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb",
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[5374, 161, 536, 14, 45, "PrimaryExamplesSection",
+  Cell[5374, 161, 536, 14, 30, "PrimaryExamplesSection",
    CellTags->"PrimaryExamplesSection",
    CellID->436725159]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 17174, 483}
+ {"PrimaryExamplesSection", 17038, 477}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[630, 21, 2493, 61, 47, "AnchorBarGrid",
+Cell[630, 21, 2493, 61, 53, "AnchorBarGrid",
  CellID->1699355767],
-Cell[CellGroupData[{
-Cell[3148, 86, 63, 1, 51, "ObjectName",
+Cell[3126, 84, 63, 1, 43, "ObjectName",
  CellID->1737483160],
-Cell[3214, 89, 966, 31, 138, "Usage",
- CellID->396838214]
-}, Open  ]],
 Cell[CellGroupData[{
-Cell[4217, 125, 656, 18, 38, "NotesSection",
+Cell[3214, 89, 966, 31, 142, "Usage",
+ CellID->396838214],
+Cell[CellGroupData[{
+Cell[4205, 124, 656, 18, 42, "NotesSection",
  CellGroupingRules->{"SectionGrouping", 50},
  CellID->1723138763],
-Cell[4876, 145, 269, 5, 57, "Notes",
+Cell[4864, 144, 269, 5, 57, "Notes",
  CellID->1976209946],
-Cell[5148, 152, 189, 4, 43, "Notes",
+Cell[5136, 151, 189, 4, 43, "Notes",
  CellID->1203816724]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5374, 161, 536, 14, 45, "PrimaryExamplesSection",
+Cell[5374, 161, 536, 14, 30, "PrimaryExamplesSection",
  CellTags->"PrimaryExamplesSection",
  CellID->436725159],
 Cell[CellGroupData[{
-Cell[5935, 179, 242, 6, 32, "ExampleSection",
+Cell[5935, 179, 242, 6, 25, "ExampleSection",
  CellID->2088125514],
-Cell[6180, 187, 185, 4, 46, "ExampleText",
+Cell[6180, 187, 185, 4, 47, "ExampleText",
  CellID->947754524],
-Cell[6368, 193, 105, 3, 24, "Input",
+Cell[6368, 193, 105, 3, 28, "Input",
  CellID->1448270228],
 Cell[CellGroupData[{
-Cell[6498, 200, 143, 4, 24, "Input",
+Cell[6498, 200, 143, 4, 28, "Input",
  CellID->1498066898],
-Cell[6644, 206, 416, 12, 20, "Print",
+Cell[6644, 206, 416, 12, 23, "Print",
  CellID->912077258],
-Cell[7063, 220, 1267, 24, 37, "Message",
+Cell[7063, 220, 1254, 23, 19, "Message",
  CellID->544202920],
-Cell[8333, 246, 1259, 24, 37, "Message",
+Cell[8320, 245, 1246, 23, 19, "Message",
  CellID->285623867],
-Cell[9595, 272, 428, 12, 20, "Print",
+Cell[9569, 270, 428, 12, 23, "Print",
  CellID->854381624],
-Cell[10026, 286, 1268, 24, 37, "Message",
+Cell[10000, 284, 1255, 23, 19, "Message",
  CellID->1516290726],
-Cell[11297, 312, 1259, 24, 37, "Message",
+Cell[11258, 309, 1246, 23, 19, "Message",
  CellID->109792933]
 }, Open  ]],
-Cell[12571, 339, 157, 4, 33, "ExampleText",
+Cell[12519, 335, 157, 4, 47, "ExampleText",
  CellID->601372158]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12777, 349, 490, 13, 45, "SeeAlsoSection",
+Cell[12725, 345, 490, 13, 30, "SeeAlsoSection",
  CellID->83480331],
-Cell[13270, 364, 530, 18, 19, "SeeAlso",
+Cell[13218, 360, 530, 18, 26, "SeeAlso",
  CellID->747101626]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[13837, 387, 494, 13, 45, "TutorialsSection",
+Cell[13785, 383, 494, 13, 23, "TutorialsSection",
  CellID->200144173],
-Cell[14334, 402, 198, 5, 16, "Tutorials",
+Cell[14282, 398, 198, 5, 23, "Tutorials",
  CellID->863724409]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14569, 412, 496, 13, 45, "MoreAboutSection",
+Cell[14517, 408, 496, 13, 45, "MoreAboutSection",
  CellID->1014359816],
-Cell[15068, 427, 162, 3, 16, "MoreAbout",
+Cell[15016, 423, 162, 3, 16, "MoreAbout",
  CellID->1620237626]
 }, Open  ]],
-Cell[15245, 433, 92, 1, 42, "History",
+Cell[15193, 429, 92, 1, 42, "History",
  CellID->336359530],
-Cell[15340, 436, 44, 1, 24, "FooterCell",
+Cell[15288, 432, 44, 1, 24, "FooterCell",
  CellID->1017661806]
 }
 ]

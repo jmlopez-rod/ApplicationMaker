@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     19099,        532]
-NotebookOptionsPosition[     15551,        420]
-NotebookOutlinePosition[     17504,        475]
-CellTagsIndexPosition[     17419,        470]
+NotebookDataLength[     15170,        466]
+NotebookOptionsPosition[     11751,        356]
+NotebookOutlinePosition[     13620,        409]
+CellTagsIndexPosition[     13535,        404]
 WindowTitle->EditOption - ApplicationMaker`DocumentationMaker`
 WindowFrame->Normal*)
 
@@ -84,10 +84,10 @@ to-mathematicas-documentation-center"], None}]}],
   }]], "AnchorBarGrid",
  CellID->1699355767],
 
-Cell[CellGroupData[{
-
 Cell["EditOption", "ObjectName",
  CellID->927098721],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
@@ -103,8 +103,7 @@ Cell[BoxData[GridBox[{
 the expression required to change the settings of the option name."
     }]]}
   }]], "Usage",
- CellID->1754344862]
-}, Open  ]],
+ CellID->1754344862],
 
 Cell[CellGroupData[{
 
@@ -133,6 +132,7 @@ EditOption reads the current option of the object and prints it out in an \
 expression so that you can modify it.\
 \>", "Notes",
  CellID->1691805264]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -223,71 +223,7 @@ xTM+kbD2+RgWQBAQxHPcl4+RyBjjnmnVEyh1sBqamCBRW2x/JqyfwH8x/X0W
   PlotRangeClipping->True,
   PlotRangePadding->{Automatic, Automatic}]], "Output",
  CellLabel->"Out[1]=",
- CellID->1855277576,
- ImageCache->GraphicsData["CompressedBitmap", "\<\
-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
-RA2pryJpl/0HW9ZlAQ==\
-\>"]]
+ CellID->1855277576]
 }, Open  ]],
 
 Cell[BoxData[
@@ -323,7 +259,7 @@ Notice that the cell written by EditOption can be modified so that you can \
 easily change the current values.\
 \>", "ExampleText",
  CellID->2119603320]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -428,15 +364,14 @@ PageHeaders->{{None, None, None}, {None, None,
    Cell[
     TextData[{
       Cell[
-       TextData[{"ApplicationMaker Documentation "}], "PageHeader"], 
+       TextData[{""}], "PageHeader"], 
       Cell[
        TextData[{
          CounterBox["Page"]}], "PageNumber"]}], 
     CellMargins -> {{Inherited, -29}, {Inherited, Inherited}}]}},
 PageFooters->{{None, None, None}, {
    Cell[
-    TextData[{"Created by Manuel Lopez | July 12, 2011"}], "PageFooter"], 
-   None, None}},
+    TextData[{""}], "PageFooter"], None, None}},
 TaggingRules->{
  "ModificationHighlight" -> False, 
   "Metadata" -> {
@@ -451,10 +386,9 @@ name.", "synonyms" -> {"editoption", "EDITOPTION"}, "title" -> "EditOption",
     "windowTitle" -> "EditOption", "type" -> "Symbol", "uri" -> 
     "ApplicationMaker/ref/EditOption"}, "SearchTextTranslated" -> "", 
   "LinkTrails" -> ""},
-FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
-2011)",
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
-  CharacterEncoding -> "UTF-8"]
+  CharacterEncoding -> "WindowsANSI"]
 ]
 (* End of Notebook Content *)
 
@@ -462,77 +396,77 @@ StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb",
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[4627, 139, 536, 14, 45, "PrimaryExamplesSection",
+  Cell[4627, 139, 536, 14, 30, "PrimaryExamplesSection",
    CellTags->"PrimaryExamplesSection",
    CellID->849384402]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 17276, 463}
+ {"PrimaryExamplesSection", 13392, 397}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[620, 21, 2527, 63, 47, "AnchorBarGrid",
+Cell[620, 21, 2527, 63, 48, "AnchorBarGrid",
  CellID->1699355767],
-Cell[CellGroupData[{
-Cell[3172, 88, 52, 1, 51, "ObjectName",
+Cell[3150, 86, 52, 1, 43, "ObjectName",
  CellID->927098721],
-Cell[3227, 91, 509, 14, 94, "Usage",
- CellID->1754344862]
-}, Open  ]],
 Cell[CellGroupData[{
-Cell[3773, 110, 655, 18, 38, "NotesSection",
+Cell[3227, 91, 509, 14, 95, "Usage",
+ CellID->1754344862],
+Cell[CellGroupData[{
+Cell[3761, 109, 655, 18, 42, "NotesSection",
  CellGroupingRules->{"SectionGrouping", 50},
  CellID->323622324],
-Cell[4431, 130, 159, 4, 30, "Notes",
+Cell[4419, 129, 159, 4, 30, "Notes",
  CellID->1691805264]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4627, 139, 536, 14, 45, "PrimaryExamplesSection",
+Cell[4627, 139, 536, 14, 30, "PrimaryExamplesSection",
  CellTags->"PrimaryExamplesSection",
  CellID->849384402],
 Cell[CellGroupData[{
-Cell[5188, 157, 242, 6, 32, "ExampleSection",
+Cell[5188, 157, 242, 6, 25, "ExampleSection",
  CellID->1279842805],
 Cell[CellGroupData[{
-Cell[5455, 167, 521, 17, 24, "Input",
+Cell[5455, 167, 521, 17, 28, "Input",
  CellID->1118381160],
-Cell[5979, 186, 5804, 103, 126, 1960, 37, "CachedBoxData", "BoxData", "Output",
+Cell[5979, 186, 2004, 39, 163, "Output",
  CellID->1855277576]
 }, Open  ]],
-Cell[11798, 292, 104, 3, 24, "Input",
+Cell[7998, 228, 104, 3, 28, "Input",
  CellID->187665392],
-Cell[11905, 297, 181, 5, 24, "Input",
+Cell[8105, 233, 181, 5, 28, "Input",
  CellID->1586249548],
-Cell[12089, 304, 619, 14, 168, "Input",
+Cell[8289, 240, 619, 14, 227, "Input",
  CellID->1234159378],
-Cell[12711, 320, 162, 4, 33, "ExampleText",
+Cell[8911, 256, 162, 4, 33, "ExampleText",
  CellID->2119603320]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12922, 330, 490, 13, 45, "SeeAlsoSection",
+Cell[9122, 266, 490, 13, 45, "SeeAlsoSection",
  CellID->83480331],
-Cell[13415, 345, 548, 18, 19, "SeeAlso",
+Cell[9615, 281, 548, 18, 19, "SeeAlso",
  CellID->747101626]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14000, 368, 494, 13, 45, "TutorialsSection",
+Cell[10200, 304, 494, 13, 45, "TutorialsSection",
  CellID->200144173],
-Cell[14497, 383, 198, 5, 16, "Tutorials",
+Cell[10697, 319, 198, 5, 16, "Tutorials",
  CellID->863724409]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14732, 393, 496, 13, 45, "MoreAboutSection",
+Cell[10932, 329, 496, 13, 45, "MoreAboutSection",
  CellID->1014359816],
-Cell[15231, 408, 162, 3, 16, "MoreAbout",
+Cell[11431, 344, 162, 3, 16, "MoreAbout",
  CellID->1620237626]
 }, Open  ]],
-Cell[15408, 414, 93, 1, 42, "History",
+Cell[11608, 350, 93, 1, 42, "History",
  CellID->2051429799],
-Cell[15504, 417, 43, 1, 24, "FooterCell",
+Cell[11704, 353, 43, 1, 24, "FooterCell",
  CellID->530679208]
 }
 ]

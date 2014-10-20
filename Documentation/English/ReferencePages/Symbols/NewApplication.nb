@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     27662,        863]
+NotebookDataLength[     27578,        861]
 NotebookOptionsPosition[     22939,        709]
-NotebookOutlinePosition[     24975,        766]
-CellTagsIndexPosition[     24890,        761]
+NotebookOutlinePosition[     24891,        764]
+CellTagsIndexPosition[     24806,        759]
 WindowTitle->NewApplication - ApplicationMaker`ApplicationMaker`
 WindowFrame->Normal*)
 
@@ -84,10 +84,10 @@ to-mathematicas-documentation-center"], None}]}],
   }]], "AnchorBarGrid",
  CellID->1699355767],
 
-Cell[CellGroupData[{
-
 Cell["NewApplication", "ObjectName",
  CellID->395050955],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
@@ -118,8 +118,7 @@ application with documentation."
 documentation."
     }]]}
   }]], "Usage",
- CellID->1749447808]
-}, Open  ]],
+ CellID->1749447808],
 
 Cell[CellGroupData[{
 
@@ -158,6 +157,7 @@ functions in ",
  "."
 }], "Notes",
  CellID->1346976106]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -612,7 +612,7 @@ Cell[TextData[{
 the default value instead."
 }], "ExampleText",
  CellID->1731447783]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -717,15 +717,14 @@ PageHeaders->{{None, None, None}, {None, None,
    Cell[
     TextData[{
       Cell[
-       TextData[{"ApplicationMaker Documentation "}], "PageHeader"], 
+       TextData[{""}], "PageHeader"], 
       Cell[
        TextData[{
          CounterBox["Page"]}], "PageNumber"]}], 
     CellMargins -> {{Inherited, -29}, {Inherited, Inherited}}]}},
 PageFooters->{{None, None, None}, {
    Cell[
-    TextData[{"Created by Manuel Lopez | July 12, 2011"}], "PageFooter"], 
-   None, None}},
+    TextData[{""}], "PageFooter"], None, None}},
 TaggingRules->{
  "ModificationHighlight" -> False, 
   "Metadata" -> {
@@ -742,10 +741,9 @@ application with documentation.",
     "NewApplication", "windowTitle" -> "NewApplication", "type" -> "Symbol", 
     "uri" -> "ApplicationMaker/ref/NewApplication"}, "SearchTextTranslated" -> 
   "", "LinkTrails" -> ""},
-FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
-2011)",
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
-  CharacterEncoding -> "UTF-8"]
+  CharacterEncoding -> "WindowsANSI"]
 ]
 (* End of Notebook Content *)
 
@@ -753,61 +751,61 @@ StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb",
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[5435, 164, 537, 14, 45, "PrimaryExamplesSection",
+  Cell[5435, 164, 537, 14, 30, "PrimaryExamplesSection",
    CellTags->"PrimaryExamplesSection",
    CellID->2002290515]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 24746, 754}
+ {"PrimaryExamplesSection", 24662, 752}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[622, 21, 2521, 63, 47, "AnchorBarGrid",
+Cell[622, 21, 2521, 63, 48, "AnchorBarGrid",
  CellID->1699355767],
-Cell[CellGroupData[{
-Cell[3168, 88, 56, 1, 51, "ObjectName",
+Cell[3146, 86, 56, 1, 43, "ObjectName",
  CellID->395050955],
-Cell[3227, 91, 1007, 29, 166, "Usage",
- CellID->1749447808]
-}, Open  ]],
 Cell[CellGroupData[{
-Cell[4271, 125, 656, 18, 38, "NotesSection",
+Cell[3227, 91, 1007, 29, 169, "Usage",
+ CellID->1749447808],
+Cell[CellGroupData[{
+Cell[4259, 124, 656, 18, 42, "NotesSection",
  CellGroupingRules->{"SectionGrouping", 50},
  CellID->1770697979],
-Cell[4930, 145, 123, 3, 30, "Notes",
+Cell[4918, 144, 123, 3, 30, "Notes",
  CellID->292552927],
-Cell[5056, 150, 342, 9, 43, "Notes",
+Cell[5044, 149, 342, 9, 43, "Notes",
  CellID->1346976106]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5435, 164, 537, 14, 45, "PrimaryExamplesSection",
+Cell[5435, 164, 537, 14, 30, "PrimaryExamplesSection",
  CellTags->"PrimaryExamplesSection",
  CellID->2002290515],
 Cell[CellGroupData[{
-Cell[5997, 182, 242, 6, 32, "ExampleSection",
+Cell[5997, 182, 242, 6, 25, "ExampleSection",
  CellID->1427937115],
-Cell[6242, 190, 370, 7, 58, "ExampleText",
+Cell[6242, 190, 370, 7, 75, "ExampleText",
  CellID->1209336580],
-Cell[6615, 199, 105, 3, 24, "Input",
+Cell[6615, 199, 105, 3, 28, "Input",
  CellID->1429383087],
 Cell[CellGroupData[{
-Cell[6745, 206, 129, 3, 24, "Input",
+Cell[6745, 206, 129, 3, 28, "Input",
  CellID->1889467867],
 Cell[CellGroupData[{
-Cell[6899, 213, 721, 21, 20, "Print",
+Cell[6899, 213, 721, 21, 23, "Print",
  CellID->1445752480],
-Cell[7623, 236, 764, 21, 20, "Print",
+Cell[7623, 236, 764, 21, 23, "Print",
  CellID->2131949202],
-Cell[8390, 259, 752, 21, 20, "Print",
+Cell[8390, 259, 752, 21, 23, "Print",
  CellID->905587819],
-Cell[9145, 282, 779, 21, 20, "Print",
+Cell[9145, 282, 779, 21, 41, "Print",
  CellID->997867644],
-Cell[9927, 305, 794, 21, 20, "Print",
+Cell[9927, 305, 794, 21, 41, "Print",
  CellID->1461693285],
-Cell[10724, 328, 810, 21, 20, "Print",
+Cell[10724, 328, 810, 21, 62, "Print",
  CellID->1613602962],
 Cell[11537, 351, 800, 21, 20, "Print",
  CellID->1401488018],
@@ -841,7 +839,7 @@ Cell[19176, 582, 796, 21, 20, "Print",
 }, Open  ]],
 Cell[19999, 607, 265, 6, 46, "ExampleText",
  CellID->1731447783]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[20313, 619, 490, 13, 45, "SeeAlsoSection",

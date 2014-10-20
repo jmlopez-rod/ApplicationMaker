@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     16089,        502]
-NotebookOptionsPosition[     12511,        386]
-NotebookOutlinePosition[     14451,        441]
-CellTagsIndexPosition[     14366,        436]
+NotebookDataLength[     15992,        499]
+NotebookOptionsPosition[     12498,        385]
+NotebookOutlinePosition[     14354,        438]
+CellTagsIndexPosition[     14269,        433]
 WindowTitle->NewTutorial - ApplicationMaker`DocumentationMaker`
 WindowFrame->Normal*)
 
@@ -84,10 +84,10 @@ to-mathematicas-documentation-center"], None}]}],
   }]], "AnchorBarGrid",
  CellID->1699355767],
 
-Cell[CellGroupData[{
-
 Cell["NewTutorial", "ObjectName",
  CellID->777038602],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
@@ -120,8 +120,7 @@ documentation for the application ",
      "."
     }]]}
   }]], "Usage",
- CellID->839726407]
-}, Open  ]],
+ CellID->839726407],
 
 Cell[CellGroupData[{
 
@@ -151,6 +150,7 @@ document created by this function inside the documentation for the \
 application you are creating.\
 \>", "Notes",
  CellID->477145505]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -259,9 +259,8 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"NewTutorial", "::", "tuterr"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"The guide you are trying to create in the application \
+   RowBox[{"NewTutorial", "::", "tuterr"}], "MessageName"], ":", 
+  " ", "\<\"The guide you are trying to create in the application \
 \[NoBreak]\\!\\(\\\"SimpleArithmetic\\\"\\)\[NoBreak] already exists. Click \
 \[NoBreak]\\!\\(\\*TagBox[ButtonBox[PaneSelectorBox[{False -> \
 \\\"\\\\\\\"here\\\\\\\"\\\", Rule[True, \
@@ -289,7 +288,7 @@ Cell[BoxData["$Failed"], "Output",
  CellLabel->"Out[3]=",
  CellID->1538513312]
 }, Open  ]]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -394,15 +393,14 @@ PageHeaders->{{None, None, None}, {None, None,
    Cell[
     TextData[{
       Cell[
-       TextData[{"ApplicationMaker Documentation "}], "PageHeader"], 
+       TextData[{""}], "PageHeader"], 
       Cell[
        TextData[{
          CounterBox["Page"]}], "PageNumber"]}], 
     CellMargins -> {{Inherited, -29}, {Inherited, Inherited}}]}},
 PageFooters->{{None, None, None}, {
    Cell[
-    TextData[{"Created by Manuel Lopez | July 12, 2011"}], "PageFooter"], 
-   None, None}},
+    TextData[{""}], "PageFooter"], None, None}},
 TaggingRules->{
  "ModificationHighlight" -> False, 
   "Metadata" -> {
@@ -417,10 +415,9 @@ inside the documentation for the application appName.",
     "windowTitle" -> "NewTutorial", "type" -> "Symbol", "uri" -> 
     "ApplicationMaker/ref/NewTutorial"}, "SearchTextTranslated" -> "", 
   "LinkTrails" -> ""},
-FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
-2011)",
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
-  CharacterEncoding -> "UTF-8"]
+  CharacterEncoding -> "WindowsANSI"]
 ]
 (* End of Notebook Content *)
 
@@ -428,81 +425,81 @@ StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb",
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[5208, 157, 536, 14, 45, "PrimaryExamplesSection",
+  Cell[5208, 157, 536, 14, 30, "PrimaryExamplesSection",
    CellTags->"PrimaryExamplesSection",
    CellID->751950137]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"PrimaryExamplesSection", 14223, 429}
+ {"PrimaryExamplesSection", 14126, 426}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[621, 21, 2527, 63, 47, "AnchorBarGrid",
+Cell[621, 21, 2527, 63, 48, "AnchorBarGrid",
  CellID->1699355767],
-Cell[CellGroupData[{
-Cell[3173, 88, 53, 1, 51, "ObjectName",
+Cell[3151, 86, 53, 1, 43, "ObjectName",
  CellID->777038602],
-Cell[3229, 91, 1030, 31, 154, "Usage",
- CellID->839726407]
-}, Open  ]],
 Cell[CellGroupData[{
-Cell[4296, 127, 654, 18, 38, "NotesSection",
+Cell[3229, 91, 1030, 31, 142, "Usage",
+ CellID->839726407],
+Cell[CellGroupData[{
+Cell[4284, 126, 654, 18, 42, "NotesSection",
  CellGroupingRules->{"SectionGrouping", 50},
  CellID->19194365],
-Cell[4953, 147, 218, 5, 43, "Notes",
+Cell[4941, 146, 218, 5, 43, "Notes",
  CellID->477145505]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5208, 157, 536, 14, 45, "PrimaryExamplesSection",
+Cell[5208, 157, 536, 14, 30, "PrimaryExamplesSection",
  CellTags->"PrimaryExamplesSection",
  CellID->751950137],
 Cell[CellGroupData[{
-Cell[5769, 175, 240, 6, 32, "ExampleSection",
+Cell[5769, 175, 240, 6, 25, "ExampleSection",
  CellID->84689964],
-Cell[6012, 183, 182, 4, 46, "ExampleText",
+Cell[6012, 183, 182, 4, 47, "ExampleText",
  CellID->1750050634],
-Cell[6197, 189, 105, 3, 24, "Input",
+Cell[6197, 189, 105, 3, 28, "Input",
  CellID->1226292102],
 Cell[CellGroupData[{
-Cell[6327, 196, 176, 5, 24, "Input",
+Cell[6327, 196, 176, 5, 28, "Input",
  CellID->890798055],
-Cell[6506, 203, 1510, 43, 47, "Output",
+Cell[6506, 203, 1510, 43, 54, "Output",
  CellID->847019547]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8053, 251, 176, 5, 24, "Input",
+Cell[8053, 251, 176, 5, 28, "Input",
  CellID->188430466],
-Cell[8232, 258, 1508, 27, 37, "Message",
+Cell[8232, 258, 1495, 26, 35, "Message",
  CellID->1559946384],
-Cell[9743, 287, 78, 2, 33, "Output",
+Cell[9730, 286, 78, 2, 36, "Output",
  CellID->1538513312]
 }, Open  ]]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9882, 296, 490, 13, 45, "SeeAlsoSection",
+Cell[9869, 295, 490, 13, 30, "SeeAlsoSection",
  CellID->83480331],
-Cell[10375, 311, 548, 18, 19, "SeeAlso",
+Cell[10362, 310, 548, 18, 26, "SeeAlso",
  CellID->747101626]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10960, 334, 494, 13, 45, "TutorialsSection",
+Cell[10947, 333, 494, 13, 23, "TutorialsSection",
  CellID->200144173],
-Cell[11457, 349, 198, 5, 16, "Tutorials",
+Cell[11444, 348, 198, 5, 16, "Tutorials",
  CellID->863724409]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11692, 359, 496, 13, 45, "MoreAboutSection",
+Cell[11679, 358, 496, 13, 45, "MoreAboutSection",
  CellID->1014359816],
-Cell[12191, 374, 162, 3, 16, "MoreAbout",
+Cell[12178, 373, 162, 3, 16, "MoreAbout",
  CellID->1620237626]
 }, Open  ]],
-Cell[12368, 380, 93, 1, 42, "History",
+Cell[12355, 379, 93, 1, 42, "History",
  CellID->2034315507],
-Cell[12464, 383, 43, 1, 24, "FooterCell",
+Cell[12451, 382, 43, 1, 24, "FooterCell",
  CellID->653582262]
 }
 ]
