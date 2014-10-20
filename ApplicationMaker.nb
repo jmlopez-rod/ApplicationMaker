@@ -232,17 +232,7 @@ Cell[BoxData[
   RowBox[{
    RowBox[{"spaceRiffledString", "@", 
     RowBox[{"{", 
-     RowBox[{"s", ",", " ", "#"}], "}"}]}], "&"}]}]], "Code"],
-
-Cell["I hope the following will become obsolete:", "Text"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"fileBaseNameWithoutFirstThreeChars", "@", "path_"}], " ", ":=", 
-  "\n", 
-  RowBox[{"StringDrop", "[", 
-   RowBox[{
-    RowBox[{"FileBaseName", "@", "path"}], ",", " ", "3"}], "]"}]}]], "Code"]
+     RowBox[{"s", ",", " ", "#"}], "}"}]}], "&"}]}]], "Code"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -685,9 +675,8 @@ Cell[BoxData[
        RowBox[{"NotebookSave", "@", "nb"}], ";", "\n", "    ", 
        RowBox[{"NotebookClose", "@", "nb"}], ";", "\n", "    ", 
        RowBox[{"DocumentationSearch`AddDocumentationNotebook", "[", 
-        RowBox[{"index", ",", " ", "newpath"}], "]"}], ";", "\n", "    ", 
-       RowBox[{"fileBaseNameWithoutFirstThreeChars", "@", "path"}]}]}], 
-     "]"}]}], "]"}]}]], "Code"]
+        RowBox[{"index", ",", " ", "newpath"}], "]"}], ";"}]}], "]"}]}], 
+   "]"}]}]], "Code"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -735,8 +724,8 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"FileNameJoin", "[", 
        RowBox[{"#", ",", " ", 
-        RowBox[{"OperatingSystem", " ", "\[Rule]", " ", "\"\<Unix\>\""}]}], 
-       "]"}], "&"}], "\n", ",", " ", 
+        RowBox[{"OperatingSystem", " ", "->", " ", "\"\<Unix\>\""}]}], "]"}], 
+      "&"}], "\n", ",", " ", 
      RowBox[{
       RowBox[{"Replace", "[", 
        RowBox[{"#", "\n", "  ", ",", " ", 
@@ -745,7 +734,7 @@ Cell[BoxData[
           RowBox[{
           "most___", ",", " ", "\"\<Documentation\>\"", ",", " ", 
            "\"\<English\>\"", ",", " ", "rest___", ",", " ", "last_"}], "}"}],
-          " ", "\[RuleDelayed]", "\n", "    ", 
+          " ", ":>", "\n", "    ", 
          RowBox[{"{", 
           RowBox[{"rest", ",", " ", 
            RowBox[{"StringReplace", "[", 
@@ -754,13 +743,12 @@ Cell[BoxData[
              " ", 
              RowBox[{
               RowBox[{"StartOfString", "~~", 
-               RowBox[{"\"\<_\>\"", ".."}], "~~", "filename_"}], " ", 
-              "\[RuleDelayed]", " ", "filename"}]}], "]"}]}], "}"}]}]}], 
-       "]"}], "&"}], "\n", ",", " ", "FileNameSplit"}], "]"}], " ", "/@", 
-   "\n", 
+               RowBox[{"\"\<_\>\"", ".."}], "~~", "filename_"}], " ", ":>", 
+              " ", "filename"}]}], "]"}]}], "}"}]}]}], "]"}], "&"}], "\n", 
+     ",", " ", "FileNameSplit"}], "]"}], " ", "/@", "\n", 
    RowBox[{"listOfFiles", "[", "\n", "  ", 
     RowBox[{
-     RowBox[{"appName", "[", "\[IndentingNewLine]", "    ", 
+     RowBox[{"appName", "[", "\n", "    ", 
       RowBox[{
        RowBox[{
         RowBox[{"\"\<Documentation\>\"", "[", "\n", "      ", 
@@ -792,9 +780,8 @@ Cell[BoxData[{
      RowBox[{"Module", "[", "\n", "  ", 
       RowBox[{
        RowBox[{"{", 
-        RowBox[{
-        "appNameDir", ",", " ", "indexDir", ",", " ", "tmpPath", ",", " ", 
-         "files", ",", " ", "index"}], "}"}], ",", "\n", "\n", "  ", 
+        RowBox[{"appNameDir", ",", " ", "indexDir", ",", " ", "index"}], 
+        "}"}], ",", "\n", "\n", "  ", 
        RowBox[{
         RowBox[{"appNameDir", " ", "=", " ", 
          RowBox[{"FileNameJoin", "@", 
@@ -857,32 +844,29 @@ Cell[BoxData[{
               "}"}]}], "\n", "    ", ",", " ", 
             RowBox[{"Paclet", "[", 
              RowBox[{
-              RowBox[{"Name", " ", "\[Rule]", " ", "appName"}], "\n", 
-              "      ", ",", " ", 
-              RowBox[{"Version", " ", "\[Rule]", " ", "version"}], "\n", 
-              "      ", ",", " ", 
-              RowBox[{
-              "MathematicaVersion", " ", "\[Rule]", " ", "\"\<8+\>\""}], "\n",
-               "      ", ",", " ", 
-              RowBox[{"Extensions", " ", "\[Rule]", "\n", "        ", 
+              RowBox[{"Name", " ", "->", " ", "appName"}], "\n", "      ", 
+              ",", " ", 
+              RowBox[{"Version", " ", "->", " ", "version"}], "\n", "      ", 
+              ",", " ", 
+              RowBox[{"MathematicaVersion", " ", "->", " ", "\"\<8+\>\""}], 
+              "\n", "      ", ",", " ", 
+              RowBox[{"Extensions", " ", "->", "\n", "        ", 
                RowBox[{"{", " ", 
                 RowBox[{
                  RowBox[{"{", " ", 
                   RowBox[{"\"\<Kernel\>\"", ",", " ", 
-                   RowBox[{"\"\<Context\>\"", " ", "\[Rule]", " ", 
+                   RowBox[{"\"\<Context\>\"", " ", "->", " ", 
                     RowBox[{"contextNames", "[", 
                     RowBox[{"appName", ",", " ", "appsDir"}], "]"}]}]}], 
                   "}"}], "\n", "        ", ",", " ", 
                  RowBox[{"{", " ", 
                   RowBox[{"\"\<Documentation\>\"", ",", " ", 
-                   RowBox[{
-                   "Language", " ", "\[Rule]", " ", "\"\<English\>\""}], ",", 
-                   " ", 
-                   RowBox[{"LinkBase", " ", "\[Rule]", " ", "appName"}], "\n",
-                    "          ", ",", " ", 
-                   RowBox[{
-                   "Resources", " ", "\[Rule]", " ", "engResources"}]}], 
-                  "}"}]}], "}"}]}]}], "]"}], "\n", "  ", ",", " ", 
+                   RowBox[{"Language", " ", "->", " ", "\"\<English\>\""}], 
+                   ",", " ", 
+                   RowBox[{"LinkBase", " ", "->", " ", "appName"}], "\n", 
+                   "          ", ",", " ", 
+                   RowBox[{"Resources", " ", "->", " ", "engResources"}]}], 
+                  "}"}]}], "}"}]}]}], "]"}], "\n", "    ", ",", " ", 
             "\"\<Package\>\""}], "]"}]}], "]"}], ";", "\n", "\n", "  ", 
         RowBox[{
          RowBox[{
@@ -907,8 +891,8 @@ Cell[BoxData[{
   RowBox[{"(", 
    RowBox[{
     RowBox[{"Message", "[", 
-     RowBox[{"BuildApplication", "::", "argerr"}], "]"}], ";", "$Failed"}], 
-   ")"}]}]}], "Code"]
+     RowBox[{"BuildApplication", "::", "argerr"}], "]"}], ";", " ", 
+    "$Failed"}], ")"}]}]}], "Code"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -921,8 +905,8 @@ Cell[BoxData[{
    RowBox[{"DeployApplication", "[", "\n", "  ", 
     RowBox[{
     "appName_String", "\n", ",", " ", "destDir_String", "\n", ",", " ", 
-     RowBox[{"appDir_String:", " ", "$ApplicationsDirectory"}]}], "]"}], " ", 
-   ":=", "\n", 
+     RowBox[{"appsDir_String:", " ", "$ApplicationsDirectory"}]}], "]"}], " ",
+    ":=", "\n", 
    RowBox[{"With", "[", "\n", "  ", 
     RowBox[{
      RowBox[{"{", " ", 
@@ -935,7 +919,7 @@ Cell[BoxData[{
        RowBox[{"appNameDir", " ", "=", " ", 
         RowBox[{"FileNameJoin", "@", 
          RowBox[{"{", " ", 
-          RowBox[{"appDir", ",", " ", "appName"}], "}"}]}]}]}], " ", "}"}], 
+          RowBox[{"appsDir", ",", " ", "appName"}], "}"}]}]}]}], " ", "}"}], 
      ",", "\n", 
      RowBox[{
       RowBox[{"If", "[", 
@@ -946,7 +930,7 @@ Cell[BoxData[{
          RowBox[{"Message", "[", 
           RowBox[{
            RowBox[{"BuildApplication", "::", "nodir"}], ",", " ", "appName", 
-           ",", " ", "appDir"}], "]"}], ";", " ", 
+           ",", " ", "appsDir"}], "]"}], ";", " ", 
          RowBox[{"Return", "@", "$Failed"}]}]}], "]"}], ";", "\n", "\n", 
       RowBox[{"If", "[", 
        RowBox[{
@@ -1020,7 +1004,7 @@ Cell[BoxData[
 }, Closed]]
 },
 WindowSize->{714, 563},
-WindowMargins->{{124, Automatic}, {41, Automatic}},
+WindowMargins->{{20, Automatic}, {Automatic, 25}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (February 23, 2011)",
 StyleDefinitions->"Default.nb",

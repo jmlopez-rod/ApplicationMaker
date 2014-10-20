@@ -35,7 +35,7 @@ ClearAll[NewApplication, BuildApplication, DeployApplication];
 (*Messages*)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Usage Messages*)
 
 
@@ -64,7 +64,7 @@ StyleBox[\"destDir\", \"TI\"]\)] copies the m files and documentation of your ap
 StyleBox[\"destDir\", \"TI\"]\)";
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Error Messages*)
 
 
@@ -121,14 +121,6 @@ spaceRiffledString = Composition[StringJoin, spaceRiffle];
 
 
 prefixStringViaSpace@s_String := spaceRiffledString@{s, #}&
-
-
-(* ::Text:: *)
-(*I hope the following will become obsolete:*)
-
-
-fileBaseNameWithoutFirstThreeChars@path_ :=
-StringDrop[FileBaseName@path, 3]
 
 
 (* ::Subsubsection::Closed:: *)
@@ -304,8 +296,7 @@ With[
     , ##&@@Options[nb, WindowTitle]];
     NotebookSave@nb;
     NotebookClose@nb;
-    DocumentationSearch`AddDocumentationNotebook[index, newpath];
-    fileBaseNameWithoutFirstThreeChars@path]]
+    DocumentationSearch`AddDocumentationNotebook[index, newpath];]]
 
 
 (* ::Subsubsection:: *)
@@ -352,7 +343,7 @@ BuildApplication[
 , appsDir_String: $ApplicationsDirectory] :=
 With[{engResources = englishResourcesList[appName, appsDir]},
 Module[
-  {appNameDir, indexDir, tmpPath, files, index},
+  {appNameDir, indexDir, index},
 
   appNameDir = FileNameJoin@{appsDir, appName};
   indexDir = FileNameJoin@{appNameDir, "Documentation", "English", "Index"};
@@ -380,7 +371,7 @@ Module[
         { { "Kernel", "Context" -> contextNames[appName, appsDir]}
         , { "Documentation", Language -> "English", LinkBase -> appName
           , Resources -> engResources}}]
-  , "Package"]];
+    , "Package"]];
 
   ChangeNotebookSettings[
     FileNameJoin@{appNameDir, "Documentation", "English", # <> ".nb"}
@@ -390,7 +381,7 @@ Module[
   DocumentationSearch`CloseDocumentationNotebookIndexer@index;
   PacletManager`RestartPacletManager[];]]
 
-BuildApplication@smthElse___ := (Message[BuildApplication::argerr];$Failed)
+BuildApplication@smthElse___ := (Message[BuildApplication::argerr]; $Failed)
 
 
 (* ::Subsubsection::Closed:: *)
@@ -400,12 +391,12 @@ BuildApplication@smthElse___ := (Message[BuildApplication::argerr];$Failed)
 DeployApplication[
   appName_String
 , destDir_String
-, appDir_String: $ApplicationsDirectory] :=
+, appsDir_String: $ApplicationsDirectory] :=
 With[
   { deploymentDirectory = FileNameJoin@{destDir, appName}
-  ,          appNameDir = FileNameJoin@{ appDir, appName} },
+  ,          appNameDir = FileNameJoin@{ appsDir, appName} },
 If[!DirectoryQ@appNameDir
-,  Message[BuildApplication::nodir, appName, appDir]; Return@$Failed];
+,  Message[BuildApplication::nodir, appName, appsDir]; Return@$Failed];
 
 If[MatchQ[CopyDirectory[appNameDir, deploymentDirectory], $Failed]
 ,  Return@$Failed];
