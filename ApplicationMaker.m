@@ -16,11 +16,11 @@
 				distribution. *)
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Initialization*)
 
 
-(* ::Subsubsection:: *)
+(* ::Subsection::Closed:: *)
 (*Public Context*)
 
 
@@ -31,15 +31,15 @@ Unprotect[NewApplication, BuildApplication, DeployApplication];
 ClearAll[NewApplication, BuildApplication, DeployApplication];
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Messages*)
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Usage Messages*)
 
 
-$DefaultAppsDir::usage = "Default directory for Applications developing and deploying.";
+$ApplicationsDirectory::usage = "Default directory for Applications developing and deploying.";
 
 
 NewApplication::usage = 
@@ -64,7 +64,7 @@ StyleBox[\"destDir\", \"TI\"]\)] copies the m files and documentation of your ap
 StyleBox[\"destDir\", \"TI\"]\)";
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Error Messages*)
 
 
@@ -107,10 +107,10 @@ Begin["`Private`"];
 (*One constant*)
 
 
-$DefaultAppsDir = FileNameJoin@{$UserBaseDirectory, "Applications"};
+$ApplicationsDirectory = FileNameJoin@{$UserBaseDirectory, "Applications"};
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Subsidiary string operations*)
 
 
@@ -124,17 +124,7 @@ prefixStringViaSpace@s_String := spaceRiffledString@{s, #}&
 
 
 (* ::Text:: *)
-(*I suspect Capitalize was actually a huge mistake of mine. When I put it there I didn't know Linux directories are case sensitive.*)
-
-
-Capitalize@s_String :=
-If[s =!= ""
-,  ToUpperCase@StringTake[s, {1}] <> StringDrop[s, {1}]
-,  s]
-
-
-(* ::Text:: *)
-(*I hope the following two will become obsolete:*)
+(*I hope the following will become obsolete:*)
 
 
 fileBaseNameWithoutFirstThreeChars@path_ :=
@@ -215,7 +205,7 @@ If[OptionValue@"Output Form" === OpenerView
 ,  {}]
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Delete multiple files in a directory tree*)
 
 
@@ -240,23 +230,33 @@ With[
     , Column@{} -> "(None)"]}]
 
 
+(* ::Subsubsection:: *)
+(*listOfFiles*)
+
+
+listOfFiles[
+  dir_String@sub__
+, root:_String:$HomeDirectory] :=
+With[{newroot = FileNameJoin@{root, dir}}
+, listOfFiles[#, newroot]& /@ {sub} // Flatten]
+
+listOfFiles[
+  fileNamePattern_String
+, root:_String:$HomeDirectory] :=
+FileNames @ FileNameJoin @ {root, fileNamePattern}
+
+
 (* ::Subsection:: *)
 (*Main functions*)
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*NewApplication*)
 
 
-(* ::Text:: *)
-(*I' m still not sure if this is the directory tree that should be created: couldn't figure this out from the original program. This tree is based on examples of existing apps' dirs.*)
-
-
-NewApplication@args___ := (Message[NewApplication::argerr]; $Failed)
-
 NewApplication[
   appName_String
-, appsDir_String: $DefaultAppsDir] :=
+, appsDir_String: $ApplicationsDirectory] :=
 CreateDirectoryTree[
   appName[
     "Kernel"
@@ -266,6 +266,12 @@ CreateDirectoryTree[
       , "Tutorials"
       , "ReferencePages"@"Symbols"]]]
 , appsDir]
+
+NewApplication@smthElse___ := (Message[NewApplication::argerr]; $Failed)
+
+
+(* ::Subsubsection::Closed:: *)
+(*ChangeNotebookSettings*)
 
 
 ChangeNotebookSettings[path_, index_, header_, footer_] :=
@@ -306,157 +312,95 @@ With[
 (*BuildApplication*)
 
 
-BuildApplication@args___ := (Message[BuildApplication::argerr];$Failed)
+packageFilesNames[appName_String
+, appsDir_String:$ApplicationsDirectory] :=
+DeleteCases[
+  FileBaseName /@ FileNames@FileNameJoin@{appsDir, appName, "*.m"}
+, "PacletInfo"]
+
+
+contextNames[appName_String
+, appsDir_String:$ApplicationsDirectory] :=
+appName <> "`" <> # <> "`" & /@
+packageFilesNames[appName, appsDir]
+
+
+englishResourcesList[appName_String
+, appsDir_String:$ApplicationsDirectory] :=
+Composition[
+  FileNameJoin[#, OperatingSystem -> "Unix"]&
+, Replace[#
+  , {most___, "Documentation", "English", rest___, last_} :>
+    {rest, StringReplace[FileBaseName@last
+           , StartOfString~~"_"..~~filename_ :> filename]}]&
+, FileNameSplit] /@
+listOfFiles[
+  appName[
+    "Documentation"[
+      "English"[
+        "Guides"@#
+      , "Tutorials"@#
+      , "ReferencePages"@"Symbols"@#]]& @ "___*.nb"]
+, appsDir]
+
 
 BuildApplication[
   appName_String
 , version_String: "0.0.1"
 , header_String: ""
 , footer_String: ""
-, appDir_String: $DefaultAppsDir] :=
+, appsDir_String: $ApplicationsDirectory] :=
+With[{engResources = englishResourcesList[appName, appsDir]},
 Module[
-  {appNameDir, indexDir, tmpPath, files, pacFile, pkg, index, str,guides,
-   tutorials,refs},
+  {appNameDir, indexDir, tmpPath, files, index},
 
-  appNameDir = FileNameJoin@{appDir, appName};
+  appNameDir = FileNameJoin@{appsDir, appName};
   indexDir = FileNameJoin@{appNameDir, "Documentation", "English", "Index"};
 
   If[!DirectoryQ@appNameDir
-  ,  Message[BuildApplication::nodir, appName, appDir]; Return@$Failed];
+  ,  Message[BuildApplication::nodir, appName, appsDir]; Return@$Failed];
 
   If[FileNames@indexDir != {}
   ,  DeleteDirectory[indexDir, DeleteContents -> True]];
 
   index = DocumentationSearch`NewDocumentationNotebookIndexer@indexDir;
 
-  pacFile = OpenWrite@FileNameJoin@{appNameDir, "PacletInfo.m"};
+  Block[
+    { Paclet = PacletManager`Paclet
+    , Name = Global`Name
+    , MathematicaVersion = Global`MathematicaVersion
+    , Extensions = Global`Extensions
+    , LinkBase = Global`LinkBase
+    , Resources = Global`Resources}
+  , Export[FileNameJoin@{appNameDir, "PacletInfo.m"}
+    , Paclet[Name -> appName
+      , Version -> version
+      , MathematicaVersion -> "8+"
+      , Extensions ->
+        { { "Kernel", "Context" -> contextNames[appName, appsDir]}
+        , { "Documentation", Language -> "English", LinkBase -> appName
+          , Resources -> engResources}}]
+  , "Package"]];
 
-  WriteString[pacFile
-  , "Paclet[
-	Name -> \"" <> appName <> "\",
-	Version -> \"" <> version <> "\",
-	MathematicaVersion -> \"8+\",
-	Extensions -> {
-		{
-			\"Kernel\",
-			\"Context\" -> {\n"];
-  pkg = DeleteCases[FileBaseName /@ FileNames[appNameDir <> "/*.m"],
-          "PacletInfo"];
-
-  WriteString[pacFile
-  , StringJoin["\t\t\t\t\"" <> appName <> "`" <> # <> "`\", \n" & /@ pkg]];
-
-  WriteString[pacFile, "\t\t\t}
-		},
-		{
-			\"Documentation\",
-			Language -> \"English\",
-			LinkBase -> \"" <> appName <> "\",
-			Resources -> {\n"];
-
-(* :GUIDES: *)
-
-  guides =
-  FileNames @
-  FileNameJoin@{appNameDir
-  , "Documentation"
-  , "English"
-  , "Guides"
-  , "___*"};
-
-  WriteString[pacFile
-  , StringJoin[
-    ( StringJoin[
-        "\t\t\t\t\""
-      , FileNameJoin[
-        { "Guides"
-        , fileBaseNameWithoutFirstThreeChars@# },
-          OperatingSystem-> "Unix"]
-      , "\",\n"] ) & /@
-    guides]];
-
-(* :TUTORIALS: *)
-
-  tutorials =
-  FileNames @
-  FileNameJoin@{appNameDir
-  , "Documentation"
-  , "English"
-  , "Tutorials"
-  , "___*"};
-
-  WriteString[pacFile
-  , StringJoin[
-    ( StringJoin[
-        "\t\t\t\t\""
-      , FileNameJoin[
-        { "Tutorials"
-        , fileBaseNameWithoutFirstThreeChars@# },
-          OperatingSystem-> "Unix"
-       ]
-        , "\",\n"] ) & /@
-      tutorials]];
-
-(* :REFERENCES: *)
-
-  refs =
-  FileNames @
-  FileNameJoin@{appNameDir
-  , "Documentation"
-  , "English"
-  , "ReferencePages"
-  , "Symbols"
-  , "___*"};
-
-  WriteString[pacFile
-  , StringJoin[
-    ( StringJoin[
-        "\t\t\t\t\""
-      , FileNameJoin [
-        { "ReferencePages"
-        , "Symbols"
-        , fileBaseNameWithoutFirstThreeChars@# },
-         OperatingSystem-> "Unix"
-       ]
-      , "\",\n"] ) & /@
-    refs]];
-
-  WriteString[pacFile, "\t\t\t}
-		}
-	}
-]\n"];
-  Close@pacFile;
-
-  ( Print[
-        grayMsg@"Adding Guide : "
-      , boldMsg@fileBaseNameWithoutFirstThreeChars@#];
-      ChangeNotebookSettings[#, index, header, footer] ) & /@
-    guides;
-  ( Print[
-        grayMsg@"Adding Tutorial : "
-      , boldMsg@fileBaseNameWithoutFirstThreeChars@#];
-      ChangeNotebookSettings[#, index, header, footer] ) & /@
-      tutorials;
-  ( Print[
-        grayMsg@"Adding Reference : "
-      , boldMsg@fileBaseNameWithoutFirstThreeChars@#];
-      ChangeNotebookSettings[#, index, header, footer] ) & /@
-    refs;
+  ChangeNotebookSettings[
+    FileNameJoin@{appNameDir, "Documentation", "English", # <> ".nb"}
+  , index, header, footer]& /@
+  engResources;
 
   DocumentationSearch`CloseDocumentationNotebookIndexer@index;
-  PacletManager`RestartPacletManager[];]
+  PacletManager`RestartPacletManager[];]]
+
+BuildApplication@smthElse___ := (Message[BuildApplication::argerr];$Failed)
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*DeployApplication*)
 
-
-DeployApplication@args___ := (Message[DeployApplication::argerr]; $Failed)
 
 DeployApplication[
   appName_String
 , destDir_String
-, appDir_String: $DefaultAppsDir] :=
+, appDir_String: $ApplicationsDirectory] :=
 With[
   { deploymentDirectory = FileNameJoin@{destDir, appName}
   ,          appNameDir = FileNameJoin@{ appDir, appName} },
@@ -480,8 +424,10 @@ Print[
       plainMsg @ " has been deployed to ", 
        boldMsg @ deploymentDirectory];]
 
+DeployApplication@smthElse___ := (Message[DeployApplication::argerr]; $Failed)
 
-(* ::Section:: *)
+
+(* ::Section::Closed:: *)
 (*Finalization*)
 
 
