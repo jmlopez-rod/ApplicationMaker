@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     41756,       1177]
-NotebookOptionsPosition[     38615,       1070]
-NotebookOutlinePosition[     38954,       1085]
-CellTagsIndexPosition[     38911,       1082]
+NotebookDataLength[     41087,       1158]
+NotebookOptionsPosition[     37983,       1052]
+NotebookOutlinePosition[     38322,       1067]
+CellTagsIndexPosition[     38279,       1064]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -281,20 +281,8 @@ Cell[BoxData[
   "\n", 
   RowBox[{"StringDrop", "[", 
    RowBox[{
-    RowBox[{"FileBaseName", "@", "path"}], ",", " ", "3"}], "]"}]}]], "Code"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"dropLastCharsAndAddNewLine", "@", 
-   RowBox[{"n_Integer", "?", "Positive"}]}], " ", ":=", "\n", 
-  RowBox[{"Composition", "[", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"#", " ", "<>", " ", "\"\<\\n\>\""}], "&"}], ",", " ", 
-    RowBox[{
-     RowBox[{"StringDrop", "[", 
-      RowBox[{"#", ",", " ", "n"}], "]"}], "&"}]}], "]"}]}]], "Code"]
-}, Closed]],
+    RowBox[{"FileBaseName", "@", "path"}], ",", " ", "3"}], "]"}]}]], "Code"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -792,17 +780,14 @@ Cell[BoxData[{
      "\n", "  ", 
      RowBox[{"WriteString", "[", 
       RowBox[{"pacFile", "\n", "  ", ",", " ", 
-       RowBox[{
-        RowBox[{"dropLastCharsAndAddNewLine", "[", "3", "]"}], " ", "@", "\n",
-         "    ", 
-        RowBox[{"StringJoin", "[", 
+       RowBox[{"StringJoin", "[", 
+        RowBox[{
          RowBox[{
           RowBox[{
-           RowBox[{
-           "\"\<\\t\\t\\t\\t\\\"\>\"", " ", "<>", " ", "appName", " ", "<>", 
-            " ", "\"\<`\>\"", " ", "<>", " ", "#", " ", "<>", " ", 
-            "\"\<`\\\", \\n\>\""}], " ", "&"}], " ", "/@", " ", "pkg"}], 
-         "]"}]}]}], "]"}], ";", "\n", "\n", "  ", 
+          "\"\<\\t\\t\\t\\t\\\"\>\"", " ", "<>", " ", "appName", " ", "<>", 
+           " ", "\"\<`\>\"", " ", "<>", " ", "#", " ", "<>", " ", 
+           "\"\<`\\\", \\n\>\""}], " ", "&"}], " ", "/@", " ", "pkg"}], 
+        "]"}]}], "]"}], ";", "\n", "\n", "  ", 
      RowBox[{"WriteString", "[", 
       RowBox[{"pacFile", ",", " ", 
        RowBox[{
@@ -882,27 +867,24 @@ Language -> \\\"English\\\",\n\t\t\tLinkBase -> \\\"\>\"", " ", "<>", " ",
      "\n", "  ", 
      RowBox[{"WriteString", "[", 
       RowBox[{"pacFile", "\n", "  ", ",", " ", 
-       RowBox[{
-        RowBox[{"dropLastCharsAndAddNewLine", "[", "2", "]"}], " ", "@", "\n",
-         "    ", 
-        RowBox[{"StringJoin", "[", "\n", "    ", 
+       RowBox[{"StringJoin", "[", "\n", "    ", 
+        RowBox[{
          RowBox[{
-          RowBox[{
-           RowBox[{"(", " ", 
-            RowBox[{"StringJoin", "[", "\n", "        ", 
-             RowBox[{"\"\<\\t\\t\\t\\t\\\"\>\"", "\n", "      ", ",", " ", 
-              RowBox[{"FileNameJoin", " ", "[", "\n", "        ", 
-               RowBox[{
-                RowBox[{"{", " ", 
-                 RowBox[{
-                 "\"\<ReferencePages\>\"", "\n", "        ", ",", " ", 
-                  "\"\<Symbols\>\"", "\n", "        ", ",", " ", 
-                  RowBox[{"fileBaseNameWithoutFirstThreeChars", "@", "#"}]}], 
-                 " ", "}"}], ",", "\n", "         ", 
-                RowBox[{"OperatingSystem", "->", " ", "\"\<Unix\>\""}]}], 
-               "\n", "       ", "]"}], "\n", "      ", ",", " ", 
-              "\"\<\\\",\\n\>\""}], "]"}], " ", ")"}], " ", "&"}], " ", "/@", 
-          "\n", "    ", "refs"}], "]"}]}]}], "]"}], ";", "\n", "\n", "  ", 
+          RowBox[{"(", " ", 
+           RowBox[{"StringJoin", "[", "\n", "        ", 
+            RowBox[{"\"\<\\t\\t\\t\\t\\\"\>\"", "\n", "      ", ",", " ", 
+             RowBox[{"FileNameJoin", " ", "[", "\n", "        ", 
+              RowBox[{
+               RowBox[{"{", " ", 
+                RowBox[{
+                "\"\<ReferencePages\>\"", "\n", "        ", ",", " ", 
+                 "\"\<Symbols\>\"", "\n", "        ", ",", " ", 
+                 RowBox[{"fileBaseNameWithoutFirstThreeChars", "@", "#"}]}], 
+                " ", "}"}], ",", "\n", "         ", 
+               RowBox[{"OperatingSystem", "->", " ", "\"\<Unix\>\""}]}], "\n",
+               "       ", "]"}], "\n", "      ", ",", " ", 
+             "\"\<\\\",\\n\>\""}], "]"}], " ", ")"}], " ", "&"}], " ", "/@", 
+         "\n", "    ", "refs"}], "]"}]}], "]"}], ";", "\n", "\n", "  ", 
      RowBox[{"WriteString", "[", 
       RowBox[{"pacFile", ",", " ", "\"\<\\t\\t\\t}\n\t\t}\n\t}\n]\\n\>\""}], 
       "]"}], ";", "\n", "  ", 
@@ -1125,59 +1107,58 @@ Cell[6523, 216, 291, 7, 52, "Code"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[6851, 228, 53, 0, 39, "Subsubsection"],
-Cell[6907, 230, 244, 8, 70, "Code"],
-Cell[7154, 240, 181, 4, 70, "Code"],
-Cell[7338, 246, 223, 6, 70, "Code"],
-Cell[7564, 254, 155, 3, 70, "Text"],
-Cell[7722, 259, 509, 14, 70, "Code"],
-Cell[8234, 275, 62, 0, 70, "Text"],
-Cell[8299, 277, 228, 6, 70, "Code"],
-Cell[8530, 285, 373, 10, 70, "Code"]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[8940, 300, 40, 0, 33, "Subsubsection"],
-Cell[8983, 302, 725, 23, 70, "Code"]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[9745, 330, 48, 0, 33, "Subsubsection"],
-Cell[9796, 332, 96, 2, 30, "Text"],
-Cell[9895, 336, 667, 17, 133, "Code"],
-Cell[10565, 355, 54, 0, 30, "Text"],
-Cell[10622, 357, 1017, 26, 173, "Code"],
-Cell[11642, 385, 745, 20, 133, "Code"],
-Cell[12390, 407, 75, 0, 30, "Text"],
-Cell[12468, 409, 357, 11, 52, "Code"],
-Cell[12828, 422, 789, 20, 173, "Code"],
-Cell[13620, 444, 1807, 51, 253, "Code"]
+Cell[6907, 230, 244, 8, 52, "Code"],
+Cell[7154, 240, 181, 4, 52, "Code"],
+Cell[7338, 246, 223, 6, 52, "Code"],
+Cell[7564, 254, 155, 3, 49, "Text"],
+Cell[7722, 259, 509, 14, 113, "Code"],
+Cell[8234, 275, 62, 0, 30, "Text"],
+Cell[8299, 277, 228, 6, 73, "Code"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[15464, 500, 66, 0, 39, "Subsubsection"],
-Cell[15533, 502, 2105, 54, 413, "Code"]
+Cell[8564, 288, 40, 0, 39, "Subsubsection"],
+Cell[8607, 290, 725, 23, 70, "Code"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9369, 318, 48, 0, 33, "Subsubsection"],
+Cell[9420, 320, 96, 2, 30, "Text"],
+Cell[9519, 324, 667, 17, 133, "Code"],
+Cell[10189, 343, 54, 0, 30, "Text"],
+Cell[10246, 345, 1017, 26, 173, "Code"],
+Cell[11266, 373, 745, 20, 133, "Code"],
+Cell[12014, 395, 75, 0, 30, "Text"],
+Cell[12092, 397, 357, 11, 52, "Code"],
+Cell[12452, 410, 789, 20, 173, "Code"],
+Cell[13244, 432, 1807, 51, 253, "Code"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15088, 488, 66, 0, 39, "Subsubsection"],
+Cell[15157, 490, 2105, 54, 413, "Code"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17687, 562, 36, 0, 49, "Subsection"],
+Cell[17311, 550, 36, 0, 49, "Subsection"],
 Cell[CellGroupData[{
-Cell[17748, 566, 39, 0, 39, "Subsubsection"],
-Cell[17790, 568, 208, 4, 49, "Text"],
-Cell[18001, 574, 1014, 24, 313, "Code"],
-Cell[19018, 600, 4439, 102, 673, "Code"]
+Cell[17372, 554, 39, 0, 39, "Subsubsection"],
+Cell[17414, 556, 208, 4, 49, "Text"],
+Cell[17625, 562, 1014, 24, 313, "Code"],
+Cell[18642, 588, 4439, 102, 673, "Code"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[23494, 707, 41, 0, 33, "Subsubsection"],
-Cell[23538, 709, 11419, 252, 2853, "Code"]
+Cell[23118, 695, 41, 0, 33, "Subsubsection"],
+Cell[23162, 697, 11163, 246, 2813, "Code"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[34994, 966, 42, 0, 39, "Subsubsection"],
-Cell[35039, 968, 3000, 73, 593, "Code"]
+Cell[34362, 948, 42, 0, 39, "Subsubsection"],
+Cell[34407, 950, 3000, 73, 593, "Code"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[38100, 1048, 31, 0, 70, "Section"],
-Cell[38134, 1050, 135, 4, 70, "Code"],
-Cell[38272, 1056, 174, 5, 70, "Code"],
-Cell[38449, 1063, 150, 4, 70, "Code"]
+Cell[37468, 1030, 31, 0, 70, "Section"],
+Cell[37502, 1032, 135, 4, 70, "Code"],
+Cell[37640, 1038, 174, 5, 70, "Code"],
+Cell[37817, 1045, 150, 4, 70, "Code"]
 }, Closed]]
 }
 ]

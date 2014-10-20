@@ -110,7 +110,7 @@ Begin["`Private`"];
 $DefaultAppsDir = FileNameJoin@{$UserBaseDirectory, "Applications"};
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Subsidiary string operations*)
 
 
@@ -139,10 +139,6 @@ If[s =!= ""
 
 fileBaseNameWithoutFirstThreeChars@path_ :=
 StringDrop[FileBaseName@path, 3]
-
-
-dropLastCharsAndAddNewLine@n_Integer?Positive :=
-Composition[# <> "\n"&, StringDrop[#, n]&]
 
 
 (* ::Subsubsection::Closed:: *)
@@ -348,8 +344,7 @@ Module[
           "PacletInfo"];
 
   WriteString[pacFile
-  , dropLastCharsAndAddNewLine[3] @
-    StringJoin["\t\t\t\t\"" <> appName <> "`" <> # <> "`\", \n" & /@ pkg]];
+  , StringJoin["\t\t\t\t\"" <> appName <> "`" <> # <> "`\", \n" & /@ pkg]];
 
   WriteString[pacFile, "\t\t\t}
 		},
@@ -414,8 +409,7 @@ Module[
   , "___*"};
 
   WriteString[pacFile
-  , dropLastCharsAndAddNewLine[2] @
-    StringJoin[
+  , StringJoin[
     ( StringJoin[
         "\t\t\t\t\""
       , FileNameJoin [
