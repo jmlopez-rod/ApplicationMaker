@@ -16,26 +16,26 @@
 				distribution. *)
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Initialization*)
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*Public Context*)
 
 
 BeginPackage["ApplicationMaker`ApplicationMaker`"];
 
 
-Unprotect[NewApplication, BuildApplication, DeployApplication];
-ClearAll[NewApplication, BuildApplication, DeployApplication];
+Unprotect[NewApplication, BuildApplication, DeployApplication,listOfFiles];
+ClearAll[NewApplication, BuildApplication, DeployApplication,listOfFiles];
 
 
 (* ::Subsection::Closed:: *)
 (*Messages*)
 
 
-(* ::Subsubsection:: *)
+(* ::Subsubsection::Closed:: *)
 (*Usage Messages*)
 
 
@@ -103,7 +103,7 @@ Begin["`Private`"];
 (*Dependencies*)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*One constant*)
 
 
@@ -197,7 +197,7 @@ If[OptionValue@"Output Form" === OpenerView
 ,  {}]
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*Delete multiple files in a directory tree*)
 
 
@@ -262,7 +262,7 @@ CreateDirectoryTree[
 NewApplication@smthElse___ := (Message[NewApplication::argerr]; $Failed)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*ChangeNotebookSettings*)
 
 
@@ -280,7 +280,6 @@ With[
     , StringDrop[FileNameTake@path, 3] }}
 , Module[{nb},
     nb = NotebookOpen@path;
-
     NotebookSave[nb, newpath];
 
     SetOptions[nb
@@ -374,9 +373,16 @@ Module[
     , "Package"]];
 
   ChangeNotebookSettings[
-    FileNameJoin@{appNameDir, "Documentation", "English", # <> ".nb"}
+    #
   , index, header, footer]& /@
-  engResources;
+  listOfFiles[
+  appName[
+    "Documentation"[
+      "English"[
+        "Guides"@#
+      , "Tutorials"@#
+      , "ReferencePages"@"Symbols"@#]]& @ "___*.nb"]
+, appsDir];
 
   DocumentationSearch`CloseDocumentationNotebookIndexer@index;
   PacletManager`RestartPacletManager[];]]
@@ -384,7 +390,7 @@ Module[
 BuildApplication@smthElse___ := (Message[BuildApplication::argerr]; $Failed)
 
 
-(* ::Subsubsection::Closed:: *)
+(* ::Subsubsection:: *)
 (*DeployApplication*)
 
 
@@ -418,14 +424,14 @@ Print[
 DeployApplication@smthElse___ := (Message[DeployApplication::argerr]; $Failed)
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Finalization*)
 
 
 End[]; (* `Private` *)
 
 
-Protect[NewApplication, BuildApplication, DeployApplication];
+Protect[NewApplication, BuildApplication, DeployApplication,listOfFiles];
 
 
 EndPackage[]; (* ApplicationMaker` *)
