@@ -27,8 +27,8 @@
 BeginPackage["ApplicationMaker`ApplicationMaker`"];
 
 
-Unprotect[NewApplication, BuildApplication, DeployApplication,listOfFiles];
-ClearAll[NewApplication, BuildApplication, DeployApplication,listOfFiles];
+Unprotect[NewApplication, BuildApplication, DeployApplication];
+ClearAll[NewApplication, BuildApplication, DeployApplication];
 
 
 (* ::Subsection::Closed:: *)
@@ -431,7 +431,7 @@ DeployApplication@smthElse___ := (Message[DeployApplication::argerr]; $Failed)
 End[]; (* `Private` *)
 
 
-Protect[NewApplication, BuildApplication, DeployApplication,listOfFiles];
+Protect[NewApplication, BuildApplication, DeployApplication];
 
 
 EndPackage[]; (* ApplicationMaker` *)
