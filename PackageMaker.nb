@@ -1,22 +1,3 @@
-(* Content-type: application/vnd.wolfram.mathematica *)
-
-(*** Wolfram Notebook File ***)
-(* http://www.wolfram.com/nb *)
-
-(* CreatedBy='Mathematica 8.0' *)
-
-(*CacheID: 234*)
-(* Internal cache information:
-NotebookFileLineBreakTest
-NotebookFileLineBreakTest
-NotebookDataPosition[       157,          7]
-NotebookDataLength[     18148,        484]
-NotebookOptionsPosition[     17112,        450]
-NotebookOutlinePosition[     17791,        474]
-CellTagsIndexPosition[     17748,        471]
-WindowFrame->Normal*)
-
-(* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
  RowBox[{
@@ -75,35 +56,41 @@ Cell[BoxData[
       RowBox[{"package", ".", " ", "The"}], " ", "function", " ", 
       "UpdateInit", "\n", "\t\t\t\t", "updates", " ", "the", " ", 
       "application", " ", "init", " ", 
-      RowBox[{"file", "."}]}]}]}], " ", "*)"}]}]], "Code",
- CellChangeTimes->{{3.519263325332416*^9, 3.519263336513115*^9}, {
-  3.519263383807117*^9, 3.519263474955056*^9}, {3.5192635599008913`*^9, 
-  3.519263606544424*^9}}],
+      RowBox[{"file", "."}]}]}]}], " ", "*)"}]}]], "Code"],
+
+Cell[CellGroupData[{
+
+Cell["Initialization", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Public Context", "Subsection"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{
-  "BeginPackage", "[", "\"\<ApplicationMaker`PackageMaker`\>\"", "]"}], 
-  ";"}]], "Code"],
+  RowBox[{"BeginPackage", "[", 
+   RowBox[{"\"\<ApplicationMaker`PackageMaker`\>\"", ",", " ", 
+    RowBox[{"{", "\"\<ApplicationMaker`ApplicationMaker`\>\"", "}"}]}], "]"}],
+   ";"}]], "Code"],
 
 Cell[BoxData[{
  RowBox[{
   RowBox[{"Unprotect", "[", 
-   RowBox[{"NewPackage", ",", " ", "UpdateInit"}], "]"}], 
-  ";"}], "\[IndentingNewLine]", 
+   RowBox[{"NewPackage", ",", " ", "UpdateInit"}], "]"}], ";"}], "\n", 
  RowBox[{
   RowBox[{"ClearAll", "[", 
-   RowBox[{"NewPackage", ",", " ", "UpdateInit"}], "]"}], ";"}]}], "Input",
- CellChangeTimes->{{3.519263647329775*^9, 3.519263659300069*^9}, {
-  3.519264754292918*^9, 3.519264758875208*^9}}],
+   RowBox[{"NewPackage", ",", " ", "UpdateInit"}], "]"}], ";"}]}], "Code"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Messages", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell["Usage Messages", "Subsubsection"],
 
 Cell[BoxData[
- RowBox[{"(*", " ", 
-  RowBox[{":", 
-   RowBox[{"Usage", " ", 
-    RowBox[{"Messages", ":"}]}]}], " ", "*)"}]], "Code"],
-
-Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"NewPackage", "::", "usage"}], " ", "=", " ", 
@@ -114,380 +101,366 @@ StyleBox[\"pkgName\", \"TI\"]\)\!\(\*
 StyleBox[\".\", \"TI\"]\)\!\(\*
 StyleBox[\"nb\", \"TI\"]\) and its respective \!\(\*
 StyleBox[\"m\", \"TI\"]\) file inside the application \!\(\*
-StyleBox[\"appName\", \"TI\"]\).\>\""}], ";"}], "\[IndentingNewLine]", 
+StyleBox[\"appName\", \"TI\"]\).\>\""}], ";"}]], "Code"],
+
+Cell[BoxData[
  RowBox[{
   RowBox[{
    RowBox[{"UpdateInit", "::", "usage"}], " ", "=", "\[IndentingNewLine]", 
    "\"\<UpdateInit[\!\(\*
 StyleBox[\"appName\", \"TI\"]\)] creates the init file for the application \!\
 \(\*
-StyleBox[\"appName\", \"TI\"]\).\>\""}], ";"}]}], "Input",
- CellChangeTimes->{
-  3.519263682374938*^9, {3.519264779115548*^9, 3.519264779954132*^9}, {
-   3.519338828397377*^9, 3.519338839705427*^9}, {3.519338885281433*^9, 
-   3.519338892598267*^9}}],
+StyleBox[\"appName\", \"TI\"]\).\>\""}], ";"}]], "Code"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Error Messages", "Subsubsection"],
 
 Cell[BoxData[
- RowBox[{"(*", " ", 
-  RowBox[{":", 
-   RowBox[{"Error", " ", 
-    RowBox[{"Messages", ":"}]}]}], " ", "*)"}]], "Code"],
-
-Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"NewPackage", "::", "argerr"}], "=", "\[IndentingNewLine]", 
    "\"\<Strings specifying the package name and the application it belongs to \
-were expected.\>\""}], ";"}], "\[IndentingNewLine]", 
+were expected.\>\""}], ";"}]], "Code"],
+
+Cell[BoxData[
  RowBox[{
   RowBox[{
    RowBox[{"NewPackage", "::", "nodir"}], " ", "=", "\[IndentingNewLine]", 
    "\"\<There is no application `1` in `2`. To create a new application use \
-NewApplication\>\""}], ";"}], "\[IndentingNewLine]", 
+NewApplication\>\""}], ";"}]], "Code"],
+
+Cell[BoxData[
  RowBox[{
   RowBox[{
    RowBox[{"NewPackage", "::", "pkgerr"}], " ", "=", " ", 
    "\[IndentingNewLine]", 
    "\"\<The package you are trying to create in the application `1` already \
-exists. Click `2` to edit its contents.\>\""}], 
-  ";"}], "\[IndentingNewLine]", 
+exists. Click `2` to edit its contents.\>\""}], ";"}]], "Code"],
+
+Cell[BoxData[
  RowBox[{
   RowBox[{
    RowBox[{"UpdateInit", "::", "nodir"}], " ", "=", "\[IndentingNewLine]", 
    "\"\<There is no application `1` in `2`. To create a new application use \
-NewApplication\>\""}], ";"}]}], "Input",
- CellChangeTimes->{
-  3.519263692187628*^9, {3.519264788489888*^9, 3.519264789449044*^9}}],
+NewApplication\>\""}], ";"}]], "Code"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Private Context", "Subsection"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}]], "Code"],
+  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], ";"}]], "Code"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Implementation", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["NewPackage", "Subsubsection"],
 
 Cell[BoxData[{
  RowBox[{
-  RowBox[{"NewPackage", "[", "args___", "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{"NewPackage", "[", "\n", "  ", 
+    RowBox[{
+    "pkgName_String", "\n", ",", " ", "appName_String", "\n", ",", " ", 
+     RowBox[{"appsDir_String:", " ", "$ApplicationsDirectory"}]}], "]"}], " ",
+    ":=", "\n", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"appNameDir", ",", " ", "pkgPath", ",", " ", "nb"}], "}"}], ",",
+      "\n", "\n", 
+     RowBox[{
+      RowBox[{"appNameDir", " ", "=", " ", 
+       RowBox[{"FileNameJoin", "@", 
+        RowBox[{"{", 
+         RowBox[{"appsDir", ",", " ", "appName"}], "}"}]}]}], ";", "\n", "\n", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"!", 
+         RowBox[{"DirectoryQ", "@", "appNameDir"}]}], "\n", ",", "  ", 
+        RowBox[{
+         RowBox[{"Message", "[", 
+          RowBox[{
+           RowBox[{"NewPackage", "::", "nodir"}], ",", " ", "appName", ",", 
+           " ", "appsDir"}], "]"}], ";", " ", 
+         RowBox[{"Return", "@", "$Failed"}]}]}], "]"}], ";", "\n", "\n", 
+      RowBox[{"pkgPath", " ", "=", " ", 
+       RowBox[{"FileNameJoin", "@", 
+        RowBox[{"{", 
+         RowBox[{"appNameDir", ",", " ", 
+          RowBox[{"pkgName", " ", "<>", " ", "\"\<.nb\>\""}]}], "}"}]}]}], 
+      ";", "\n", "\n", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"FileExistsQ", "@", "pkgPath"}], "\n", ",", "  ", 
+        RowBox[{
+         RowBox[{"Message", "[", 
+          RowBox[{
+           RowBox[{"NewPackage", "::", "pkgerr"}], ",", " ", "appName", ",", 
+           " ", 
+           RowBox[{"Hyperlink", "[", 
+            RowBox[{"\"\<here\>\"", ",", " ", "pkgPath"}], "]"}]}], "]"}], 
+         ";", " ", "\n", "   ", 
+         RowBox[{"Return", "@", "$Failed"}]}]}], "]"}], ";", "\n", "\n", 
+      RowBox[{"nb", " ", "=", " ", 
+       RowBox[{"CreateDocument", "[", "]"}]}], ";", "\n", "\n", 
+      RowBox[{"SetOptions", "[", 
+       RowBox[{"nb", ",", " ", "\n", 
+        RowBox[{"TaggingRules", "->", " ", "None"}], ",", "\n", 
+        RowBox[{"AutoGeneratedPackage", "->", " ", "Automatic"}], ",", "\n", 
+        RowBox[{"StyleDefinitions", "->", " ", 
+         RowBox[{"Notebook", "[", "\n", 
+          RowBox[{
+           RowBox[{"{", "\n", 
+            RowBox[{
+             RowBox[{"Cell", "[", 
+              RowBox[{"StyleData", "[", 
+               RowBox[{"StyleDefinitions", "->", " ", "\"\<Default.nb\>\""}], 
+               "]"}], "]"}], ",", "\n", 
+             RowBox[{"Cell", "[", 
+              RowBox[{
+               RowBox[{"StyleData", "[", "\"\<Input\>\"", "]"}], ",", " ", 
+               RowBox[{"InitializationCell", "->", " ", "True"}]}], "]"}]}], 
+            "\n", "}"}], ",", "\n", 
+           RowBox[{"Visible", "->", " ", "False"}], ",", "\n", 
+           RowBox[{
+           "StyleDefinitions", "->", " ", 
+            "\"\<PrivateStylesheetFormatting.nb\>\""}]}], "\n", "]"}]}]}], 
+       "\n", "]"}], ";", "\n", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", " ", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "\"\<(* :Title: \>\"", "<>", "pkgName", "<>", 
+            "\"\< *) \n(* :Author: \>\"", "<>", "$UserName", "<>", 
+            "\"\< *)\n(* :Summary: Summary goes here. *)\n(* :Context: \>\"", 
+            "<>", "appName", "<>", "\"\<`\>\"", "<>", "pkgName", "<>", 
+            "\"\<` *)\n(* :Package version: 1.0 *)\n(* :History:  Version 1.0 \
+\>\"", "<>", 
+            RowBox[{"DateString", "[", 
+             RowBox[{"{", 
+              RowBox[{
+              "\"\<MonthName\>\"", ",", " ", "\"\< \>\"", ",", " ", 
+               "\"\<Day\>\"", ",", " ", "\"\< \>\"", " ", ",", " ", 
+               "\"\<Year\>\""}], "}"}], "]"}], "<>", 
+            "\"\< *)\n(* :Mathematica version: \>\"", "<>", "$Version", "<>", 
+            "\"\< *)\n(* :Discussion: Give more details here.*)\>\""}], " ", "//",
+            " ", "StandardForm"}], ",", " ", "\"\<Code\>\""}], "]"}]}], "]"}],
+       ";", "\n", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", " ", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "\"\<BeginPackage[\\\"\>\"", "<>", "appName", "<>", "\"\<`\>\"", "<>",
+             "pkgName", "<>", "\"\<`\\\"];\>\""}], " ", "//", " ", 
+           "StandardForm"}], ",", " ", "\"\<Code\>\""}], "]"}]}], "]"}], ";", 
+      "\n", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", " ", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{
+          "\"\<(* :Code Section (Call Unprotect and ClearAll): *)\>\"", " ", "//",
+            " ", "StandardForm"}], ",", " ", "\"\<Input\>\""}], "]"}]}], 
+       "]"}], ";", "\n", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", " ", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{
+          "\"\<(* :Usage Messages: *)\>\"", " ", "//", " ", "StandardForm"}], 
+          ",", " ", "\"\<Code\>\""}], "]"}]}], "]"}], ";", "\n", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", " ", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{
+          "\"\<(* :Code Section: *)\>\"", " ", "//", " ", "StandardForm"}], 
+          ",", " ", "\"\<Input\>\""}], "]"}]}], "]"}], ";", "\n", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", " ", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{
+          "\"\<(* :Error Messages: *)\>\"", " ", "//", " ", "StandardForm"}], 
+          ",", " ", "\"\<Code\>\""}], "]"}]}], "]"}], ";", "\n", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", " ", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{
+          "\"\<(* :Code Section: *)\>\"", " ", "//", " ", "StandardForm"}], 
+          ",", " ", "\"\<Input\>\""}], "]"}]}], "]"}], ";", "\n", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", " ", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{
+          "\"\<Begin[\\\"`Private`\\\"];\>\"", " ", "//", " ", 
+           "StandardForm"}], ",", " ", "\"\<Code\>\""}], "]"}]}], "]"}], ";", 
+      "\n", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", " ", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{
+          "\"\<(* :Code Section: *)\>\"", " ", "//", " ", "StandardForm"}], 
+          ",", " ", "\"\<Input\>\""}], "]"}]}], "]"}], ";", "\n", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", " ", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"\"\<End[];\>\"", " ", "//", " ", "StandardForm"}], ",", 
+          " ", "\"\<Code\>\""}], "]"}]}], "]"}], ";", "\n", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", " ", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{
+          "\"\<(* :Code Section (Call Protect): *)\>\"", " ", "//", " ", 
+           "StandardForm"}], ",", " ", "\"\<Input\>\""}], "]"}]}], "]"}], ";",
+       "\n", 
+      RowBox[{"NotebookWrite", "[", 
+       RowBox[{"nb", ",", " ", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"\"\<EndPackage[];\>\"", " ", "//", " ", "StandardForm"}], 
+          ",", " ", "\"\<Code\>\""}], "]"}]}], "]"}], ";", "\n", 
+      RowBox[{"NotebookSave", "[", 
+       RowBox[{"nb", ",", " ", "pkgPath"}], "]"}], ";", "\n", 
+      RowBox[{"Return", "@", "nb"}], ";"}]}], "]"}]}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"NewPackage", "@", "args___"}], " ", ":=", " ", 
   RowBox[{"(", 
    RowBox[{
     RowBox[{"Message", "[", 
-     RowBox[{"NewPackage", "::", "argerr"}], "]"}], ";", "$Failed"}], 
-   ")"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"NewPackage", "[", 
-   RowBox[{
-   "pkgName_String", ",", " ", "appName_String", ",", "\[IndentingNewLine]", 
-    RowBox[{"appDir_String:", " ", 
-     RowBox[{"FileNameJoin", "[", 
-      RowBox[{"{", " ", 
-       RowBox[{"$UserBaseDirectory", ",", "\"\<Applications\>\""}], "}"}], 
-      "]"}]}]}], "\[IndentingNewLine]", "]"}], " ", ":=", " ", 
-  RowBox[{"Module", "[", "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{"appNameDir", ",", " ", "pkgPath", ",", " ", "nb"}], "}"}], ",", 
-    "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"appNameDir", " ", "=", "  ", 
-      RowBox[{"FileNameJoin", "[", 
-       RowBox[{"{", 
-        RowBox[{"appDir", ",", " ", "appName"}], "}"}], "]"}]}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"If", "[", 
-      RowBox[{
-       RowBox[{"!", 
-        RowBox[{"DirectoryQ", "[", "appNameDir", "]"}]}], ",", " ", 
-       RowBox[{
-        RowBox[{"Message", "[", 
-         RowBox[{
-          RowBox[{"NewPackage", "::", "nodir"}], ",", " ", "appName", ",", 
-          " ", "appDir"}], "]"}], ";", " ", 
-        RowBox[{"Return", "[", "$Failed", "]"}]}]}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"pkgPath", " ", "=", " ", 
-      RowBox[{"FileNameJoin", "[", 
-       RowBox[{"{", 
-        RowBox[{"appNameDir", ",", 
-         RowBox[{"pkgName", "<>", "\"\<.nb\>\""}]}], " ", "}"}], "]"}]}], ";",
-      "\[IndentingNewLine]", 
-     RowBox[{"If", "[", 
-      RowBox[{
-       RowBox[{"FileExistsQ", "[", "pkgPath", "]"}], ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"Message", "[", 
-         RowBox[{
-          RowBox[{"NewPackage", "::", "pkgerr"}], ",", " ", "appName", ",", 
-          " ", 
-          RowBox[{"Hyperlink", "[", 
-           RowBox[{"\"\<here\>\"", ",", " ", "pkgPath"}], "]"}]}], "]"}], ";",
-         " ", "\[IndentingNewLine]", 
-        RowBox[{"Return", "[", "$Failed", "]"}]}]}], "\[IndentingNewLine]", 
-      "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"nb", " ", "=", " ", 
-      RowBox[{"CreateDocument", "[", "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"SetOptions", "[", 
-      RowBox[{"nb", ",", " ", "\[IndentingNewLine]", 
-       RowBox[{"TaggingRules", "\[Rule]", " ", "None"}], ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{"AutoGeneratedPackage", "\[Rule]", " ", "Automatic"}], ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{"StyleDefinitions", "\[Rule]", " ", 
-        RowBox[{"Notebook", "[", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"{", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"Cell", "[", 
-             RowBox[{"StyleData", "[", 
-              RowBox[{
-              "StyleDefinitions", "\[Rule]", " ", "\"\<Default.nb\>\""}], 
-              "]"}], "]"}], ",", "\[IndentingNewLine]", 
-            RowBox[{"Cell", "[", 
-             RowBox[{
-              RowBox[{"StyleData", "[", "\"\<Input\>\"", "]"}], ",", " ", 
-              RowBox[{"InitializationCell", "\[Rule]", " ", "True"}]}], 
-             "]"}]}], "\[IndentingNewLine]", "}"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"Visible", "\[Rule]", " ", "False"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{
-          "StyleDefinitions", "\[Rule]", " ", 
-           "\"\<PrivateStylesheetFormatting.nb\>\""}]}], 
-         "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"NotebookWrite", "[", 
-      RowBox[{"nb", ",", " ", 
-       RowBox[{"Cell", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{
-          "\"\<(* :Title: \>\"", "<>", "pkgName", "<>", 
-           "\"\< *) \n(* :Author: \>\"", "<>", "$UserName", "<>", 
-           "\"\< *)\n(* :Summary: Summary goes here. *)\n(* :Context: \>\"", "<>",
-            "appName", "<>", "\"\<`\>\"", "<>", "pkgName", "<>", 
-           "\"\<` *)\n(* :Package version: 1.0 *)\n(* :History:  Version 1.0 \
-\>\"", "<>", 
-           RowBox[{"DateString", "[", 
-            RowBox[{"{", 
-             RowBox[{
-             "\"\<MonthName\>\"", ",", " ", "\"\< \>\"", ",", " ", 
-              "\"\<Day\>\"", ",", " ", "\"\< \>\"", " ", ",", " ", 
-              "\"\<Year\>\""}], "}"}], "]"}], "<>", 
-           "\"\< *)\n(* :Mathematica version: \>\"", "<>", "$Version", "<>", 
-           "\"\< *)\n(* :Discussion: Give more details here.*)\>\""}], " ", "//",
-           " ", "StandardForm"}], ",", " ", "\"\<Code\>\""}], "]"}]}], "]"}], 
-     ";", "\[IndentingNewLine]", 
-     RowBox[{"NotebookWrite", "[", 
-      RowBox[{"nb", ",", " ", 
-       RowBox[{"Cell", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{
-          "\"\<BeginPackage[\\\"\>\"", "<>", "appName", "<>", "\"\<`\>\"", "<>",
-            "pkgName", "<>", "\"\<`\\\"];\>\""}], " ", "//", " ", 
-          "StandardForm"}], ",", " ", "\"\<Code\>\""}], "]"}]}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"NotebookWrite", "[", 
-      RowBox[{"nb", ",", " ", 
-       RowBox[{"Cell", "[", 
-        RowBox[{
-         RowBox[{
-         "\"\<(* :Code Section (Call Unprotect and ClearAll): *)\>\"", " ", "//",
-           " ", "StandardForm"}], ",", " ", "\"\<Input\>\""}], "]"}]}], "]"}],
-      ";", "\[IndentingNewLine]", 
-     RowBox[{"NotebookWrite", "[", 
-      RowBox[{"nb", ",", " ", 
-       RowBox[{"Cell", "[", 
-        RowBox[{
-         RowBox[{
-         "\"\<(* :Usage Messages: *)\>\"", " ", "//", " ", "StandardForm"}], 
-         ",", " ", "\"\<Code\>\""}], "]"}]}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"NotebookWrite", "[", 
-      RowBox[{"nb", ",", " ", 
-       RowBox[{"Cell", "[", 
-        RowBox[{
-         RowBox[{
-         "\"\<(* :Code Section: *)\>\"", " ", "//", " ", "StandardForm"}], 
-         ",", " ", "\"\<Input\>\""}], "]"}]}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"NotebookWrite", "[", 
-      RowBox[{"nb", ",", " ", 
-       RowBox[{"Cell", "[", 
-        RowBox[{
-         RowBox[{
-         "\"\<(* :Error Messages: *)\>\"", " ", "//", " ", "StandardForm"}], 
-         ",", " ", "\"\<Code\>\""}], "]"}]}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"NotebookWrite", "[", 
-      RowBox[{"nb", ",", " ", 
-       RowBox[{"Cell", "[", 
-        RowBox[{
-         RowBox[{
-         "\"\<(* :Code Section: *)\>\"", " ", "//", " ", "StandardForm"}], 
-         ",", " ", "\"\<Input\>\""}], "]"}]}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"NotebookWrite", "[", 
-      RowBox[{"nb", ",", " ", 
-       RowBox[{"Cell", "[", 
-        RowBox[{
-         RowBox[{
-         "\"\<Begin[\\\"`Private`\\\"];\>\"", " ", "//", " ", 
-          "StandardForm"}], ",", " ", "\"\<Code\>\""}], "]"}]}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"NotebookWrite", "[", 
-      RowBox[{"nb", ",", " ", 
-       RowBox[{"Cell", "[", 
-        RowBox[{
-         RowBox[{
-         "\"\<(* :Code Section: *)\>\"", " ", "//", " ", "StandardForm"}], 
-         ",", " ", "\"\<Input\>\""}], "]"}]}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"NotebookWrite", "[", 
-      RowBox[{"nb", ",", " ", 
-       RowBox[{"Cell", "[", 
-        RowBox[{
-         RowBox[{"\"\<End[];\>\"", " ", "//", " ", "StandardForm"}], ",", 
-         " ", "\"\<Code\>\""}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"NotebookWrite", "[", 
-      RowBox[{"nb", ",", " ", 
-       RowBox[{"Cell", "[", 
-        RowBox[{
-         RowBox[{
-         "\"\<(* :Code Section (Call Protect): *)\>\"", " ", "//", " ", 
-          "StandardForm"}], ",", " ", "\"\<Input\>\""}], "]"}]}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"NotebookWrite", "[", 
-      RowBox[{"nb", ",", " ", 
-       RowBox[{"Cell", "[", 
-        RowBox[{
-         RowBox[{"\"\<EndPackage[];\>\"", " ", "//", " ", "StandardForm"}], 
-         ",", " ", "\"\<Code\>\""}], "]"}]}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"NotebookSave", "[", 
-      RowBox[{"nb", ",", " ", "pkgPath"}], "]"}], ";", "\[IndentingNewLine]", 
-     
-     RowBox[{"Return", "[", "nb", "]"}], ";"}]}], "\[IndentingNewLine]", 
-   "]"}]}]}], "Input",
- CellChangeTimes->{
-  3.519263702917594*^9, {3.519265767251409*^9, 3.5192657727223053`*^9}}],
+     RowBox[{"NewPackage", "::", "argerr"}], "]"}], ";", " ", "$Failed"}], 
+   ")"}]}]}], "Code"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["UpdateInit", "Subsubsection"],
+
+Cell["\<\
+Blocking Get demands several hacks then for Export to work, this might be \
+dependent on version of Mathematica so I resorted to a string-based Get. :-( 
+(Blocking CompoundExpression breaks everything on an even bigger scale, in \
+ver 8.0 at least.)\
+\>", "Text"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"UpdateInit", "[", "\[IndentingNewLine]", 
-   RowBox[{"appName_String", ",", " ", "\[IndentingNewLine]", 
-    RowBox[{"appDir_String:", 
-     RowBox[{"FileNameJoin", "[", 
-      RowBox[{"{", " ", 
-       RowBox[{"$UserBaseDirectory", ",", "\"\<Applications\>\""}], "}"}], 
-      "]"}]}]}], "\[IndentingNewLine]", "]"}], ":=", " ", 
-  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+  RowBox[{"UpdateInit", "[", 
+   RowBox[{"appName_String", "\n", ",", " ", 
+    RowBox[{"appsDir_String:", "$ApplicationsDirectory"}]}], "]"}], " ", ":=",
+   "\n", 
+  RowBox[{"Module", "[", 
    RowBox[{
     RowBox[{"{", 
-     RowBox[{"appNameDir", ",", " ", "pkgName", ",", " ", "nb"}], "}"}], ",", 
-    "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"appNameDir", " ", "=", "  ", 
-      RowBox[{"FileNameJoin", "[", 
+     RowBox[{"appNameDir", " ", "=", " ", 
+      RowBox[{"FileNameJoin", "@", 
        RowBox[{"{", 
-        RowBox[{"appDir", ",", " ", "appName"}], "}"}], "]"}]}], ";", 
-     "\[IndentingNewLine]", 
+        RowBox[{"appsDir", ",", " ", "appName"}], "}"}]}]}], "}"}], ",", "\n",
+     "\n", 
+    RowBox[{
      RowBox[{"If", "[", 
       RowBox[{
        RowBox[{"!", 
-        RowBox[{"DirectoryQ", "[", "appNameDir", "]"}]}], ",", " ", 
+        RowBox[{"DirectoryQ", "@", "appNameDir"}]}], "\n", ",", "  ", 
        RowBox[{
         RowBox[{"Message", "[", 
          RowBox[{
           RowBox[{"UpdateInit", "::", "nodir"}], ",", " ", "appName", ",", 
-          " ", "appDir"}], "]"}], ";", " ", 
-        RowBox[{"Return", "[", "$Failed", "]"}]}]}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"pkgName", " ", "=", " ", 
-      RowBox[{"Map", "[", 
-       RowBox[{"FileBaseName", ",", " ", 
-        RowBox[{"FileNames", "@", 
-         RowBox[{"FileNameJoin", "[", 
-          RowBox[{"{", 
-           RowBox[{"appNameDir", ",", " ", "\"\<*.nb\>\""}], "}"}], "]"}]}]}],
-        "]"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"nb", " ", "=", " ", 
-      RowBox[{"OpenWrite", "[", 
-       RowBox[{"FileNameJoin", "[", 
-        RowBox[{"{", 
-         RowBox[{
-         "appNameDir", ",", " ", "\"\<Kernel\>\"", ",", " ", 
-          "\"\<Init.m\>\""}], "}"}], "]"}], "]"}]}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"Do", "[", "\[IndentingNewLine]", 
+          " ", "appsDir"}], "]"}], ";", " ", 
+        RowBox[{"Return", "@", "$Failed"}]}]}], "]"}], ";", "\n", "\n", 
+     RowBox[{"With", "[", 
       RowBox[{
-       RowBox[{
-        RowBox[{"WriteString", "[", 
-         RowBox[{"nb", ",", " ", 
-          RowBox[{"\"\<Get[\\\"\>\"", "<>", "appName", "<>", "\"\<`\>\"", "<>", 
-           RowBox[{"pkgName", "[", 
-            RowBox[{"[", "i", "]"}], "]"}], "<>", "\"\<`\\\"];\\n\>\""}]}], 
-         "]"}], ";"}], "\[IndentingNewLine]", ",", 
        RowBox[{"{", 
-        RowBox[{"i", ",", " ", 
-         RowBox[{"Length", "@", "pkgName"}]}], "}"}]}], "]"}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"Close", "[", "nb", "]"}]}]}], "\[IndentingNewLine]", 
-   "]"}]}]], "Input"],
+        RowBox[{"pkgNames", " ", "=", " ", 
+         RowBox[{"FileBaseName", " ", "/@", " ", 
+          RowBox[{"FileNames", "@", 
+           RowBox[{"FileNameJoin", "@", 
+            RowBox[{"{", 
+             RowBox[{"appNameDir", ",", " ", "\"\<*.nb\>\""}], "}"}]}]}]}]}], 
+        "}"}], "\n", ",", " ", 
+       RowBox[{"Export", "[", 
+        RowBox[{
+         RowBox[{"FileNameJoin", "@", 
+          RowBox[{"{", 
+           RowBox[{
+           "appNameDir", ",", " ", "\"\<Kernel\>\"", ",", " ", 
+            "\"\<Init.m\>\""}], "}"}]}], "\n", "  ", ",", " ", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"Fold", "[", 
+              RowBox[{"StringReplace", ",", " ", "#", ",", " ", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{
+                 "\"\<\\\"|Get|\\\"\>\"", " ", "->", " ", "\"\<Get\>\""}], 
+                 ",", " ", 
+                 RowBox[{"EndOfString", "->", "\"\<;\>\""}]}], "}"}]}], "]"}],
+              "&"}], " ", "@", "\n", "    ", 
+            RowBox[{"ToString", "[", 
+             RowBox[{"#", ",", " ", "InputForm"}], "]"}]}], " ", "&"}], " ", 
+          "@", "\n", "    ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"Composition", "[", 
+             RowBox[{"\"\<|Get|\>\"", ",", " ", 
+              RowBox[{
+               RowBox[{
+               "appName", " ", "<>", " ", "\"\<`\>\"", " ", "<>", " ", "#", 
+                " ", "<>", " ", "\"\<`\>\""}], " ", "&"}]}], "]"}], " ", "/@",
+             " ", "pkgNames"}], ")"}]}], "\n", "  ", ",", " ", 
+         "\"\<Text\>\""}], "]"}]}], "]"}], ";"}]}], "]"}]}]], "Code"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Finalization", "Section"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"End", "[", "]"}], ";"}]], "Code"],
+  RowBox[{
+   RowBox[{"End", "[", "]"}], ";"}], " ", 
+  RowBox[{"(*", " ", "`Private`", " ", "*)"}]}]], "Code"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"Protect", "[", 
-   RowBox[{"NewPackage", ",", " ", "UpdateInit"}], "]"}], ";"}]], "Input",
- CellChangeTimes->{{3.5192636649251747`*^9, 3.519263668963455*^9}, {
-  3.519264766123111*^9, 3.5192647671865387`*^9}}],
+   RowBox[{"NewPackage", ",", " ", "UpdateInit"}], "]"}], ";"}]], "Code"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"EndPackage", "[", "]"}], ";"}]], "Code"]
+  RowBox[{
+   RowBox[{"EndPackage", "[", "]"}], ";"}], " ", 
+  RowBox[{"(*", " ", "`PackageMaker`", " ", "*)"}]}]], "Code"]
+}, Closed]]
 },
-AutoGeneratedPackage->Automatic,
-WindowSize->{849, 669},
-WindowMargins->{{26, Automatic}, {Automatic, 10}},
-FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
-2011)",
-StyleDefinitions->Notebook[{
-   Cell[
-    StyleData[StyleDefinitions -> "Default.nb"]], 
-   Cell[
-    StyleData["Input"], InitializationCell -> True]}, Visible -> False, 
-  FrontEndVersion -> 
-  "8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, 2011)", 
-  StyleDefinitions -> "PrivateStylesheetFormatting.nb"]
+WindowSize->{714, 563},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrivateNotebookOptions->{"FileOutlineCache"->False},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb",
+$CellContext`TrackCellChangeTimes -> False
 ]
-(* End of Notebook Content *)
 
-(* Internal cache information *)
-(*CellTagsOutline
-CellTagsIndex->{}
-*)
-(*CellTagsIndex
-CellTagsIndex->{}
-*)
-(*NotebookFileOutline
-Notebook[{
-Cell[557, 20, 2404, 60, 209, "Code"],
-Cell[2964, 82, 125, 4, 43, "Code"],
-Cell[3092, 88, 374, 9, 43, "Input"],
-Cell[3469, 99, 133, 4, 43, "Code"],
-Cell[3605, 105, 956, 22, 88, "Input"],
-Cell[4564, 129, 133, 4, 43, "Code"],
-Cell[4700, 135, 1044, 24, 148, "Input"],
-Cell[5747, 161, 91, 2, 43, "Code"],
-Cell[5841, 165, 8426, 205, 748, "Input"],
-Cell[14270, 372, 2442, 61, 223, "Input"],
-Cell[16715, 435, 68, 2, 43, "Code"],
-Cell[16786, 439, 244, 5, 27, "Input"],
-Cell[17033, 446, 75, 2, 43, "Code"]
-}
-]
-*)
-
-(* End of internal cache information *)
