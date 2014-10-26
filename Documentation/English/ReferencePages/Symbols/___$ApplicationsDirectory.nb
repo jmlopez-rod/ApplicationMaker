@@ -1,0 +1,265 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8665,        256]
+NotebookOptionsPosition[      6523,        197]
+NotebookOutlinePosition[      8050,        237]
+CellTagsIndexPosition[      7966,        232]
+WindowTitle->$ApplicationsDirectory - ApplicationMaker`ApplicationMaker`
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["APPLICATIONMAKER`APPLICATIONMAKER` SYMBOL", "PacletNameCell"], Cell[
+    TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Title of tutorial 1\"\>":>
+       Documentation`HelpLookup[
+        StringJoin[
+        "paclet:", "ApplicationMaker", 
+         "/tutorial/tutorialName1"]], "\<\"Title of tutorial 2\"\>":>
+       Documentation`HelpLookup[
+        StringJoin["paclet:", "ApplicationMaker", "/tutorial/tutorialName2"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"See Also \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Symbol1\"\>":>Documentation`HelpLookup[
+        StringJoin[
+        "paclet:", "ApplicationMaker", "/ref/Symbol1"]], "\<\"Symbol2\"\>":>
+       Documentation`HelpLookup[
+        StringJoin["paclet:", "ApplicationMaker", "/ref/Symbol2"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Guide 1\"\>":>Documentation`HelpLookup[
+        StringJoin[
+        "paclet:", "ApplicationMaker", "/guide/Guide1"]], "\<\"Guide 2\"\>":>
+       Documentation`HelpLookup[
+        StringJoin["paclet:", "ApplicationMaker", "/guide/Guide2"]]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->
+         False], {"\<\"Go to ApplicationMaker/ref/$ApplicationsDirectory \
+URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL["your.website.goes.here/documentationIfAny"], None}]}], 
+       Delimiter, "\<\"Go to wolfram URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+           "http://reference.wolfram.com/mathematica/guide/Mathematica.html"],
+            None}]}], "\<\"Go to authors URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL["your.website.goes.here"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid"],
+
+Cell[CellGroupData[{
+
+Cell["$ApplicationsDirectory", "ObjectName"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       ButtonBox["$ApplicationsDirectory",
+        BaseStyle->"Link",
+        ButtonData->"paclet:ApplicationMaker/ref/$ApplicationsDirectory"], 
+       "[", 
+       StyleBox["args", "TI"], "]"}]], "InlineFormula"],
+     "\[LineSeparator]Default directory for Applications developing and \
+deploying."
+    }]]}
+  }]], "Usage"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[
+  FrameBox[
+   StyleBox[
+    RowBox[{"MORE", " ", "INFORMATION"}], "NotesFrameText"],
+   StripOnInput->False],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell["Note about the function goes here.", "Notes"],
+
+Cell["Another Note about the function goes here.", "Notes"],
+
+Cell[TextData[ButtonBox["EXAMPLES",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(#)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$ApplicationsDirectory"], "Input"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\a\\\\AppData\\\\Roaming\\\\Mathematica\\\\\
+Applications\"\>"], "Output"]
+}, Open  ]],
+
+Cell[TextData[ButtonBox["SEE ALSO",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "SeeAlsoSection",
+ ApplicationMaker`DocumentationMaker`Private`WholeCellGroupOpener -> True],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["DeployApplication",
+    BaseStyle->"Link",
+    ButtonData->"paclet:ApplicationMaker/ref/DeployApplication"],
+   FontFamily->"Verdana"]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["NewApplication",
+    BaseStyle->"Link",
+    ButtonData->"paclet:ApplicationMaker/ref/NewApplication"],
+   FontFamily->"Verdana"]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->747101626],
+
+Cell[" ", "FooterCell"]
+}, Open  ]]
+},
+WindowSize->{667, 670},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+WindowTitle->"$ApplicationsDirectory - ApplicationMaker`ApplicationMaker`",
+DockedCells->None,
+TaggingRules->{
+ "ModificationHighlight" -> False, 
+  "Metadata" -> {
+   "context" -> "ApplicationMaker`", 
+    "keywords" -> {"$applicationsdirectory", "$APPLICATIONSDIRECTORY"}, 
+    "index" -> True, "label" -> "ApplicationMaker`ApplicationMaker` Symbol", 
+    "language" -> "en", "paclet" -> "ApplicationMaker ApplicationMaker", 
+    "status" -> "", "summary" -> 
+    "Default directory for Applications developing and deploying.", 
+    "synonyms" -> {"$applicationsdirectory", "$APPLICATIONSDIRECTORY"}, 
+    "title" -> "$ApplicationsDirectory", "windowTitle" -> 
+    "$ApplicationsDirectory", "type" -> "Symbol", "uri" -> 
+    "ApplicationMaker/ref/$ApplicationsDirectory"}, "SearchTextTranslated" -> 
+  ""},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "C:", "Users", "a", 
+   "AppData", "Roaming", "Mathematica", "Applications", "ApplicationMaker", 
+   "FrontEnd", "Stylesheets"}, "UserReference.nb", CharacterEncoding -> 
+  "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[4516, 130, 516, 13, 23, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 7845, 226}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[631, 21, 2615, 63, 37, "AnchorBarGrid"],
+Cell[CellGroupData[{
+Cell[3271, 88, 44, 0, 51, "ObjectName"],
+Cell[3318, 90, 407, 12, 85, "Usage"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3762, 107, 635, 17, 35, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50}],
+Cell[4400, 126, 51, 0, 30, "Notes"],
+Cell[4454, 128, 59, 0, 30, "Notes"],
+Cell[4516, 130, 516, 13, 23, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection"],
+Cell[5035, 145, 221, 5, 23, "ExampleSection"],
+Cell[CellGroupData[{
+Cell[5281, 154, 48, 0, 31, "Input"],
+Cell[5332, 156, 106, 1, 31, "Output"]
+}, Open  ]],
+Cell[5453, 160, 471, 12, 23, "SeeAlsoSection"],
+Cell[5927, 174, 554, 18, 26, "SeeAlso",
+ CellID->747101626],
+Cell[6484, 194, 23, 0, 23, "FooterCell"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
