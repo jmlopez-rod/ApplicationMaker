@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     38345,        948]
-NotebookOptionsPosition[     37217,        912]
-NotebookOutlinePosition[     37895,        936]
-CellTagsIndexPosition[     37852,        933]
+NotebookDataLength[     38959,        958]
+NotebookOptionsPosition[     37858,        924]
+NotebookOutlinePosition[     38509,        946]
+CellTagsIndexPosition[     38466,        943]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -32,13 +32,12 @@ Cell[BoxData[
      RowBox[{"jmlopez", ".", 
       RowBox[{"rod", "@", "gmail"}], ".", "com"}]}]}], " ", "*)"}], "\n", 
   RowBox[{"(*", " ", 
-   RowBox[{":", 
-    RowBox[{"Summary", ":", " ", 
-     RowBox[{
-     "Package", " ", "provides", " ", "functions", " ", "to", " ", "create", 
-      " ", "directory", " ", "tree", " ", "and", " ", "to", " ", "export", 
-      "\n", "\t\t\t ", "the", " ", 
-      RowBox[{"application", "."}]}]}]}], " ", "*)"}], "\n", 
+   RowBox[{":", "Summary", ":", " ", 
+    RowBox[{
+    "Package", " ", "provides", " ", "functions", " ", "to", " ", "create", 
+     " ", "directory", " ", "tree", " ", "and", " ", "to", " ", "export", 
+     "\n", "\t\t\t ", "the", " ", 
+     RowBox[{"application", "."}]}]}], " ", "*)"}], "\n", 
   RowBox[{"(*", " ", 
    RowBox[{":", 
     RowBox[{"Context", ":", " ", "ApplicationMaker`ApplicationMaker`"}]}], 
@@ -48,10 +47,12 @@ Cell[BoxData[
     RowBox[{"Package", " ", 
      RowBox[{"version", ":", " ", "1.0"}]}]}], " ", "*)"}], "\n", 
   RowBox[{"(*", " ", 
-   RowBox[{":", 
-    RowBox[{"History", ":", "  ", 
-     RowBox[{"Version", " ", "1.0", " ", "July", " ", "09", " ", "2011"}]}]}],
-    " ", "*)"}], "\n", 
+   RowBox[{":", "History", ":", "  ", 
+    RowBox[{
+    "Version", " ", "1.0", " ", "July", " ", "09", " ", "2011", "\n", " ", 
+     "fix", " ", "as", " ", "suggested", " ", "by", " ", "oca", " ", "by", 
+     " ", "Paul", " ", "Frischknecht", " ", "August", " ", "08", " ", 
+     "2016"}]}], " ", "*)"}], "\n", 
   RowBox[{"(*", " ", 
    RowBox[{":", 
     RowBox[{"Mathematica", " ", 
@@ -65,22 +66,22 @@ Cell[BoxData[
          RowBox[{"February", " ", "23"}], ",", " ", "2011"}], ")"}]}]}]}]}], 
    " ", "*)"}], "\n", 
   RowBox[{"(*", " ", 
-   RowBox[{":", 
-    RowBox[{"Discussion", ":", " ", 
-     RowBox[{
-     "The", " ", "function", " ", "NewApplication", " ", "creates", " ", "a", 
-      " ", "directory", " ", "tree", " ", "at", " ", "a", "\n", "\t\t\t\t", 
-      "specified", " ", "location", " ", "for", " ", "a", " ", "new", " ", 
-      RowBox[{"application", ".", " ", "The"}], " ", "DeployApplication", 
-      "\n", "\t\t\t\t", "takes", " ", "all", " ", "the", " ", "m", " ", 
-      "files", " ", "and", " ", "documentation", " ", "notebooks", " ", "in", 
-      " ", "the", "\n", "\t\t\t\t", "application", " ", "and", " ", "puts", 
-      " ", "them", " ", "in", " ", "an", " ", "specified", " ", "location", 
-      " ", "for", " ", "\n", "\t\t\t\t", 
-      RowBox[{"distribution", "."}]}]}]}], " ", "*)"}]}]], "Code",
+   RowBox[{":", "Discussion", ":", " ", 
+    RowBox[{
+    "The", " ", "function", " ", "NewApplication", " ", "creates", " ", "a", 
+     " ", "directory", " ", "tree", " ", "at", " ", "a", "\n", "\t\t\t\t", 
+     "specified", " ", "location", " ", "for", " ", "a", " ", "new", " ", 
+     RowBox[{"application", ".", " ", "The"}], " ", "DeployApplication", "\n",
+      "\t\t\t\t", "takes", " ", "all", " ", "the", " ", "m", " ", "files", 
+     " ", "and", " ", "documentation", " ", "notebooks", " ", "in", " ", 
+     "the", "\n", "\t\t\t\t", "application", " ", "and", " ", "puts", " ", 
+     "them", " ", "in", " ", "an", " ", "specified", " ", "location", " ", 
+     "for", " ", "\n", "\t\t\t\t", 
+     RowBox[{"distribution", "."}]}]}], " ", "*)"}]}]], "Code",
  CellChangeTimes->{{3.519262426879718*^9, 3.519262448169848*^9}, {
   3.519262497687089*^9, 3.51926254251353*^9}, {3.5192625853585587`*^9, 
-  3.519262813906499*^9}, {3.519265619896352*^9, 3.519265624995922*^9}}],
+  3.519262813906499*^9}, {3.519265619896352*^9, 3.519265624995922*^9}, {
+  3.6796452540189776`*^9, 3.6796452795388117`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -229,13 +230,24 @@ Cell[BoxData[{
         RowBox[{
          RowBox[{
           RowBox[{"tmp", "=", 
-           RowBox[{"FileNameJoin", "[", 
-            RowBox[{"{", 
-             RowBox[{"root", ",", "start", ",", 
-              RowBox[{"sub", "[", 
-               RowBox[{"[", 
-                RowBox[{"nm", ",", "i"}], "]"}], "]"}]}], "}"}], "]"}]}], ";",
-           "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"StringLength", "[", "root", "]"}], "\[NotEqual]", 
+              "0"}], ",", 
+             RowBox[{"FileNameJoin", "[", 
+              RowBox[{"{", 
+               RowBox[{"root", ",", "start", ",", 
+                RowBox[{"sub", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"nm", ",", "i"}], "]"}], "]"}]}], "}"}], "]"}], ",", 
+             RowBox[{"FileNameJoin", "[", 
+              RowBox[{"{", 
+               RowBox[{"start", ",", 
+                RowBox[{"sub", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"nm", ",", "i"}], "]"}], "]"}]}], "}"}], "]"}]}], 
+            "]"}]}], ";", "\[IndentingNewLine]", 
           RowBox[{"If", "[", 
            RowBox[{
             RowBox[{"DirectoryQ", "[", "tmp", "]"}], ",", " ", 
@@ -356,7 +368,7 @@ Cell[BoxData[{
       RowBox[{
       "\"\<\>\"", ",", " ", "appNameDir", ",", " ", "main", ",", " ", "sub"}],
        "]"}], ";"}]}], "\[IndentingNewLine]", "]"}]}]}], "Input",
- CellChangeTimes->{3.5192630783304367`*^9}],
+ CellChangeTimes->{3.5192630783304367`*^9, 3.679645308215603*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -912,16 +924,14 @@ Cell[BoxData[
 },
 AutoGeneratedPackage->Automatic,
 WindowSize->{695, 723},
-WindowMargins->{{13, Automatic}, {Automatic, 3}},
-FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, \
-2011)",
+WindowMargins->{{Automatic, 152}, {41, Automatic}},
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[StyleDefinitions -> "Default.nb"]], 
    Cell[
     StyleData["Input"], InitializationCell -> True]}, Visible -> False, 
-  FrontEndVersion -> 
-  "8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (February 23, 2011)", 
+  FrontEndVersion -> "10.4 for Microsoft Windows (64-bit) (April 11, 2016)", 
   StyleDefinitions -> "PrivateStylesheetFormatting.nb"]
 ]
 (* End of Notebook Content *)
@@ -935,23 +945,22 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 2643, 62, 239, "Code"],
-Cell[3203, 84, 129, 4, 43, "Code"],
-Cell[3335, 90, 564, 13, 43, "Input"],
-Cell[3902, 105, 133, 4, 43, "Code"],
-Cell[4038, 111, 1351, 29, 163, "Input"],
-Cell[5392, 142, 133, 4, 43, "Code"],
-Cell[5528, 148, 1324, 34, 193, "Input"],
-Cell[6855, 184, 91, 2, 43, "Code"],
-Cell[6949, 188, 6854, 170, 673, "Input"],
-Cell[13806, 360, 5172, 115, 463, "Input"],
-Cell[18981, 477, 13007, 304, 1363, "Input"],
-Cell[31991, 783, 4728, 109, 448, "Input"],
-Cell[36722, 894, 68, 2, 43, "Code"],
-Cell[36793, 898, 342, 8, 27, "Input"],
-Cell[37138, 908, 75, 2, 43, "Code"]
+Cell[557, 20, 2807, 63, 333, "Code"],
+Cell[3367, 85, 129, 4, 52, "Code"],
+Cell[3499, 91, 564, 13, 52, "Input"],
+Cell[4066, 106, 133, 4, 52, "Code"],
+Cell[4202, 112, 1351, 29, 212, "Input"],
+Cell[5556, 143, 133, 4, 52, "Code"],
+Cell[5692, 149, 1324, 34, 272, "Input"],
+Cell[7019, 185, 91, 2, 52, "Code"],
+Cell[7113, 189, 7331, 181, 972, "Input"],
+Cell[14447, 372, 5172, 115, 632, "Input"],
+Cell[19622, 489, 13007, 304, 1992, "Input"],
+Cell[32632, 795, 4728, 109, 612, "Input"],
+Cell[37363, 906, 68, 2, 52, "Code"],
+Cell[37434, 910, 342, 8, 31, "Input"],
+Cell[37779, 920, 75, 2, 52, "Code"]
 }
 ]
 *)
 
-(* End of internal cache information *)

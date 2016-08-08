@@ -26,7 +26,8 @@
 			 the application. *)
 (* :Context: ApplicationMaker`ApplicationMaker` *)
 (* :Package version: 1.0 *)
-(* :History:  Version 1.0 July 09 2011 *)
+(* :History:  Version 1.0 July 09 2011
+ fix as suggested by oca by Paul Frischknecht August 08 2016 *)
 (* :Mathematica version: 8.0 for Mac OS X x86 (64-bit) (February 23, 2011) *)
 (* :Discussion: The function NewApplication creates a directory tree at a
 				specified location for a new application. The DeployApplication
@@ -88,7 +89,7 @@ nm = Position[main, start];
 If[Length@nm != 0, nm=nm[[1,1]]];
 If[Length@sub[[nm]] !=0,
 Do[
-tmp=FileNameJoin[{root,start,sub[[nm,i]]}];
+tmp=If[StringLength[root]!=0,FileNameJoin[{root,start,sub[[nm,i]]}],FileNameJoin[{start,sub[[nm,i]]}]];
 If[DirectoryQ[tmp], 
 Print[Style["Existing Directory : ", "MSG", Gray],Style[tmp, "MSG", Bold]], 
 CreateDirectory[tmp];
