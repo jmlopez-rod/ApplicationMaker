@@ -88,7 +88,10 @@ nm = Position[main, start];
 If[Length@nm != 0, nm=nm[[1,1]]];
 If[Length@sub[[nm]] !=0,
 Do[
-tmp=FileNameJoin[{root,start,sub[[nm,i]]}];
+If[root===""&&StringContainsQ[$System,"Windows"],
+tmp=FileNameJoin[{start,sub[[nm,i]]}],
+tmp=FileNameJoin[{root,start,sub[[nm,i]]}]
+];(*useing diffrent root dir on diffrent system*)
 If[DirectoryQ[tmp], 
 Print[Style["Existing Directory : ", "MSG", Gray],Style[tmp, "MSG", Bold]], 
 CreateDirectory[tmp];
@@ -97,7 +100,10 @@ Print[Style["Directory Created  : ", "MSG", Blue],Style[tmp, "MSG", Bold]]
 ,{i,Length@sub[[nm]]}]
 ];
 Do[
-MakeDirectory[FileNameJoin[{root,start}], sub[[nm,i]], main, sub],
+If[root===""&&StringContainsQ[$System,"Windows"],
+tmp=start,
+tmp=FileNameJoin[{root,start}]];(*useing diffrent root dir on diffrent system*)
+MakeDirectory[tmp, sub[[nm,i]], main, sub],
 {i,Length@sub[[nm]]}
 ]
 ]
